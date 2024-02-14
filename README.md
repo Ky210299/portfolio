@@ -224,34 +224,40 @@ const price = computed(() => {
 ### Good
 
 js
+```
 const basePrice = computed(
   () => manufactureCost.value / (1 - profitMargin.value)
 )
-
+```
 const discount = computed(
   () => basePrice.value * (discountPercent.value || 0)
 )
-
+```
 const finalPrice = computed(() => basePrice.value - discount.value)
-
+```
 ## Quoted attribute values​
 
 Non-empty HTML attribute values should always be inside quotes (single or double, whichever is not used in JS).
 
 ### Bad
-
-template
+```
+//template
 <input type=text>
+```
 template
+```
 <AppSidebar :style={width:sidebarWidth+'px'}>
-
+```
 ### Good
 
 template
+```
 <input type="text">
+```
 template
+```
 <AppSidebar :style="{ width: sidebarWidth + 'px' }">
-
+```
 ## Directive shorthands​
 
 Directive shorthands (: for v-bind:, @ for v-on: and # for v-slot) should be used always or never.
