@@ -33,13 +33,14 @@ In committed code, prop definitions should always be as detailed as possible, sp
 const props = defineProps(['status'])
 
 #### Nice
-
+```
 const props = defineProps({
   status: String
 })
-
+```
 ##### Even better
 
+```
 const props = defineProps({
   status: {
     type: String,
@@ -52,6 +53,7 @@ const props = defineProps({
     }
   }
 })
+```
 
 ## Use keyed v-for
 
@@ -96,20 +98,23 @@ components/
 |- SettingsCheckboxTerms.vue
 
 ## Component name casing in templates
-
+```
    <!-- In Single-File Components and string templates -->
 
    <MyComponent/>
+```
 template
+```
 <!-- In in-DOM templates -->
 <my-component></my-component>
-
+```
 OR
 
 template
+```
 <!-- Everywhere -->
 <my-component></my-component>
-
+```
 ## Component names should prefer full words over abbreviations
 
 ## Prop name casing​
@@ -117,72 +122,85 @@ template
 Prop names should always use camelCase during declaration. When used inside in-DOM templates, props should be kebab-cased.
 
 ### Bad
-
+```
 const props = defineProps({
   'greeting-text': String
 })
+```
 template
+```
 // for in-DOM templates
 <welcome-message greetingText="hi"></welcome-message>
-
+```
 ### Good
-
+```
 const props = defineProps({
   greetingText: String
 })
+```
 template
+```
 // for SFC - please make sure your casing is consistent throughout the project
 // you can use either convention but we don't recommend mixing two different casing styles
 <WelcomeMessage greeting-text="hi"/>
 // or
 <WelcomeMessage greetingText="hi"/>
+```
 template
+```
 // for in-DOM templates
 <welcome-message greeting-text="hi"></welcome-message>
-
+```
 ## Multi-attribute elements​
 
 Elements with multiple attributes should span multiple lines, with one attribute per line.
 
 ### Bad
-
+```
 template
 <img src="https://vuejs.org/images/logo.png" alt="Vue Logo">
 template
 <MyComponent foo="a" bar="b" baz="c"/>
-
+```
 ### Good
+
 template
+```
 <img
   src="https://vuejs.org/images/logo.png"
   alt="Vue Logo"
 >
+```
 template
+```
 <MyComponent
   foo="a"
   bar="b"
   baz="c"
 />
-
+```
 ## Simple expressions in templates​
 
 Component templates should only include simple expressions, with more complex expressions refactored into computed properties or methods.
 
 ### Bad
-
+```
 template
 {{
   fullName.split(' ').map((word) => {
     return word[0].toUpperCase() + word.slice(1)
   }).join(' ')
 }}
-
+```
 ### Good
 
 template
+``` 
 <!-- In a template -->
 {{ normalizedFullName }}
+```
 js
+```
 // The complex expression has been moved to a computed property
 const normalizedFullName = computed(() =>
   fullName.value
@@ -190,7 +208,7 @@ const normalizedFullName = computed(() =>
     .map((word) => word[0].toUpperCase() + word.slice(1))
     .join(' ')
 )
-
+``` 
 ## Simple computed properties​
 
 Complex computed properties should be split into as many simpler properties as possible.
