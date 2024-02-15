@@ -1,4 +1,5 @@
 <script lang="ts">
+
 import { defineComponent } from 'vue'
 
 export default defineComponent({
@@ -7,19 +8,20 @@ export default defineComponent({
 
 </script>
  
- 
+ ««««««««««««««««««««--Template--»»»»»»»»»»»»»»»»»»»»»
+
 <template>
   <div class="nav-container">
 
-    <nav>
+    Navegation bar
 
-    </nav>
   </div>
 </template>
- 
- 
-<style>
 
+ 
+ ««««««««««««««««««««--Style--»»»»»»»»»»»»»»»»»»»»»
+
+<style>
 .nav-container {
   width: 90%;
   height: 30px;
@@ -28,3 +30,4 @@ export default defineComponent({
   border-bottom-right-radius: 10px;
 }
 </style>
+

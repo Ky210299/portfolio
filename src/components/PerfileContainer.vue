@@ -10,19 +10,19 @@ export default defineComponent({
  
 <template>
   <div class="perfile-container">
-    <p>Perfile Container</p>
+    Perfile Container
   </div>
 </template>
  
  
 <style>
 .perfile-container {
-  width: 200px;
+  width: 225px;
   height: 200px;
   margin: auto;
-  margin-top: 10px;
+  margin-top: 25px;
   margin-bottom: 25px;
-  padding-top: 2px;
+  padding: 10px;
   border-radius: 10px;
 }
 </style>
