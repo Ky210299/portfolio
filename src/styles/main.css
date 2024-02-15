@@ -1,0 +1,13 @@
+* {
+  outline: 1px solid black;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+html {
+  background-color: gray;
+}
+
+#app {
+  background-color: blue;
+}
