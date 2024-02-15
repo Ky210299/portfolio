@@ -5,6 +5,7 @@ import App from './App.vue'
 
 
 // <<-----------Styles------------->>
+import "./styles/main.css";
 
 
 // <<-----------Styles------------->>
