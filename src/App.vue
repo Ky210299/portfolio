@@ -1,11 +1,10 @@
 <template>
-  <h1>Hello World</h1>
+  <NavegationContainer />
 </template>
 
 <script lang="ts" setup>
+import NavegationContainer from './components/NavegationContainer.vue';
 
 </script>
 
-<style scoped>
-
-</style>
+<style></style>
