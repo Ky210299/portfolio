@@ -17,8 +17,8 @@ export default defineComponent({
  
 <style>
 .perfile-container {
-  width: 225px;
-  height: 200px;
+  width: 90%;
+  height: 150px;
   margin: auto;
   margin-top: 25px;
   margin-bottom: 25px;

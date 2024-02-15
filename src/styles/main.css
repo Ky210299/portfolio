@@ -1,15 +1,13 @@
 * {
-  border: 1px solid black;
+  outline: 1px solid black;
   box-sizing: border-box;
   background-color: white;
 }
 
 html {
-  border: 1px solid blue;
-  background: blue;
-
+  background-color: gray;
 }
 
-.hidden {
-  
+#app {
+  background-color: blue;
 }
