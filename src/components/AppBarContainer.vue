@@ -18,13 +18,5 @@ export default defineComponent({
  ««««««««««««««««««««--Style--»»»»»»»»»»»»»»»»»»»»»
 
 <style>
-.nav-filter-container {
-  width: 90%;
-  height: 25px;
-  margin: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 5px;
-  border-radius: 10px;
-}
+
 </style>

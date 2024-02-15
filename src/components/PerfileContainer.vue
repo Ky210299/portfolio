@@ -16,13 +16,5 @@ export default defineComponent({
  
  
 <style>
-.perfile-container {
-  width: 90%;
-  height: 150px;
-  margin: auto;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  padding: 10px;
-  border-radius: 10px;
-}
+
 </style>

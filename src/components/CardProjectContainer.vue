@@ -22,14 +22,5 @@ export default defineComponent({
  ««««««««««««««««««««--Style--»»»»»»»»»»»»»»»»»»»»»
 
 <style>
-.card-project-container {
-  display: flex;
-  width: 90%;
-  margin: auto;
-  margin-top: 20px;
-  padding: 30px;
-  height: 250px;
-  border: none;
-  border-radius: 30px;
-}
+
 </style>

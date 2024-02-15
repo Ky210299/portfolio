@@ -1,11 +1,22 @@
+<script lang="ts">
+
+ 
+ 
+</script>
+ 
+ ««««««««««««««««««««--Template--»»»»»»»»»»»»»»»»»»»»»
+
 <template>
-  
+
+ 
+
 </template>
 
-<script lang="ts" setup>
-
-</script>
+ 
+ ««««««««««««««««««««--Style--»»»»»»»»»»»»»»»»»»»»»
 
 <style>
+
+ 
 
 </style>
