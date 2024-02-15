@@ -5,9 +5,8 @@ import App from './App.vue'
 
 
 // <<-----------Styles------------->>
-import "./styles/main.css";
-
-
+import './assets/styles/main.css/'
+import './assets/styles/variables.css'
 // <<-----------Styles------------->>
 
 createApp(App).mount('#app')
