@@ -10,7 +10,7 @@ export default defineComponent({
  ««««««««««««««««««««--Template--»»»»»»»»»»»»»»»»»»»»»
 
 <template>
-  <nav class="nav-filter-container">
+  <nav class="container__bar">
     Nav filter container
   </nav>
 </template>

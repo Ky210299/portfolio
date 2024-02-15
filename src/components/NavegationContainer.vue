@@ -11,7 +11,7 @@ export default defineComponent({
  ««««««««««««««««««««--Template--»»»»»»»»»»»»»»»»»»»»»
 
 <template>
-  <div class="nav-container">
+  <div class="container__navegation-bar">
 
     Navegation bar
 

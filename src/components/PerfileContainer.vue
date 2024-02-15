@@ -9,12 +9,10 @@ export default defineComponent({
  
  
 <template>
-  <div class="perfile-container">
+  <div class="container__perfile">
     Perfile Container
   </div>
 </template>
  
  
-<style>
-
-</style>
+<style></style>

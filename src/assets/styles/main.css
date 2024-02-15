@@ -11,7 +11,8 @@ html {
 #app {
   background-color: blue;
 }
-.nav-filter-container {
+
+.container__bar {
   width: 90%;
   height: 25px;
   margin: auto;
@@ -20,7 +21,8 @@ html {
   padding: 5px;
   border-radius: 10px;
 }
-.card-project-container {
+
+.container__project {
   display: flex;
   width: 90%;
   margin: auto;
@@ -31,7 +33,7 @@ html {
   border-radius: 30px;
 }
 
-.nav-container {
+.container__navegation-bar {
   width: 90%;
   height: 30px;
   margin: auto;
@@ -39,7 +41,7 @@ html {
   border-bottom-right-radius: 10px;
 }
 
-.perfile-container {
+.container__perfile {
   width: 90%;
   height: 150px;
   margin: auto;

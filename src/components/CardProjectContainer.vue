@@ -14,7 +14,7 @@ export default defineComponent({
  ««««««««««««««««««««--Template--»»»»»»»»»»»»»»»»»»»»»
 
 <template>
-  <article class="card-project-container">
+  <article class="container__project">
     Card Project Container
   </article>
 </template>
