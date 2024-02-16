@@ -36,15 +36,15 @@ html {
 .container__perfile {
   margin-top: 70px;
   outline: 1px solid white;
-  width: 80%;
-  height: 150px;
+  width: 100% ;
+  flex: 4; 
   padding: 10px;
   border-radius: 10px;
 }
 
 .container__bar {
-  width: 80%;
-  height: 50px;
+  flex: 1;
+  width: 100%;
   padding: 5px;
   border-radius: 10px;
   outline: 1px solid white;
@@ -53,11 +53,10 @@ html {
 
 
 .container__project {
-
+  flex: 6;
+  width: 100%;
   outline: 1px solid white;
   padding: 30px;
-  width: 80%;
-  height: 250px;
   border: none;
   border-radius: 30px;
   margin-bottom: 30px;
@@ -81,8 +80,6 @@ html {
     color: rgb(94, 255, 0);
     outline: 3px solid rgba(0, 255, 110, 0.719);
   }
-
-
 
 }
 
