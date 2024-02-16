@@ -1,9 +1,13 @@
 <script lang="ts">
 
 import { defineComponent } from 'vue'
-import AppButton from './AppButton.vue';
-export default defineComponent({
+import AppButtom from './AppButtom.vue';
+import AppCurrentIndexCircle from './AppCurrentIndexCircle.vue';
 
+export default defineComponent({
+  setup() {
+  },
+  components: { AppButtom, AppCurrentIndexCircle }
 })
 
 </script>
@@ -12,8 +16,8 @@ export default defineComponent({
 
 <template>
   <div class="container__navegation-bar">
-    <button class="button"></button><p>hello</p>
-    <AppButton />
+    <AppButtom />
+    <AppCurrentIndexCircle />
   </div>
 </template>
 

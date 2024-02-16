@@ -1,9 +1,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 export default defineComponent({
-    setup() {
 
-    }
 })
 
 </script>
@@ -11,10 +9,12 @@ export default defineComponent({
  ««««««««««««««««««««--Template--»»»»»»»»»»»»»»»»»»»»»
 
 <template>
-    
+    <button class="button">test button</button>
 </template>
 
  
  ««««««««««««««««««««--Style--»»»»»»»»»»»»»»»»»»»»»
 
-<style></style>
+<style scoped>
+
+</style>
