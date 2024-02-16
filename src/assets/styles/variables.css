@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Sono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Sono:wght,MONO@600,0..1&display=swap');
+
 :root {
   --color-primary: #0000A0;
   --color-secondary: #014401AA;
@@ -10,5 +14,5 @@
   --text-color--dark-mode: #ffe;
   --text-color--dark-mode--secondary: #40cc50;
   --text-color--light-mode: #113;
-
+  --font-family--main: Sono, sans-serif;
 }
