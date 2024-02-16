@@ -66,7 +66,7 @@ html {
 .button {
   border: 0;
   background: var(--bg-tertiary--primary);
-  outline: 3px solid var(--color-secondary);
+  outline: 3px solid var(--color-primary);
   padding: 5px;
   margin: 2px;
   height: min-content;
@@ -74,8 +74,8 @@ html {
   margin: 2px;
   border-radius: 8px;
   text-align: center;
-  color: var(--text-color--dark-mode--secondary);
-  transition: ease-in-out 200ms;
+  color: var(--text-color--dark-mode--primary);
+  transition: ease 200ms;
 
   &:active {
     color: rgb(94, 255, 0);

@@ -18,7 +18,7 @@ export default defineComponent({
                 <stop offset="100%" stop-color="white" />
             </radialGradient>
         </defs>
-        <circle cx="10" cy="10" class="disabled svg__index-circle" />
+        <circle cx="10" cy="10" class="enabled svg__index-circle" />
     </svg>
 </template>
 
