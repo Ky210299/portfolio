@@ -1,4 +1,7 @@
 :root {
-  --color-primary: blue;
-  --color-secondary:
+  --color-primary: #000099;
+  --color-secondary: #014401;
+  --color-terciario__primary: #472347;
+  --color-terciario__secondary: #AA9030;
+  --color-oposite__primary: #C47124;
 }
