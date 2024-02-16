@@ -2,6 +2,7 @@
   <NavegationContainer />
   <PerfileContainer />
   <AppBarContainer />
+  <AppBarContainer />
   <CardProjectContainer/>
 </template>
 

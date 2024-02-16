@@ -41,7 +41,7 @@ export default defineComponent({
     fill-opacity: .6;
     r: 5;
 
-    &:hover {
+    &:active {
         fill: rgb(159, 167, 191);
         r: 7;
         fill-opacity: 1;
