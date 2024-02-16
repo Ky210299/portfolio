@@ -4,6 +4,8 @@
   margin: 0;
   box-sizing: border-box;
   border: none;
+  color: unset;
+  text-decoration: none;
 }
 
 html {
@@ -36,8 +38,8 @@ html {
 .container__perfile {
   margin-top: 70px;
   outline: 1px solid white;
-  width: 100% ;
-  flex: 4; 
+  width: 100%;
+  flex: 4;
   padding: 10px;
   border-radius: 10px;
 }
@@ -49,8 +51,6 @@ html {
   border-radius: 10px;
   outline: 1px solid white;
 }
-
-
 
 .container__project {
   flex: 6;
@@ -65,7 +65,7 @@ html {
 .button {
   border: 0;
   background: var(--bg-tertiary--primary);
-  outline: 3px solid var(--color-primary);
+  outline: 3px solid var(--color-secondary);
   padding: 5px;
   margin: 2px;
   height: min-content;
@@ -73,7 +73,7 @@ html {
   margin: 2px;
   border-radius: 8px;
   text-align: center;
-  color: var(--text-color--dark-mode--primary);
+  color: var(--text-color--dark-mode--secondary);
   transition: ease 200ms;
 
   &:active {
@@ -81,10 +81,6 @@ html {
     outline: 3px solid rgba(0, 255, 110, 0.719);
   }
 
-}
-
-svg {
-  outline: 1px solid white;
 }
 
 .svg__index-circle {

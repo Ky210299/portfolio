@@ -18,6 +18,7 @@ export default defineComponent({
   <div class="container__navegation-bar">
     <AppButtom />
     <AppCurrentIndexCircle />
+    <a>About</a>
   </div>
 </template>
 
