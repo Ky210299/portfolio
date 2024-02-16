@@ -1,32 +1,26 @@
-* {
+body {
+  background-color: blue;
   outline: 1px solid black;
-  box-sizing: border-box;
-  background-color: white;
-}
-
-html {
-  background-color: gray;
 }
 
 #app {
-  background-color: blue;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .container__bar {
-  width: 90%;
+  margin: 0px 10px;
   height: 25px;
-  margin: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
   padding: 5px;
   border-radius: 10px;
+  outline: 1px solid black;
 }
 
 .container__project {
-  display: flex;
-  width: 90%;
-  margin: auto;
-  margin-top: 20px;
+  margin: 0px 10px;
+  outline: 1px solid black;
   padding: 30px;
   height: 250px;
   border: none;
@@ -34,19 +28,26 @@ html {
 }
 
 .container__navegation-bar {
-  width: 90%;
+  outline: 1px solid black;
   height: 30px;
-  margin: auto;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
 .container__perfile {
-  width: 90%;
+  outline: 1px solid black;
+  margin: 0px 10px;
   height: 150px;
-  margin: auto;
-  margin-top: 25px;
-  margin-bottom: 25px;
   padding: 10px;
   border-radius: 10px;
+}
+
+.button {
+  border: 0;
+  outline: none;
+  height: 15px;
+  width: 15px;
+  margin: 2px;
+  border-radius: 100%;
+
 }
