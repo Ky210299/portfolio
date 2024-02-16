@@ -10,7 +10,7 @@ export default defineComponent({
  
 <template>
   <div class="container__perfile">
-    Perfile Container
+    <em>emphaty</em> <strong>strong</strong> <span>just text</span>
   </div>
 </template>
  
