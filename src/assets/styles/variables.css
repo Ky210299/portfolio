@@ -3,12 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Sono:wght,MONO@600,0..1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Junge&family=Merienda:wght@300..900&family=Sono:wght,MONO@600,0..1&display=swap');
 :root {
-  --color-primary: #0000a7;
-  --color-secondary: #035a03;
-  --color-tertiary--primary: #580e5860;
-  --color-tertiary--secondary: #88701960;
-  --color-opposite--primary: #a65b1660;
-  --bg-primary: #04001b;
+  --color-primary: #0000c5;
+  --color-secondary: #13a100;
+  --color-tertiary--primary: #7b00a0fb;
+  --color-tertiary--secondary: #e49c00;
+  --color-opposite--primary: #f16100;
+  --bg-primary: #09061d;
   --bg-secondary--primary: #00200050;
   --bg-tertiary--primary: #30103050;
   --text-color--dark-mode: #ffe;

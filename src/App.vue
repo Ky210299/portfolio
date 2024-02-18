@@ -1,16 +1,17 @@
 <template>
-  <NavegationContainer />
+  <HeaderContainer />
   <PerfileContainer />
-  <AppBarContainer />
-  <AppBarContainer />
+  <BarSocials/>   
+  <BarIndex/>
   <CardProjectContainer/>
 </template>
 
 <script lang="ts" setup>
-import NavegationContainer from './components/NavegationContainer.vue';
+import HeaderContainer from './components/HeaderContainer.vue';
 import PerfileContainer from './components/PerfileContainer.vue';
-import AppBarContainer from './components/AppBarContainer.vue';
 import CardProjectContainer from './components/CardProjectContainer.vue';
+import BarSocials from './components/BarSocials.vue';
+import BarIndex from './components/BarIndex.vue';
 </script>
 
 <style>

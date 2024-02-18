@@ -9,10 +9,16 @@ export default defineComponent({
  
  
 <template>
-  <div class="container__perfile">
-    <em>emphaty</em> <strong>strong</strong> <span>just text</span>
-  </div>
+  <section class="container__perfile">
+    <article>
+    <p><strong>Hi, I am Leonardo</strong></p>
+    <p><em>Fullstack Developep</em> Hacking the NAZA</p>
+    <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, quisquam?</p>
+    </article>
+  </section>
 </template>
  
  
-<style></style>
+<style scoped>
+
+</style>
