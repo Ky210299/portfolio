@@ -1,22 +1,9 @@
-<script lang="ts">
+<script lang="ts"></script>
 
- 
- 
-</script>
- 
- ««««««««««««««««««««--Template--»»»»»»»»»»»»»»»»»»»»»
+««««««««««««««««««««--Template--»»»»»»»»»»»»»»»»»»»»»
 
-<template>
+<template></template>
 
- 
+««««««««««««««««««««--Style--»»»»»»»»»»»»»»»»»»»»»
 
-</template>
-
- 
- ««««««««««««««««««««--Style--»»»»»»»»»»»»»»»»»»»»»
-
-<style>
-
- 
-
-</style>
+<style></style>

@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Sono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sono:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Sono:wght,MONO@600,0..1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Junge&family=Merienda:wght@300..900&family=Sono:wght,MONO@600,0..1&display=swap");
+
+:root {
+	--color-primary: #f8f0dd;
+	--color-secondary: #010011;
+	--color-palette--primary: #7b00a0fb;
+	--color-palette--secondary: #e49c00;
+	--color-palette--opposite: #f16100;
+	--font-family-primary: Junge, sans-serif;
+	--font-family-secondary: Sono, sans-serif;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--color-primary: #010011;
+		--color-secondary: #f0f0f0;
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+	vertical-align: baseline;
+}
+
+img,
+picture,
+video,
+iframe,
+figure {
+	max-width: 100%;
+	width: 100%;
+	display: block;
+}
+
+a {
+	display: block;
+}
+p a {
+	display: inline;
+}
+
+li {
+	list-style-type: none;
+}
+html {
+	scroll-behavior: smooth;
+}
+a:-webkit-any-link,
+h1,
+h2,
+h3,
+h4,
+h5,
+span,
+p,
+a strong,
+blockquote,
+i,
+b,
+u,
+em {
+	font-size: 1em;
+	font-weight: inherit;
+	font-style: inherit;
+	text-decoration: none;
+	color: inherit;
+}
+
+blockquote::before,
+blockquote::after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
+
+::selection {
+	background-color: var(--color-primary);
+	color: var(--color-secondary);
+}
+
+form,
+input,
+textarea,
+select,
+button,
+label {
+	font-family: inherit;
+	font-size: inherit;
+	hyphens: auto;
+	background-color: transparent;
+	display: block;
+	color: inherit;
+}
+
+table,
+tr,
+td {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+svg {
+	width: 100%;
+	display: block;
+	fill: currentColor;
+}
+
+body {
+	min-height: 100vh;
+	font-size: 100%;
+	font-family: var(--font-family-primary);
+	color: var(--color-primary);
+	background-color: var(--color-secondary);
+	line-height: 1.4em;
+}

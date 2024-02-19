@@ -1,30 +1,26 @@
 <script lang="ts">
-import {defineComponent} from 'vue'
-import IconLinkedin from './icons/IconLinkedin.vue'
-import IconGithub from './icons/IconGithub.vue'
-export default defineComponent({
-    
-
-    components:{IconLinkedin, IconGithub}
-})
- 
- 
+	import { defineComponent } from "vue";
+	import IconLinkedin from "./icons/IconLinkedin.vue";
+	import IconGithub from "./icons/IconGithub.vue";
+	export default defineComponent({
+		components: { IconLinkedin, IconGithub },
+	});
 </script>
- 
- ««««««««««««««««««««--Template--»»»»»»»»»»»»»»»»»»»»»
+
+««««««««««««««««««««--Template--»»»»»»»»»»»»»»»»»»»»»
 
 <template>
-    <div class="socials-container">
-        <IconLinkedin/>
-        <IconGithub/>
-    </div>
+	<li class="li">
+		<a href="#" class="a" title="name" target="_blank" rel="noopener noreferer">
+			<svg></svg>
+		</a>
+		aaa
+	</li>
 </template>
 
- 
- ««««««««««««««««««««--Style--»»»»»»»»»»»»»»»»»»»»»
+««««««««««««««««««««--Style--»»»»»»»»»»»»»»»»»»»»»
 
-<style>
-
- 
-
+<style scoped>
+	.socials {
+	}
 </style>

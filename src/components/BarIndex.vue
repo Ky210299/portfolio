@@ -1,21 +1,21 @@
-
 <script lang="ts">
-import { defineComponent } from 'vue'
-export default defineComponent({
-
-})
-
+	import { defineComponent } from "vue";
+	import AppCurrentIndexCircle from "./AppCurrentIndexCircle.vue";
+	export default defineComponent({
+		components: { AppCurrentIndexCircle },
+	});
 </script>
- 
- ««««««««««««««««««««--Template--»»»»»»»»»»»»»»»»»»»»»
+
+««««««««««««««««««««--Template--»»»»»»»»»»»»»»»»»»»»»
 
 <template>
-  <nav class="container__bar">
-  </nav>
+	<div class="container__projects__index">
+		<strong>Circle</strong>
+		<strong>Circle</strong>
+		<strong>Circle</strong>
+	</div>
 </template>
- 
- ««««««««««««««««««««--Style--»»»»»»»»»»»»»»»»»»»»»
 
-<style>
+««««««««««««««««««««--Style--»»»»»»»»»»»»»»»»»»»»»
 
-</style>
+<style></style>

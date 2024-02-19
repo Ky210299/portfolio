@@ -1,26 +1,20 @@
-
- ««««««««««««««««««««--Script--»»»»»»»»»»»»»»»»»»»»»
+««««««««««««««««««««--Script--»»»»»»»»»»»»»»»»»»»»»
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-export default defineComponent({
-  setup() {
-
-  }
-})
-
+	import { defineComponent } from "vue";
+	export default defineComponent({
+		setup() {},
+	});
 </script>
- 
- ««««««««««««««««««««--Template--»»»»»»»»»»»»»»»»»»»»»
+
+««««««««««««««««««««--Template--»»»»»»»»»»»»»»»»»»»»»
 
 <template>
-  <article class="container__project">
-    Card Project Container
-  </article>
-</template>
- 
- ««««««««««««««««««««--Style--»»»»»»»»»»»»»»»»»»»»»
 
-<style>
+</template>
+
+««««««««««««««««««««--Style--»»»»»»»»»»»»»»»»»»»»»
+
+<style scoped>
 
 </style>

@@ -1,19 +1,15 @@
 <template>
-  <HeaderContainer />
-  <PerfileContainer />
-  <BarSocials/>   
-  <BarIndex/>
-  <CardProjectContainer/>
+	<HeaderContainer />
+	<ProfileContainer />
+	<main class="main">
+		<Projects />
+	</main>
 </template>
 
 <script lang="ts" setup>
-import HeaderContainer from './components/HeaderContainer.vue';
-import PerfileContainer from './components/PerfileContainer.vue';
-import CardProjectContainer from './components/CardProjectContainer.vue';
-import BarSocials from './components/BarSocials.vue';
-import BarIndex from './components/BarIndex.vue';
+	import HeaderContainer from "./components/HeaderContainer.vue";
+	import ProfileContainer from "./components/ProfileContainer.vue";
+	import Projects from "./views/Projects.vue";
 </script>
 
-<style>
-
-</style>
+<style></style>
