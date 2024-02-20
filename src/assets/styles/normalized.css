@@ -10,7 +10,7 @@
 	--color-palette--secondary: #e49c00;
 	--color-palette--opposite: #f16100;
 	--font-family-primary: Junge, sans-serif;
-	--font-family-secondary: Sono, sans-serif;
+	--font-family-secondary: Merienda, sans-serif;
 }
 
 @media (prefers-color-scheme: light) {
@@ -70,6 +70,7 @@ em {
 	font-style: inherit;
 	text-decoration: none;
 	color: inherit;
+	font-family: Junge;
 }
 
 blockquote::before,
