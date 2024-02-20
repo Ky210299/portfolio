@@ -1,16 +1,18 @@
 * {
-	outline: 1px solid white;
+	/* outline: 1px solid white; */
 }
 
 .header {
 	position: fixed;
 	z-index: 2;
-	background-color: var(--color-palette--primary);
-	top: 0px;
+	background-color: #0000006c;
+	box-shadow: inset 0 0 6px var(--color-primary);
+	backdrop-filter: blur(.26rem);
+	top: -2px;
 	width: 100%;
 	min-height: 4rem;
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: row nowrap;
 	justify-content: space-between;
 	align-items: center;
 	padding: 1rem 1rem;
@@ -21,33 +23,23 @@
 		& .a {
 			transition: ease-in all 100ms;
 			font-family: Merienda;
+			font-style: italic;
 			font-size: 3rem;
-			font-weight: 700;
-			text-transform: capitalize;
+			font-weight: 500;
+			text-shadow: 0 0 15px white;
 			color: var(--color-palette--secondary);
 		}
 		& :hover {
 			color: var(--color-palette--opposite);
 			transform: transform(1.1);
+			text-shadow: 0 0 5px white, 0 0 10px yellow, 0 0 5px black;
 		}
 	}
-
-	& .nav {
-		& .ul {
-			display: flex;
-			flex-flow: row nowrap;
-			align-items: center;
-			gap: 1rem;
-
-			& .li {
-				margin: 0 1rem;
-
-				& .a {
-				}
-			}
-		}
+	
+	 
+	
 	}
-}
+
 
 .profile-section {
 	width: 100%;
@@ -58,7 +50,7 @@
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: space-between;
-	
+
 	& .profile-section-text {
 		display: flex;
 		flex-flow: column wrap;
@@ -78,7 +70,6 @@
 		padding-bottom: 1rem;
 		border-bottom: 2px solid var(--color-palette--secondary);
 		line-height: 3.5rem;
-		
 	}
 
 	& .h3 {
@@ -131,7 +122,7 @@
 				& .a {
 					width: 100%;
 					height: 100%;
-					
+
 					& .img {
 						width: 100%;
 						height: 100%;
@@ -151,14 +142,13 @@
 						justify-content: center;
 						align-items: center;
 
-
 						color: white;
 						font-size: 1.8em;
 						font-style: italic;
 						opacity: 0;
 						transform: translateZ(1) scale(1.2);
-						transition: all .5s ease;
-						&:hover{
+						transition: all 0.5s ease;
+						&:hover {
 							opacity: 1;
 							transform: translateZ(1) scale(1);
 						}
