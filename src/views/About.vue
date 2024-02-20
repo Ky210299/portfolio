@@ -1,10 +1,15 @@
-<script lang="ts"></script>
+<script lang="ts">
+import {defineComponent} from 'vue'
+export default defineComponent({
+
+})
+</script>
 
 ««««««««««««««««««««--Template--»»»»»»»»»»»»»»»»»»»»»
 
 <template>
-	<section id="about-section" class="section">
-		<h1 class="h1">About me</h1>
+	<section id="about" class="about-section">
+		<h2 class="h2">About me</h2>
 		<p class="p">
 			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, natus illo!
 			Aut eveniet quas totam?

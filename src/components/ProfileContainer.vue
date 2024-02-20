@@ -7,11 +7,14 @@
 <template>
 	<section class="profile-section">
 		<div class="profile-section-text">
-			<h2 class="h2">Hi! I'm Leonardo Bazan Marquez</h2>
-			<h3 class="h3">FullStack Developep</h3>
+			<h2 class="h2"><em>Hi! I'm Leonardo Bazan Marquez</em></h2>
+			<h3 class="h3"><strong>Frontend Developep</strong></h3>
+			<BarSocials />
 		</div>
-		<BarSocials />
+		<div class="imagen"> Algo bonito aqui</div>
 	</section>
 </template>
 
-<style scoped></style>
+<style scoped>
+
+</style>
