@@ -1,10 +1,10 @@
 <template>
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
-		width="16"
-		height="16"
+		width="36"
+		height="36"
 		fill="currentColor"
-		class="menu-deployed"
+		class="menu"
 		viewBox="0 0 16 16"
 	>
 		<path
@@ -15,7 +15,11 @@
 </template>
 
 <style scoped>
-.menu-deployed{
-    z-index: 2;
-}
+	.menu {
+		transition: all ease 250ms;
+		&:hover {
+			transform: scale(1.3);
+			fill: aliceblue;
+		}
+	}
 </style>

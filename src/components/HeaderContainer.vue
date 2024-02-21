@@ -1,9 +1,11 @@
 <script lang="ts">
-	import { defineComponent } from "vue";
+	import { computed, defineComponent, Ref, ref } from "vue";
 	import IconArrowBarLeft from "./icons/IconArrowBarLeft.vue";
 	import IconArrowBarRigth from "./icons/IconArrowBarRigth.vue";
 	export default defineComponent({
+		name: "HeaderContainer",
 		setup() {},
+
 		components: { IconArrowBarLeft, IconArrowBarRigth },
 	});
 </script>
@@ -22,36 +24,26 @@
 				<li class="li"><a href="#about" title="About" class="a">About</a></li>
 			</ul>
 		</nav>
-		<IconArrowBarLeft class="header-menu deployed" />
-		<IconArrowBarRigth class="header-menu" />
+		<IconArrowBarRigth class="header-menu show" />
+		<IconArrowBarLeft class="header-menu " />
 	</header>
 </template>
 
 ««««««««««««««««««««--Style--»»»»»»»»»»»»»»»»»»»»»
 
 <style scoped>
-	.header-menu {
-		display: none;
-		> .deployed {
-			display: block;
-		}
-	}
-
-	@media screen and (min-width: 800px) {
-		.show {
-			display: block;
-		}
+	.header {
 		.nav {
-			& .ul {
+			.ul {
 				display: flex;
 				flex-flow: row nowrap;
 				align-items: center;
 				gap: 1rem;
 
-				& .li {
+				.li {
 					margin: 0 1rem;
 
-					& .a {
+					.a {
 						position: relative;
 						transition: ease-in all 150ms;
 						z-index: 1;
@@ -101,6 +93,17 @@
 		}
 		.header-menu {
 			display: none;
+		}
+	}
+
+	@media screen and (width <= 800px) {
+		.header {
+			.header-menu.show {
+				display: block;
+			}
+			.nav {
+				display: none;
+			}
 		}
 	}
 </style>
