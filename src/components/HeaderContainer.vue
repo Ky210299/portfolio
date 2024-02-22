@@ -1,10 +1,12 @@
 <script lang="ts">
-	import { computed, defineComponent, Ref, ref } from "vue";
+	import { defineComponent, ref } from "vue";
 	import IconArrowBarLeft from "./icons/IconArrowBarLeft.vue";
 	import IconArrowBarRigth from "./icons/IconArrowBarRigth.vue";
 	export default defineComponent({
-		name: "HeaderContainer",
-		setup() {},
+		setup() {
+			const isDeployed = ref<boolean>(false);
+			return { isDeployed };
+		},
 
 		components: { IconArrowBarLeft, IconArrowBarRigth },
 	});
@@ -15,7 +17,7 @@
 <template>
 	<header class="header">
 		<h1 class="h1"><a href="#home" class="a">LBM</a></h1>
-		<nav class="nav">
+		<nav class="nav" :class="{'nav-show' : isDeployed}" >
 			<ul class="ul">
 				<li class="li"><a href="#home" title="Home" class="a">Home</a></li>
 				<li class="li">
@@ -24,8 +26,18 @@
 				<li class="li"><a href="#about" title="About" class="a">About</a></li>
 			</ul>
 		</nav>
-		<IconArrowBarRigth class="header-menu show" />
-		<IconArrowBarLeft class="header-menu " />
+		<IconArrowBarRigth
+			v-if="isDeployed"
+			@click="isDeployed = !isDeployed"
+			class="header-menu"
+		/>
+		<IconArrowBarLeft
+			v-else
+			:class="{ show: !isDeployed }"
+			@click="isDeployed = !isDeployed"
+			id="nav-menu"
+			class="header-menu"
+		/>
 	</header>
 </template>
 
@@ -91,9 +103,9 @@
 				}
 			}
 		}
-		.header-menu {
+		/* .header-menu {
 			display: none;
-		}
+		} */
 	}
 
 	@media screen and (width <= 800px) {
@@ -103,6 +115,9 @@
 			}
 			.nav {
 				display: none;
+			}
+			.nav-show{
+				display: flex;
 			}
 		}
 	}
