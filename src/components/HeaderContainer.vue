@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { defineComponent, ref } from "vue";
+	import { defineComponent, Ref, ref } from "vue";
 	import IconArrowBarLeft from "./icons/IconArrowBarLeft.vue";
 	import IconArrowBarRigth from "./icons/IconArrowBarRigth.vue";
 	export default defineComponent({
 		setup() {
-			const isDeployed = ref<boolean>(false);
+			let isDeployed: Ref<boolean> = ref(false);
 			return { isDeployed };
 		},
 
@@ -16,24 +16,32 @@
 
 <template>
 	<header class="header">
-		<h1 class="h1"><a href="#home" class="a">LBM</a></h1>
-		<nav class="nav" :class="{'nav-show' : isDeployed}" >
+		<h1 :class="{ 'h1-isDeployed': isDeployed }" class="h1">
+			<a href="#home" class="a">LBM</a>
+		</h1>
+		<nav :class="{ 'nav-not-deployed': !isDeployed }" class="nav">
 			<ul class="ul">
-				<li class="li"><a href="#home" title="Home" class="a">Home</a></li>
 				<li class="li">
-					<a href="#projects" title="Projects" class="a">Projects</a>
+					<a href="#home" title="Home" class="a">Home</a>
 				</li>
-				<li class="li"><a href="#about" title="About" class="a">About</a></li>
+				<li class="li">
+					<a href="#home" title="Home" class="a">Home</a>
+				</li>
+				<li class="li">
+					<a href="#home" title="Home" class="a">Home</a>
+				</li>
+				<li class="li">
+					<a href="#home" title="Home" class="a">Home</a>
+				</li>
 			</ul>
 		</nav>
 		<IconArrowBarRigth
-			v-if="isDeployed"
+			v-show="isDeployed"
 			@click="isDeployed = !isDeployed"
 			class="header-menu"
 		/>
 		<IconArrowBarLeft
-			v-else
-			:class="{ show: !isDeployed }"
+			v-show="!isDeployed"
 			@click="isDeployed = !isDeployed"
 			id="nav-menu"
 			class="header-menu"
@@ -50,7 +58,7 @@
 				display: flex;
 				flex-flow: row nowrap;
 				align-items: center;
-				gap: 1rem;
+				justify-content: space-between;
 
 				.li {
 					margin: 0 1rem;
@@ -103,20 +111,32 @@
 				}
 			}
 		}
-		/* .header-menu {
-			display: none;
-		} */
 	}
 
 	@media screen and (width <= 800px) {
 		.header {
-			.header-menu.show {
-				display: block;
+			.h1 {
+				transition: all ease-in-out 250ms;
+				&.h1-isDeployed {
+					width: 0%;
+					opacity: 0.4;
+
+					.a {
+						color: var(--color-secondary);
+					}
+				}
 			}
+
 			.nav {
-				display: none;
+				transition: all ease-out 550ms;
+
+				
+				&.nav-not-deployed {
+					transition: all ease-in 300ms;
+					transform: translateX(200%);
+				}
 			}
-			.nav-show{
+			.nav-show {
 				display: flex;
 			}
 		}
