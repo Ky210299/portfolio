@@ -9,8 +9,8 @@
 	--color-palette--primary: #21012bfb;
 	--color-palette--secondary: #e49c00;
 	--color-palette--opposite: #f16100;
-	--font-family-primary: "Sono", sans-serif;
-	--font-family-secondary: "Cormorant", sans-serif;
+	--font-family-primary: Teko, sans-serif;
+	--font-family-secondary: Merienda , sans-serif;
 }
 
 @media (prefers-color-scheme: light) {
@@ -130,4 +130,5 @@ body {
 	color: var(--color-primary);
 	background-color: var(--color-secondary);
 	line-height: 1.4em;
+	font-family: var(--font-family-primary);
 }
