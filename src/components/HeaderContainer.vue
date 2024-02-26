@@ -20,7 +20,10 @@
 			<a href="#home" class="a">LBM</a>
 		</h1>
 		<nav :class="{ 'nav-not-deployed': !isDeployed }" class="nav">
-			<ul class="ul">
+			<ul :class="{ 'nav-not-deployed': !isDeployed }" class="ul">
+				<li class="li">
+					<a href="#home" title="Home" class="a">Home</a>
+				</li>
 				<li class="li">
 					<a href="#home" title="Home" class="a">Home</a>
 				</li>
@@ -53,59 +56,60 @@
 
 <style scoped>
 	.header {
+		transition: all ease 500ms;
+		.header-menu {
+			display: none;
+		}
+		.h1 {
+			justify-self: flex-start;
+			
+			.a {
+				transition: all ease 250ms;
+				font-family: var(--font-family-secondary);
+				transition: ease-in-out all 300ms;
+				font-style: oblique;
+				font-size: 3rem;
+				text-shadow: 0px 0px 3px var(--color-palette--primary);
+				color: var(--color-primary);
+				&:hover {
+					text-shadow: -0.2rem 0.1rem 1rem var(--color-palette--primary);
+
+					transform: translateX(5px);
+					transform: translateY(-3px);
+				}
+			}
+		}
 		.nav {
+			justify-self: flex-end;
+			transition: ease-in all 200ms;
 			.ul {
 				display: flex;
-				flex-flow: row nowrap;
+				flex-flow: row wrap;
 				align-items: center;
-				justify-content: space-between;
+				justify-content: flex-end;
+				background: none;
+				gap: 1rem;
 
 				.li {
-					margin: 0 1rem;
-
+					padding: 0.3rem;
+					transition: ease-in-out all 150ms;
 					.a {
+						transition: all ease-in-out 190ms;
 						position: relative;
-						transition: ease-in all 150ms;
+						font-family: var(--font-family-primary);
+						font-size: 1.3rem;
+						font-weight: bold;
+
 						z-index: 1;
-						padding: 0.2rem;
-						color: white;
-						border-radius: 0.5rem;
-						font-family: var(--font-family-secondary);
 
-						&::before,
-						&::after {
-							content: "";
-							position: absolute;
-							width: 100%;
-							height: 100%;
-							transition: 300ms;
+						text-shadow: 0 0 0.5rem rgb(114, 114, 114);
+						color: var(--color-primary);
+						transform: scale(0.9);
 
-							opacity: 0;
-						}
-						&::before {
-							border-top: 1px solid white;
-							top: 0;
-							left: 0;
-							border-top: 2px solid grey;
-							border-bottom: 2px solid grey;
-							transform: scale(2);
-						}
-						&::after {
-							bottom: px;
-							left: 0;
-							top: 2px;
-
-							z-index: -1;
-							transform: scale(0);
-						}
 						&:hover {
-							background-color: #000;
-							text-shadow: 0 0 1rem rgb(255, 255, 255), 0 0 0.3rem white;
-							&::after,
-							&::before {
-								opacity: 1;
-								transform: scale(1);
-							}
+							transform: scale(1.4);
+							text-shadow: 0 0 2rem white,
+								0 0 10rem var(--color-palette--primary);
 						}
 					}
 				}
@@ -115,29 +119,48 @@
 
 	@media screen and (width <= 800px) {
 		.header {
+			transition: all ease-out .4s;
+			padding: 0;
+			.header-menu {
+				display: block;
+			}
 			.h1 {
-				transition: all ease-in-out 250ms;
+				transition: all ease-in-out 400ms;
+				padding-left: 1rem;
 				&.h1-isDeployed {
-					width: 0%;
-					opacity: 0.4;
+					position: absolute;
+					opacity: 1;
+
+					z-index: -1;
+
+					.a {
+						text-align: center;
+					}
 
 					.a {
 						color: var(--color-secondary);
 					}
 				}
 			}
-
 			.nav {
-				transition: all ease-out 550ms;
-
+				transform: translateX(0);
 				
-				&.nav-not-deployed {
-					transition: all ease-in 300ms;
-					transform: translateX(200%);
+
+				height: auto;
+
+				.ul {
+					justify-content: center;
+					flex-wrap: wrap;
+
+					&.nav-not-deployed {
+						flex-flow: row nowrap;
+					}
 				}
-			}
-			.nav-show {
-				display: flex;
+				&.nav-not-deployed {
+					transform: translateX(300%);
+					overflow: hidden;
+					height: auto;
+				}
 			}
 		}
 	}

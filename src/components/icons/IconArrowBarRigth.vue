@@ -17,7 +17,7 @@
 <style scoped>
 	.menu {
 		transition: all ease 250ms;
-		
+		padding-right: 0.5rem;
 		&:hover {
 			transform: scale(1.3);
 			fill: aliceblue;
