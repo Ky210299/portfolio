@@ -4,6 +4,7 @@
 	import IconArrowBarRigth from "./icons/IconArrowBarRigth.vue";
 	export default defineComponent({
 		setup() {
+			
 			let isDeployed: Ref<boolean> = ref(false);
 			return { isDeployed };
 		},
@@ -24,18 +25,7 @@
 				<li class="li">
 					<a href="#home" title="Home" class="a">Home</a>
 				</li>
-				<li class="li">
-					<a href="#home" title="Home" class="a">Home</a>
-				</li>
-				<li class="li">
-					<a href="#home" title="Home" class="a">Home</a>
-				</li>
-				<li class="li">
-					<a href="#home" title="Home" class="a">Home</a>
-				</li>
-				<li class="li">
-					<a href="#home" title="Home" class="a">Home</a>
-				</li>
+				
 			</ul>
 		</nav>
 		<IconArrowBarRigth
@@ -57,6 +47,7 @@
 <style scoped>
 	.header {
 		transition: all ease 500ms;
+		z-index: 1;
 		.header-menu {
 			display: none;
 		}
@@ -66,6 +57,7 @@
 			height: fit-content;
 
 			.a {
+				
 				transition: all ease 250ms;
 				font-family: var(--font-family-secondary);
 				transition: ease-in-out all 300ms;
@@ -106,15 +98,12 @@
 
 						z-index: 1;
 
-						text-shadow: 0 0 0.5rem var(--color-primary);
 						color: var(--color-primary);
 						transform: scale(0.9);
 
 						&:hover {
-							transform: scale(1.4);
-							text-shadow: 0 0 2rem white,
-								0 0 1rem var(--color-palette--secondary),
-								0 0 0.5rem var(--color-primary);
+							transform: scale(1.2);
+							text-shadow: 1px 1px 48px var(--color-secondary);
 						}
 					}
 				}
@@ -124,7 +113,7 @@
 
 	@media screen and (width <= 800px) {
 		.header {
-			transition: all ease-out 0.4s;
+			
 			padding: 0;
 			.header-menu {
 				display: block;
@@ -148,6 +137,7 @@
 				}
 			}
 			.nav {
+				transition: all ease-out 0.7s;
 				transform: translateX(0);
 
 				height: auto;
@@ -161,6 +151,7 @@
 					}
 				}
 				&.nav-not-deployed {
+					
 					transform: translateX(300%);
 					overflow: hidden;
 					height: auto;

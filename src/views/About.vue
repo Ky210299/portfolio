@@ -33,7 +33,7 @@
 		font-family: var(--font-family-primary);
 		display: flex;
 		flex-flow: row wrap-reverse;
-		justify-content: space-evenly;
+		justify-content: space-around;
 		align-items: center;
 		gap: 2rem;
 		.text {
@@ -64,6 +64,7 @@
 			min-width: 20vw;
 			height: 4rem;
 			padding: 2rem;
+			
 		}
 	}
 </style>

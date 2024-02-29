@@ -64,14 +64,21 @@
 	}
 }
 .main {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-content: space-evenly;
 	min-height: 100dvh;
-	padding-top: 6rem;
+	padding-top: 10rem;
+	padding-bottom: 3rem;
+	padding-inline: 2rem 2rem;
+	
 }
 .about-section {
 	min-height: 95dvh;
 	padding-top: 6rem;
 	padding-bottom: 2rem;
-	padding-inline: 1rem 1rem;
+	padding-inline: 2rem 2rem;
 	
 }
 .footer {

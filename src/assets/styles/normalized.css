@@ -10,7 +10,7 @@
 	--color-palette--secondary: #e49c00;
 	--color-palette--opposite: #f16100;
 	--font-family-primary: Teko, sans-serif;
-	--font-family-secondary: Merienda , sans-serif;
+	--font-family-secondary: Merienda, sans-serif;
 }
 
 @media (prefers-color-scheme: light) {
