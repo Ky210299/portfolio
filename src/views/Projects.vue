@@ -142,7 +142,6 @@
 							background: transparent;
 							top: 0px;
 							padding: 0.5rem;
-							mix-blend-mode: difference;
 							display: flex;
 							flex-direction: column;
 							justify-content: space-between;
@@ -182,15 +181,16 @@
 						transform: scale(1.05);
 						.picture-container {
 							.img {
-								opacity: 0.5;
+								filter: blur(.2rem);
 							}
 							.description {
-								mix-blend-mode: color-dodge;
-								backdrop-filter: blur(0.3rem);
+								
+								
 
 								.tech {
 									&:hover {
 										transform: scale(1.2);
+                  
 									}
 								}
 							}

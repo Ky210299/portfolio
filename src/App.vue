@@ -15,8 +15,7 @@
 	import About from "./views/About.vue";
 	import AppFooter from "./components/AppFooter.vue";
 	// import Background from "./components/Background.vue";
+	
 </script>
 
-<style scoped>
-	
-</style>
+<style scoped></style>

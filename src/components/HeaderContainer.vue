@@ -48,6 +48,8 @@
 	.header {
 		transition: all ease 500ms;
 		z-index: 1;
+
+		
 		.header-menu {
 			display: none;
 		}
@@ -76,6 +78,7 @@
 			}
 		}
 		.nav {
+			margin-right:  3rem;
 			justify-self: flex-end;
 			transition: ease-in all 200ms;
 			.ul {
@@ -116,6 +119,7 @@
 			
 			padding: 0;
 			.header-menu {
+				
 				display: block;
 			}
 			.h1 {
@@ -137,13 +141,14 @@
 				}
 			}
 			.nav {
+				margin-right: 1rem;
 				transition: all ease-out 0.7s;
 				transform: translateX(0);
 
 				height: auto;
 
 				.ul {
-					justify-content: center;
+					justify-content: flex-end;
 					flex-wrap: wrap;
 
 					&.nav-not-deployed {

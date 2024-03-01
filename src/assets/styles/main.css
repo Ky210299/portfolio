@@ -3,6 +3,9 @@
 	background: #18181840;
 	backdrop-filter: blur(1rem);
 	mix-blend-mode: difference;
+	@media (prefers-color-scheme: light){
+		mix-blend-mode: darken;
+	}
 	border-bottom: groove var(--color-palette--secondary);
 	width: 100%;
 	min-height: 4rem;
