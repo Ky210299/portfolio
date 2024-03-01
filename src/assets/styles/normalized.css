@@ -57,9 +57,7 @@ p a {
 li {
 	list-style-type: none;
 }
-html {
-	scroll-behavior: smooth;
-}
+
 a:-webkit-any-link,
 h1,
 h2,
@@ -121,6 +119,12 @@ td {
 svg {
 	display: block;
 	fill: currentColor;
+}
+html {
+	scroll-behavior: smooth;
+	scrollbar-width: thin;
+	scrollbar-color: var(--color-primary) var(--color-secondary);
+	
 }
 
 body {

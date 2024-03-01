@@ -10,16 +10,16 @@
 		<div class="text">
 			<h2 class="h2">About me</h2>
 			<p class="p">
-				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, natus
-				illo! Aut eveniet quas totam?
+				Front-end and data science developer with an electrical engineering
+				background.
 			</p>
 			<p class="p">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, aut
-				dolorem ducimus officiis suscipit error.
+				I love setting myself new challenges that solve problems or optimize
+				results.
 			</p>
 			<p class="p">
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. In deleniti
-				repudiandae neque, nam hic labore!
+				I enjoy teamwork and I believe it is the best way to achieve great
+				things.
 			</p>
 		</div>
 		<div class="picture">sssss</div>
@@ -64,7 +64,6 @@
 			min-width: 20vw;
 			height: 4rem;
 			padding: 2rem;
-			
 		}
 	}
 </style>

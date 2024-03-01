@@ -1,20 +1,5 @@
 .header {
-	position: fixed;
-	background: #18181840;
-	backdrop-filter: blur(1rem);
-	mix-blend-mode: difference;
-	@media (prefers-color-scheme: light){
-		mix-blend-mode: darken;
-	}
-	border-bottom: groove var(--color-palette--secondary);
-	width: 100%;
-	min-height: 4rem;
-	display: flex;
-	flex-flow: row nowrap;
-	align-items: center;
-	padding: 0.5rem;
-	border-bottom-left-radius: 1rem;
-	border-bottom-right-radius: 1rem;
+	
 	.nav {
 		flex-grow: 1;
 	}
@@ -25,7 +10,7 @@
 	.header-menu {
 		flex-shrink: 0;
 		justify-self: flex-end;
-		fill: var(--color-primary);
+		
 	}
 }
 

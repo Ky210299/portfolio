@@ -29,7 +29,7 @@
 		</aside> -->
 		<section class="projects-section" id="projects">
 			<div class="grid">
-				<article class="article">
+				<article @click="" class="article">
 					<div class="picture-container">
 						<img
 							src="../../public/descarga.jpeg"
@@ -42,9 +42,9 @@
 								<h4 class="h4">Project Name</h4>
 							</a>
 							<ul class="technologies">
-								<li class="tech">XgUK3</li>
-								<li class="tech">XgUK3</li>
-								<li class="tech">XgUK3</li>
+								<li class="tag">XgUK3</li>
+								<li class="tag">XgUK3</li>
+								<li class="tag">XgUK3</li>
 							</ul>
 						</div>
 					</div>
@@ -115,13 +115,26 @@
 				width: 45vw;
 				.article {
 					transition: all ease 0.3s;
+					border: none;
 					position: relative;
 					display: flex;
 					flex-flow: column nowrap;
 					justify-content: center;
 					align-items: center;
 					height: fit-content;
-
+          box-shadow: 0px 0px 162px -17px var(--color-secondary);
+					&::before {
+						content: "";
+						position: absolute;
+						background-color: var(--color-primary);
+						border-radius: 1rem;
+						opacity: 0.1;
+						
+						left: -0.6rem;
+						bottom: -0.6rem;
+						right: -0.6rem;
+						filter: blur(1px);
+					}
 					.picture-container {
 						position: relative;
 						display: flex;
@@ -132,8 +145,9 @@
 
 						.img {
 							transition: all ease 0.5s;
-							box-shadow: 0 2rem 2rem -2rem var(--color-palette--primary);
+
 							border-radius: 1rem;
+
 							object-fit: contain;
 						}
 						.description {
@@ -167,6 +181,18 @@
 								justify-content: center;
 								align-items: center;
 								gap: 1rem;
+
+								.tag {
+									transition: all ease-in-out 0.3s;
+									font-size: 0.8rem;
+									text-align: center;
+									background: transparent;
+									color: var(--color-primary);
+									filter: grayscale(0.6) brightness(1) contrast(0.4);
+									box-shadow: inset 0 0 2px var(--color-primary);
+									padding-inline: 0.5rem;
+									border-radius: 1rem;
+								}
 							}
 						}
 					}
@@ -179,18 +205,20 @@
 					}
 					&:hover {
 						transform: scale(1.05);
+						cursor: pointer;
 						.picture-container {
 							.img {
-								filter: blur(.2rem);
+								opacity: 0.7;
+								border: 1px solid var(--color-palette--secondary);
+								filter: blur(0.2rem);
 							}
 							.description {
-								
-								
-
-								.tech {
+								.tag {
+									filter: contrast(1);
 									&:hover {
 										transform: scale(1.2);
-                  
+										filter: grayscale(0) brightness(2);
+										box-shadow: inset 0 0 3px var(--color-primary);
 									}
 								}
 							}

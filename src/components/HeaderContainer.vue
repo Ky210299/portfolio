@@ -4,9 +4,9 @@
 	import IconArrowBarRigth from "./icons/IconArrowBarRigth.vue";
 	export default defineComponent({
 		setup() {
-			
 			let isDeployed: Ref<boolean> = ref(false);
-			return { isDeployed };
+			let hideHeader = false;
+			return { isDeployed, hideHeader };
 		},
 
 		components: { IconArrowBarLeft, IconArrowBarRigth },
@@ -16,7 +16,7 @@
 ««««««««««««««««««««--Template--»»»»»»»»»»»»»»»»»»»»»
 
 <template>
-	<header class="header">
+	<header @scroll="console.log($event)" class="header">
 		<h1 :class="{ 'h1-isDeployed': isDeployed }" class="h1">
 			<a href="#home" class="a">LBM</a>
 		</h1>
@@ -25,7 +25,6 @@
 				<li class="li">
 					<a href="#home" title="Home" class="a">Home</a>
 				</li>
-				
 			</ul>
 		</nav>
 		<IconArrowBarRigth
@@ -48,8 +47,23 @@
 	.header {
 		transition: all ease 500ms;
 		z-index: 1;
+		position: fixed;
+		background: #18181840;
+		backdrop-filter: blur(.1rem);
+		filter: contrast(1.3);
+		@media (prefers-color-scheme: light) {
+			mix-blend-mode: darken;
+		}
+		border-bottom: 1px groove var(--color-palette--secondary);
+		width: 100%;
+		min-height: 4rem;
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		padding: 0.5rem;
+		border-bottom-left-radius: 1rem;
+		border-bottom-right-radius: 1rem;
 
-		
 		.header-menu {
 			display: none;
 		}
@@ -59,7 +73,6 @@
 			height: fit-content;
 
 			.a {
-				
 				transition: all ease 250ms;
 				font-family: var(--font-family-secondary);
 				transition: ease-in-out all 300ms;
@@ -70,15 +83,13 @@
 				background: none;
 			}
 			:hover {
-				text-shadow: -0.2rem 0.1rem 2rem var(--color-palette--secondary),
-					0rem 0rem 1rem var(--color-palette--opposite),
-					0rem 0rem 0.5rem var(--color-primary);
+				filter: brightness(2);
 				background: none;
 				transform: translateY(-3px);
 			}
 		}
 		.nav {
-			margin-right:  3rem;
+			margin-right: 3rem;
 			justify-self: flex-end;
 			transition: ease-in all 200ms;
 			.ul {
@@ -116,11 +127,10 @@
 
 	@media screen and (width <= 800px) {
 		.header {
-			
 			padding: 0;
 			.header-menu {
-				
 				display: block;
+				fill: var(--color-primary);
 			}
 			.h1 {
 				transition: all ease-in-out 400ms;
@@ -156,7 +166,6 @@
 					}
 				}
 				&.nav-not-deployed {
-					
 					transform: translateX(300%);
 					overflow: hidden;
 					height: auto;
