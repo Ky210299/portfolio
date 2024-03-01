@@ -64,7 +64,7 @@
 		display: flex;
 		flex-flow: column wrap;
 		width: 100%;
-
+		
 		.h2 {
 			padding: 1rem 1rem;
 			margin-bottom: 2rem;
@@ -107,6 +107,7 @@
 			}
 		} */
 		.projects-section {
+			
 			.grid {
 				display: grid;
 				gap: 2rem;
@@ -114,6 +115,7 @@
 				grid-auto-flow: row;
 				width: 45vw;
 				.article {
+					
 					transition: all ease 0.3s;
 					border: none;
 					position: relative;
@@ -122,20 +124,23 @@
 					justify-content: center;
 					align-items: center;
 					height: fit-content;
-          box-shadow: 0px 0px 162px -17px var(--color-secondary);
+					
+					box-shadow: 0px 0px 162px -17px var(--color-secondary);
 					&::before {
+						
 						content: "";
 						position: absolute;
 						background-color: var(--color-primary);
 						border-radius: 1rem;
 						opacity: 0.1;
-						
-						left: -0.6rem;
-						bottom: -0.6rem;
-						right: -0.6rem;
+
+						left: -0.1rem;
+						bottom: -0.1rem;
+						right: -0.1rem;
 						filter: blur(1px);
 					}
 					.picture-container {
+					
 						position: relative;
 						display: flex;
 						justify-content: center;

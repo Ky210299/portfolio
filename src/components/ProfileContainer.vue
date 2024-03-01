@@ -8,13 +8,12 @@
 	<section class="profile-section" id="home">
 		<div class="profile-section-text">
 			<h2 class="h2">Hi! I'm Leonardo Bazan Marquez</h2>
-			<h3 class="h3"><strong class="strong">Frontend Developep</strong></h3>
+			<h3 class="h3">
+				<strong>Frontend developed and data scientist</strong>
+			</h3>
 			<BarSocials />
 		</div>
-		<div class="imagen">Algo bonito aqui</div>
 	</section>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

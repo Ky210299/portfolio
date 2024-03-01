@@ -124,6 +124,7 @@ html {
 	scroll-behavior: smooth;
 	scrollbar-width: thin;
 	scrollbar-color: var(--color-primary) var(--color-secondary);
+	scroll-snap-type: proximity;
 	
 }
 

@@ -5,8 +5,9 @@
 	export default defineComponent({
 		setup() {
 			let isDeployed: Ref<boolean> = ref(false);
-			let hideHeader = false;
+			let hideHeader;
 			return { isDeployed, hideHeader };
+		
 		},
 
 		components: { IconArrowBarLeft, IconArrowBarRigth },
@@ -16,7 +17,7 @@
 ««««««««««««««««««««--Template--»»»»»»»»»»»»»»»»»»»»»
 
 <template>
-	<header @scroll="console.log($event)" class="header">
+	<header  class="header">
 		<h1 :class="{ 'h1-isDeployed': isDeployed }" class="h1">
 			<a href="#home" class="a">LBM</a>
 		</h1>
@@ -49,12 +50,12 @@
 		z-index: 1;
 		position: fixed;
 		background: #18181840;
-		backdrop-filter: blur(.1rem);
+		backdrop-filter: blur(.5rem);
 		filter: contrast(1.3);
 		@media (prefers-color-scheme: light) {
 			mix-blend-mode: darken;
 		}
-		border-bottom: 1px groove var(--color-palette--secondary);
+		
 		width: 100%;
 		min-height: 4rem;
 		display: flex;
@@ -71,6 +72,7 @@
 			justify-self: flex-start;
 			width: fit-content;
 			height: fit-content;
+
 
 			.a {
 				transition: all ease 250ms;
