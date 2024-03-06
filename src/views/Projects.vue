@@ -1,9 +1,48 @@
 <script lang="ts">
-	import { defineComponent } from "vue";
+	import { defineComponent, Ref, ref } from "vue";
 	import BarProjectFilter from "../components/BarProjectFilter.vue";
 	import BarIndex from "../components/BarIndex.vue";
 	import CardProjectContainer from "../components/CardProjectContainer.vue";
 	export default defineComponent({
+		setup() {
+			type projectImg = string | undefined;
+
+			interface IProject {
+				name: string;
+				link: string;
+				description: string;
+				techs: Array<string>;
+				img: projectImg;
+			}
+
+			function Project(
+				this: IProject,
+				name: string,
+				link: string,
+				description: string,
+				img: projectImg = undefined,
+				techs: Array<string>
+			) {
+				(this.name = name),
+					(this.link = link),
+					(this.description = description),
+					(this.img = img),
+					(this.techs = techs);
+			}
+
+			let projects = ref([
+				{
+					name: "Web Scrapping whit Python",
+					link: "https://google.com",
+					decription: "Un projecto que recopila datos con Web scrapping",
+					img: "../../public/descarga.jpeg",
+					techs: ["HTML", "CSS", "JavaScript", "Python", "Pandas"],
+				},
+			]);
+
+			return { projects };
+		},
+
 		components: { BarProjectFilter, BarIndex, CardProjectContainer },
 	});
 </script>
@@ -29,27 +68,31 @@
 		</aside> -->
 		<section class="projects-section" id="projects">
 			<div class="grid">
-				<article @click="" class="article">
+				<article
+					v-for="project of projects"
+					:key="project['name']"
+					@click=""
+					class="article"
+				>
 					<div class="picture-container">
-						<img
-							src="../../public/descarga.jpeg"
-							alt="Imagen"
-							class="img"
-							loading="lazy"
-						/>
+						<img :src="project.img" alt="Imagen" class="img" loading="lazy" />
 						<div class="description">
 							<a href="#" class="a" title="Project Title">
-								<h4 class="h4">Project Name</h4>
+								<h4 class="h4">{{ project.name }}</h4>
 							</a>
 							<ul class="technologies">
-								<li class="tag">XgUK3</li>
-								<li class="tag">XgUK3</li>
-								<li class="tag">XgUK3</li>
+								<li
+									v-for="(tag, index) of project.techs"
+									:key="index"
+									class="tag"
+								>
+									{{ tag }}
+								</li>
 							</ul>
 						</div>
 					</div>
-					<p class="p">
-						Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+					<p class="project-description">
+						{{ project.decription }}
 					</p>
 				</article>
 			</div>
@@ -64,7 +107,7 @@
 		display: flex;
 		flex-flow: column wrap;
 		width: 100%;
-		
+
 		.h2 {
 			padding: 1rem 1rem;
 			margin-bottom: 2rem;
@@ -107,7 +150,6 @@
 			}
 		} */
 		.projects-section {
-			
 			.grid {
 				display: grid;
 				gap: 2rem;
@@ -115,7 +157,6 @@
 				grid-auto-flow: row;
 				width: 45vw;
 				.article {
-					
 					transition: all ease 0.3s;
 					border: none;
 					position: relative;
@@ -124,10 +165,9 @@
 					justify-content: center;
 					align-items: center;
 					height: fit-content;
-					
+
 					box-shadow: 0px 0px 162px -17px var(--color-secondary);
 					&::before {
-						
 						content: "";
 						position: absolute;
 						background-color: var(--color-primary);
@@ -140,7 +180,6 @@
 						filter: blur(1px);
 					}
 					.picture-container {
-					
 						position: relative;
 						display: flex;
 						justify-content: center;
@@ -201,7 +240,7 @@
 							}
 						}
 					}
-					.p {
+					.project-description {
 						position: absolute;
 						padding: 1rem;
 						transition: all ease-in-out 0.3s;
@@ -228,7 +267,7 @@
 								}
 							}
 						}
-						.p {
+						.project-description {
 							opacity: 1;
 							transform: translateY(0);
 						}
