@@ -23,6 +23,7 @@
 
 <style scoped>
 	.footer {
+		overflow: hidden;
 		background-color: var(--color-palette--primary);
 		display: flex;
 		flex-flow: row nowrap;
