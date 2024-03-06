@@ -30,7 +30,7 @@
 					(this.techs = techs);
 			}
 
-			let projects = ref([
+			let projects: Ref = ref([
 				{
 					name: "Web Scrapping whit Python",
 					link: "https://google.com",

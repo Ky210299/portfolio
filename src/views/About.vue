@@ -1,6 +1,33 @@
 <script lang="ts">
 	import { defineComponent } from "vue";
-	export default defineComponent({});
+	export default defineComponent({
+		setup() {
+			const profileUrl = "https://api.github.com/users/Ky210299";
+			fetch(profileUrl, {
+				method: "GET",
+				headers: {
+					"X-GitHub-Api-Version": "2022-11-28",
+				},
+			})
+				.then((response) => {
+					if (!response.ok) {
+						throw new Error("Error to fetch user account");
+					}
+
+					return response.json();
+				})
+				.then((userData) => {
+					const imgE = document.createElement("img");
+					imgE.src = userData.avatar_url;
+					imgE.alt = "Leonardo Picture";
+					const avatarContainerE = document.querySelector(".picture");
+					avatarContainerE?.appendChild(imgE);
+				})
+				.catch((error) => {
+					console.log("Error ", error);
+				});
+		},
+	});
 </script>
 
 ««««««««««««««««««««--Template--»»»»»»»»»»»»»»»»»»»»»
@@ -22,7 +49,7 @@
 				things.
 			</p>
 		</div>
-		<div class="picture">sssss</div>
+		<div class="picture"></div>
 	</section>
 </template>
 
@@ -37,7 +64,8 @@
 		align-items: center;
 		gap: 2rem;
 		.text {
-			width: 40vw;
+			flex: 8;
+			max-width: 40rem;
 			min-width: 20rem;
 			.h2 {
 				font-family: var(--font-family-secondary);
@@ -60,10 +88,21 @@
 			}
 		}
 		.picture {
-			outline: 1px solid white;
-			min-width: 20vw;
-			height: 4rem;
-			padding: 2rem;
+			
+			
+			width: 17em;
+			margin: 3rem;
+			border-radius: 100%;
+			overflow: hidden;
+			border: 1px solid var(--color-palette--opposite);
+			
+
+			img {
+				
+				aspect-ratio: 16/9;
+				object-fit: scale-down;
+				
+			}
 		}
 	}
 </style>
