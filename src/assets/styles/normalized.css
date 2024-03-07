@@ -141,6 +141,6 @@ body {
 	@media (prefers-color-scheme: light) {
 		background: linear-gradient(to left, rgb(139, 163, 161) , rgb(140, 131, 168), rgb(147, 189, 175) );
 	}
-	line-height: 1.4em;
+	line-height: 140%;
 	font-family: var(--font-family-primary);
 }

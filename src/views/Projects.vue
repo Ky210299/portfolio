@@ -38,6 +38,48 @@
 					img: "../../public/descarga.jpeg",
 					techs: ["HTML", "CSS", "JavaScript", "Python", "Pandas"],
 				},
+				{
+					name: "Web Scrapping whit Python",
+					link: "https://google.com",
+					decription: "Un projecto que recopila datos con Web scrapping",
+					img: "../../public/descarga.jpeg",
+					techs: ["HTML", "CSS", "JavaScript", "Python", "Pandas"],
+				},
+				{
+					name: "Web Scrapping whit Python",
+					link: "https://google.com",
+					decription: "Un projecto que recopila datos con Web scrapping",
+					img: "../../public/descarga.jpeg",
+					techs: ["HTML", "CSS", "JavaScript", "Python", "Pandas"],
+				},
+				{
+					name: "Web Scrapping whit Python",
+					link: "https://google.com",
+					decription: "Un projecto que recopila datos con Web scrapping",
+					img: "../../public/descarga.jpeg",
+					techs: ["HTML", "CSS", "JavaScript", "Python", "Pandas"],
+				},
+				{
+					name: "Web Scrapping whit Python",
+					link: "https://google.com",
+					decription: "Un projecto que recopila datos con Web scrapping",
+					img: "../../public/descarga.jpeg",
+					techs: ["HTML", "CSS", "JavaScript", "Python", "Pandas"],
+				},
+				{
+					name: "Web Scrapping whit Python",
+					link: "https://google.com",
+					decription: "Un projecto que recopila datos con Web scrapping",
+					img: "../../public/descarga.jpeg",
+					techs: ["HTML", "CSS", "JavaScript", "Python", "Pandas"],
+				},
+				{
+					name: "Web Scrapping whit Python",
+					link: "https://google.com",
+					decription: "Un projecto que recopila datos con Web scrapping",
+					img: "../../public/descarga.jpeg",
+					techs: ["HTML", "CSS", "JavaScript", "Python", "Pandas"],
+				},
 			]);
 
 			return { projects };
@@ -52,20 +94,6 @@
 <template>
 	<div class="project-view">
 		<h2 class="h2">Projects</h2>
-		<!-- <aside class="aside">
-			<h3 class="h3">Filter</h3>
-			<div class="filters">
-				<select name="technologies" id="technologies-filter">
-					Tech
-				</select>
-				<select name="languages" id="technologies-filter">
-					Lang
-				</select>
-				<select name="date" id="technologies-filter">
-					Date
-				</select>
-			</div>
-		</aside> -->
 		<section class="projects-section" id="projects">
 			<div class="grid">
 				<article
@@ -106,6 +134,8 @@
 	.project-view {
 		display: flex;
 		flex-flow: column wrap;
+		justify-content: flex-start;
+		align-items: stretch;
 		width: 100%;
 
 		.h2 {
@@ -120,65 +150,33 @@
 				color: var(--color-palette--opposite);
 			}
 		}
-		/* .aside {
-			display: flex;
-			flex-flow: row nowrap;
-			justify-content: space-around;
-			align-items: center;
-			gap: 2rem;
-			padding: 1rem;
-			margin-bottom: 2rem;
-			.h3 {
-				font-family: var(--font-family-secondary);
-				font-size: 1.2rem;
-
-				&::first-letter {
-					font-size: 1.6rem;
-					color: var(--color-palette--opposite);
-				}
-			}
-			.filters {
-				display: flex;
-				flex-flow: row nowrap;
-				justify-content: center;
-				align-items: center;
-				gap: 4rem;
-
-        select{
-          padding: 
-        }
-			}
-		} */
 		.projects-section {
+			width: 100%;
+			display: flex;
+			align-items: center;
 			.grid {
+				width: 100%;
 				display: grid;
 				gap: 2rem;
-				grid-template-columns: repeat(auto-fit, minmax(16rem, 32rem));
+				grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+				@media screen and (max-width: 1366px) {
+					grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+				}
+				@media screen and (max-width: 879px) {
+					grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+				}
+				@media screen and (max-width: 400px) {
+					grid-template-columns: 1fr;
+				}
 				grid-auto-flow: row;
-				width: 45vw;
 				.article {
 					transition: all ease 0.3s;
-					border: none;
 					position: relative;
 					display: flex;
 					flex-flow: column nowrap;
 					justify-content: center;
 					align-items: center;
-					height: fit-content;
 
-					box-shadow: 0px 0px 162px -17px var(--color-secondary);
-					&::before {
-						content: "";
-						position: absolute;
-						background-color: var(--color-primary);
-						border-radius: 1rem;
-						opacity: 0.1;
-
-						left: -0.1rem;
-						bottom: -0.1rem;
-						right: -0.1rem;
-						filter: blur(1px);
-					}
 					.picture-container {
 						position: relative;
 						display: flex;
@@ -189,7 +187,7 @@
 
 						.img {
 							transition: all ease 0.5s;
-
+							background: none;
 							border-radius: 1rem;
 
 							object-fit: contain;
@@ -209,6 +207,7 @@
 
 							.a {
 								.h4 {
+									text-align: center;
 									font-family: var(--font-family-secondary);
 									color: var(--color-primary);
 									font-size: 1.2rem;
@@ -221,10 +220,10 @@
 							.technologies {
 								transition: all ease-in-out 0.3s;
 								display: flex;
-								flex-flow: row nowrap;
+								flex-flow: row wrap;
 								justify-content: center;
 								align-items: center;
-								gap: 1rem;
+								gap: 2px 0.3rem;
 
 								.tag {
 									transition: all ease-in-out 0.3s;

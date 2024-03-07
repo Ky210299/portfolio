@@ -1,8 +1,9 @@
 <script lang="ts">
-	import { defineComponent } from "vue";
+	import { defineComponent, ref } from "vue";
 	export default defineComponent({
 		setup() {
 			const profileUrl = "https://api.github.com/users/Ky210299";
+			let imgSrc = ref<string>("");
 			fetch(profileUrl, {
 				method: "GET",
 				headers: {
@@ -17,15 +18,13 @@
 					return response.json();
 				})
 				.then((userData) => {
-					const imgE = document.createElement("img");
-					imgE.src = userData.avatar_url;
-					imgE.alt = "Leonardo Picture";
-					const avatarContainerE = document.querySelector(".picture");
-					avatarContainerE?.appendChild(imgE);
+					imgSrc.value = userData.avatar_url;
+					console.log(imgSrc)
 				})
 				.catch((error) => {
 					console.log("Error ", error);
 				});
+			return { imgSrc };
 		},
 	});
 </script>
@@ -49,7 +48,9 @@
 				things.
 			</p>
 		</div>
-		<div class="picture"></div>
+		<div class="picture">
+			<img :src="imgSrc" alt="Leonardo Picture" class="img" />
+		</div>
 	</section>
 </template>
 
@@ -57,6 +58,7 @@
 
 <style scoped>
 	.about-section {
+		width: 90vw;
 		font-family: var(--font-family-primary);
 		display: flex;
 		flex-flow: row wrap-reverse;
@@ -88,20 +90,13 @@
 			}
 		}
 		.picture {
-			
-			
-			width: 17em;
-			margin: 3rem;
-			border-radius: 100%;
 			overflow: hidden;
+			border-radius: 100%;
+			min-width: 10rem;
+			max-width: 20rem;
 			border: 1px solid var(--color-palette--opposite);
-			
-
-			img {
-				
-				aspect-ratio: 16/9;
-				object-fit: scale-down;
-				
+			.img {
+			object-fit: cover;
 			}
 		}
 	}
