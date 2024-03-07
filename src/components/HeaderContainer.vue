@@ -4,9 +4,29 @@
 	import IconArrowBarRigth from "./icons/IconArrowBarRigth.vue";
 	export default defineComponent({
 		setup() {
+			type pageId = `#${string}`
+			interface Ipages {
+				name: string
+				id: pageId
+			}
+			
 			let isDeployed: Ref<boolean> = ref(false);
-			let hideHeader;
-			return { isDeployed, hideHeader };
+			const pages = ref<Array<Ipages>>([
+				{
+					name: "Home",
+					id: "#home"
+				},
+				{
+					name: "Projects",
+					id: "#projects"
+				},
+				{
+					name: "About",
+					id: "#about"
+				}
+
+			]) 
+			return { isDeployed, pages };
 		
 		},
 
@@ -18,13 +38,13 @@
 
 <template>
 	<header  class="header">
-		<h1 :class="{ 'h1-isDeployed': isDeployed }" class="h1">
+		<h1 :class="{ 'h1-isDeployed': isDeployed }" class="h1"> 
 			<a href="#home" class="a">LBM</a>
 		</h1>
 		<nav :class="{ 'nav-not-deployed': !isDeployed }" class="nav">
 			<ul :class="{ 'nav-not-deployed': !isDeployed }" class="ul">
-				<li class="li">
-					<a href="#home" title="Home" class="a">Home</a>
+				<li class="li" v-for=" page of pages" :key="page.id" >
+					<a :href="page.id" :title="page.name" class="a">{{ page.name }}</a>
 				</li>
 			</ul>
 		</nav>
