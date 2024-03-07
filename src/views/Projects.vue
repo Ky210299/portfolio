@@ -105,7 +105,7 @@
 
 			&::first-letter {
 				font-size: 4rem;
-				color: var(--color-palette--opposite);
+				color: var(--color-palette--tertiary);
 			}
 		}
 		.projects-section {

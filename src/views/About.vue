@@ -78,7 +78,7 @@
 				padding-bottom: 1rem;
 				&::first-letter {
 					font-size: 3rem;
-					color: var(--color-palette--opposite);
+					color: var(--color-palette--tertiary);
 				}
 			}
 			.p {
@@ -94,7 +94,7 @@
 			border-radius: 100%;
 			min-width: 10rem;
 			max-width: 20rem;
-			border: 1px solid var(--color-palette--opposite);
+			border: 1px solid var(--color-palette--tertiary);
 			.img {
 			object-fit: cover;
 			}

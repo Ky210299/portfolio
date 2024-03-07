@@ -138,7 +138,7 @@
 						transform: scale(0.9);
 
 						&:hover {
-							transform: scale(1.2);
+							transform: scale(1.1);
 							text-shadow: 1px 1px 48px var(--color-secondary);
 						}
 					}

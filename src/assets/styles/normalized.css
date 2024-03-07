@@ -1,14 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Sono&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Sono:wght@500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Sono:wght,MONO@600,0..1&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Junge&family=Merienda:wght@300..900&family=Sono:wght,MONO@600,0..1&display=swap");
-
 :root {
 	--color-primary: #f8f0dd;
 	--color-secondary: #010011;
-	--color-palette--primary: #21012bfb;
-	--color-palette--secondary: #e49c00;
-	--color-palette--opposite: #f16100;
+	--color-palette--primary: #0c0e5dfb;
+	--color-palette--secondary: #cdd46f;
+	--color-palette--tertiary: #a45e2f;
+	--color-palette--cuaternary: #431073;
 	--font-family-primary: Teko, sans-serif;
 	--font-family-secondary: Merienda, sans-serif;
 }
@@ -17,6 +13,10 @@
 	:root {
 		--color-primary: #010011;
 		--color-secondary: #f0f0f0;
+		--color-palette--primary: #a2abf7fb;
+		--color-palette--secondary: #525707;
+		--color-palette--tertiary: #984f1f;
+		--color-palette--cuaternary: #792fc4;
 	}
 }
 
@@ -125,7 +125,6 @@ html {
 	scrollbar-width: thin;
 	scrollbar-color: var(--color-primary) var(--color-secondary);
 	scroll-snap-type: proximity;
-	
 }
 
 body {
@@ -134,13 +133,18 @@ body {
 	color: var(--color-primary);
 	background: linear-gradient(
 		109.6deg,
-		rgb(36, 45, 57) 11.2%,
-		rgb(16, 37, 60) 51.2%,
-		rgb(0, 0, 0) 98.6%
+		rgb(46, 51, 100) 14.2%,
+		var(--color-palette--primary) 40.2%,
+		rgb(49, 49, 86) 90%
 	);
 	@media (prefers-color-scheme: light) {
-		background: linear-gradient(to left, rgb(139, 163, 161) , rgb(140, 131, 168), rgb(147, 189, 175) );
+		background: linear-gradient(
+			109.6deg,
+			rgb(138, 142, 255) 11.2%,
+			var(--color-palette--primary) 47.2%,
+			rgb(121, 134, 255) 100%
+		);
 	}
-	line-height: 140%;
+	line-height: 100%;
 	font-family: var(--font-family-primary);
 }

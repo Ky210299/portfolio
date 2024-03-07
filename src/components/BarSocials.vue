@@ -67,7 +67,7 @@
 				}
 
 				& .svg:hover {
-					transform: scale(1.2);
+					transform: scale(1.15);
 				}
 			}
 		}

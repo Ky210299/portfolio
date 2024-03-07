@@ -41,7 +41,7 @@
 				transition: all ease-in-out 0.3s;
 				font-size: 0.8rem;
 				text-align: center;
-				background: transparent;
+				background: var(--color-palette--cuaternary);
 				color: var(--color-primary);
 				filter: grayscale(0.6) brightness(1);
 				box-shadow: inset 0 0 2px var(--color-primary);
