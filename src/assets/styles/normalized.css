@@ -1,14 +1,81 @@
 :root {
 	--color-primary: #f8f0dd;
 	--color-secondary: #010011;
-	--color-palette--primary: #0c0e5dfb;
+	--color-palette--primary: #151796fb;
 	--color-palette--secondary: #cdd46f;
 	--color-palette--tertiary: #a45e2f;
 	--color-palette--cuaternary: #431073;
-	--font-family-primary: Teko, sans-serif;
-	--font-family-secondary: Merienda, sans-serif;
+	--font-family-primary: "Neuton", sans-serif;
+	--font-family-secondary: "Genos", sans-serif;
+	--font-family-logo: "MedievalSharp", sans-serif;
 }
 
+.neuton-extralight {
+  font-family: "Neuton", serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.neuton-light {
+  font-family: "Neuton", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.neuton-regular {
+  font-family: "Neuton", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.neuton-bold {
+  font-family: "Neuton", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.neuton-extrabold {
+  font-family: "Neuton", serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.neuton-regular-italic {
+  font-family: "Neuton", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+
+
+
+.genos{
+  font-family: "Genos", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.medievalsharp-regular {
+  font-family: "MedievalSharp", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/*
+family=Cormorant
+family=MedievalSharp
+family=Teko
+family=Neuton
+serif para textos de lectura
+
+
+ sans serif para titulos y letras grandes
+
+
+ manuscritas para el LBM del Logo
+  */
 @media (prefers-color-scheme: light) {
 	:root {
 		--color-primary: #010011;
@@ -73,7 +140,6 @@ b,
 u,
 em {
 	font-family: inherit;
-	font-size: 1em;
 	font-weight: inherit;
 	font-style: inherit;
 	text-decoration: none;
@@ -129,13 +195,16 @@ html {
 
 body {
 	min-height: 100dvh;
-	font-size: 100%;
+	font-size: 16px;
+	@media screen and (min-width: 1000px) {
+		font-size: 20px;
+	}
 	color: var(--color-primary);
 	background: linear-gradient(
 		109.6deg,
-		rgb(46, 51, 100) 14.2%,
+		rgb(8, 13, 62) 14.2%,
 		var(--color-palette--primary) 40.2%,
-		rgb(49, 49, 86) 90%
+		rgb(10, 10, 70) 90%
 	);
 	@media (prefers-color-scheme: light) {
 		background: linear-gradient(

@@ -96,7 +96,7 @@
 
 			.a {
 				transition: all ease 250ms;
-				font-family: var(--font-family-secondary);
+				font-family: var(--font-family-logo);
 				transition: ease-in-out all 300ms;
 				font-style: oblique;
 				font-size: 3rem;
@@ -128,7 +128,7 @@
 					.a {
 						transition: all ease-in-out 190ms;
 						position: relative;
-						font-family: var(--font-family-primary);
+						font-family: var(--font-family-secondary);
 						font-size: 1.3rem;
 						font-weight: bold;
 

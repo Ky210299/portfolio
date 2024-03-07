@@ -23,9 +23,9 @@
 	align-items: center;
 	padding-top: 7rem;
 	padding-inline: 2rem 2rem;
+	font-family: var(--font-family-secondary);
 	.profile-section-text {
 		display: flex;
-		
 		flex-flow: column wrap;
 		justify-content: center;
 		align-items: center;
@@ -57,6 +57,7 @@
 	}
 }
 .main {
+	
 	width: 90vw;
 	margin: auto;
 	display: flex;

@@ -59,7 +59,6 @@
 <style scoped>
 	.about-section {
 		width: 90vw;
-		font-family: var(--font-family-primary);
 		display: flex;
 		flex-flow: row wrap-reverse;
 		justify-content: space-between;
@@ -82,8 +81,8 @@
 				}
 			}
 			.p {
-				font-style: var(--font-family--secondary);
-
+				font-style: var(--font-family-primary);
+				font-size: 1.1rem;
 				text-wrap: pretty;
 				padding: 0rem 1rem;
 				margin-bottom: 1rem;
