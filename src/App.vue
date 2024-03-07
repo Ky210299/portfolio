@@ -1,6 +1,6 @@
 <template>
 	<div ref="test" @scroll="onScroll($event)" class="scroll">
-		<HeaderContainer :class="{ 'show' : scrollDown }" />
+		<HeaderContainer :class="{ show: scrollDown }" />
 		<ProfileContainer />
 		<main class="main">
 			<Projects />
@@ -17,7 +17,6 @@
 	import Projects from "./views/Projects.vue";
 	import About from "./views/About.vue";
 	import AppFooter from "./components/AppFooter.vue";
-	// import Background from "./components/Background.vue";
 
 	const position = ref(0);
 	const scrollDown = ref(false);
@@ -39,7 +38,7 @@
 		height: 100vh;
 		overflow-y: scroll;
 	}
-	.show{
+	.show {
 		transform: translateY(-100%);
 	}
 </style>

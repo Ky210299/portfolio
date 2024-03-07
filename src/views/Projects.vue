@@ -37,49 +37,7 @@
 					decription: "Un projecto que recopila datos con Web scrapping",
 					img: "../../public/descarga.jpeg",
 					techs: ["HTML", "CSS", "JavaScript", "Python", "Pandas"],
-				},
-				{
-					name: "Web Scrapping whit Python",
-					link: "https://google.com",
-					decription: "Un projecto que recopila datos con Web scrapping",
-					img: "../../public/descarga.jpeg",
-					techs: ["HTML", "CSS", "JavaScript", "Python", "Pandas"],
-				},
-				{
-					name: "Web Scrapping whit Python",
-					link: "https://google.com",
-					decription: "Un projecto que recopila datos con Web scrapping",
-					img: "../../public/descarga.jpeg",
-					techs: ["HTML", "CSS", "JavaScript", "Python", "Pandas"],
-				},
-				{
-					name: "Web Scrapping whit Python",
-					link: "https://google.com",
-					decription: "Un projecto que recopila datos con Web scrapping",
-					img: "../../public/descarga.jpeg",
-					techs: ["HTML", "CSS", "JavaScript", "Python", "Pandas"],
-				},
-				{
-					name: "Web Scrapping whit Python",
-					link: "https://google.com",
-					decription: "Un projecto que recopila datos con Web scrapping",
-					img: "../../public/descarga.jpeg",
-					techs: ["HTML", "CSS", "JavaScript", "Python", "Pandas"],
-				},
-				{
-					name: "Web Scrapping whit Python",
-					link: "https://google.com",
-					decription: "Un projecto que recopila datos con Web scrapping",
-					img: "../../public/descarga.jpeg",
-					techs: ["HTML", "CSS", "JavaScript", "Python", "Pandas"],
-				},
-				{
-					name: "Web Scrapping whit Python",
-					link: "https://google.com",
-					decription: "Un projecto que recopila datos con Web scrapping",
-					img: "../../public/descarga.jpeg",
-					techs: ["HTML", "CSS", "JavaScript", "Python", "Pandas"],
-				},
+				}
 			]);
 
 			return { projects };
@@ -158,7 +116,7 @@
 				width: 100%;
 				display: grid;
 				gap: 2rem;
-				grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+				grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
 				@media screen and (max-width: 1366px) {
 					grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
 				}
@@ -176,6 +134,7 @@
 					flex-flow: column nowrap;
 					justify-content: center;
 					align-items: center;
+					max-width: 32rem;
 
 					.picture-container {
 						position: relative;

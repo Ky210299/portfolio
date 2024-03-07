@@ -19,38 +19,40 @@
 	gap: 2rem;
 	display: flex;
 	flex-flow: column nowrap;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
-padding: 5rem 1rem;
+	padding-top: 7rem;
+	padding-inline: 2rem 2rem;
 	.profile-section-text {
 		display: flex;
+		
 		flex-flow: column wrap;
-		justify-content: space-evenly;
+		justify-content: center;
 		align-items: center;
-	}
 
-	.h2 {
-		max-width: 40rem;
-		color: var(--color-primary);
-		font-size: 4em;
-		margin-bottom: 2rem;
-		text-align: center;
-		text-wrap: balance;
-		padding-bottom: 1rem;
-		border-bottom: 2px solid var(--color-palette--secondary);
-		line-height: 100%;
-		&::first-letter {
-			font-size: 5rem;
+		.h2 {
+			max-width: 40rem;
+			color: var(--color-primary);
+			font-size: 3rem;
+			margin-bottom: 2rem;
+			text-align: center;
+			text-wrap: balance;
+			padding-bottom: 1rem;
+			border-bottom: 2px solid var(--color-palette--secondary);
+			line-height: 100%;
+			&::first-letter {
+				font-size: 4rem;
+			}
 		}
-	}
 
-	.h3 {
-		font-size: 3rem;
-		text-align: center;
-		margin-bottom: 3rem;
-		line-height: 100%;
-		&::first-letter {
-			font-size: 4rem;
+		.h3 {
+			font-size: 2rem;
+			text-align: center;
+			margin-bottom: 3rem;
+			line-height: 100%;
+			&::first-letter {
+				font-size: 3rem;
+			}
 		}
 	}
 }
@@ -62,7 +64,7 @@ padding: 5rem 1rem;
 	justify-content: center;
 	align-items: center;
 	min-height: 100dvh;
-
+	padding-inline: 2rem 2rem;
 }
 .about-section {
 	margin: auto;

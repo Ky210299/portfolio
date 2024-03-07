@@ -62,7 +62,7 @@
 		font-family: var(--font-family-primary);
 		display: flex;
 		flex-flow: row wrap-reverse;
-		justify-content: space-around;
+		justify-content: space-between;
 		align-items: center;
 		gap: 2rem;
 		.text {
