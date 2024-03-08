@@ -93,18 +93,20 @@
 		display: flex;
 		flex-flow: column wrap;
 		justify-content: flex-start;
-		align-items: stretch;
+		align-items: center;
 		width: 100%;
 
 		.h2 {
-			padding: 1rem 1rem;
-			margin-bottom: 2rem;
+			width: 100%;
+			padding-left: 1rem;
+			margin-bottom: 1rem;
 			font-family: var(--font-family-secondary);
 			font-size: 3rem;
+			line-height: 100%;
 			border-bottom: 1px solid var(--color-palette--secondary);
 
 			&::first-letter {
-				font-size: 4rem;
+				font-size: 1.5em;
 				color: var(--color-palette--tertiary);
 			}
 		}
@@ -115,9 +117,10 @@
 			.grid {
 				width: 100%;
 				display: grid;
-				gap: 2rem;
-				grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
-				@media screen and (max-width: 1366px) {
+				gap: 1.5rem;
+				grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+
+				@media screen and (max-width: 1365px) {
 					grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
 				}
 				@media screen and (max-width: 879px) {

@@ -75,7 +75,7 @@
 				font-weight: bold;
 				margin-bottom: 1rem;
 				border-bottom: 1px solid var(--color-palette--secondary);
-				padding-bottom: 1rem;
+				padding-left: 1rem;
 				&::first-letter {
 					font-size: 3rem;
 					color: var(--color-palette--tertiary);

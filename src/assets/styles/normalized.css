@@ -142,6 +142,7 @@ em {
 	font-family: inherit;
 	font-weight: inherit;
 	font-style: inherit;
+	line-height: 100%;
 	text-decoration: none;
 	color: inherit;
 }
@@ -210,7 +211,6 @@ body {
 			var(--color-palette--primary) 47.2%,
 			rgb(121, 134, 255) 100%
 		);
-	}
-	line-height: 100%;
+	}	
 	font-family: var(--font-family-primary);
 }
