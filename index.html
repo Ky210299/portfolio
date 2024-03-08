@@ -17,4 +17,31 @@
 		<div id="app"></div>
 		<script type="module" src="/src/main.ts"></script>
 	</body>
+	<script>
+		const htmlE = document.getElementsByTagName("html");
+		const delay = 450;
+		let onQueue = false;
+		let calls = 0;
+
+		const resizeFonts = () => {
+			const newFontSize = Math.trunc(screen.width / 90 + 13).toLocaleString();
+
+			htmlE[0].style.fontSize = newFontSize + "px";
+
+			console.log(htmlE[0].style.fontSize, "calls: ", calls);
+		};
+		window.addEventListener("resize", () => {
+			if (!onQueue) {
+				calls += 1;
+
+				resizeFonts();
+
+				onQueue = true;
+
+				setTimeout(() => {
+					onQueue = false;
+				}, delay);
+			}
+		});
+	</script>
 </html>
