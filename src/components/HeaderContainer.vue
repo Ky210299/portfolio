@@ -4,30 +4,28 @@
 	import IconArrowBarRigth from "./icons/IconArrowBarRigth.vue";
 	export default defineComponent({
 		setup() {
-			type pageId = `#${string}`
+			type pageId = `#${string}`;
 			interface Ipages {
-				name: string
-				id: pageId
+				name: string;
+				id: pageId;
 			}
-			
+
 			let isDeployed: Ref<boolean> = ref(false);
 			const pages = ref<Array<Ipages>>([
 				{
 					name: "Home",
-					id: "#home"
+					id: "#home",
 				},
 				{
 					name: "Projects",
-					id: "#projects"
+					id: "#projects",
 				},
 				{
 					name: "About",
-					id: "#about"
-				}
-
-			]) 
+					id: "#about",
+				},
+			]);
 			return { isDeployed, pages };
-		
 		},
 
 		components: { IconArrowBarLeft, IconArrowBarRigth },
@@ -37,13 +35,13 @@
 ««««««««««««««««««««--Template--»»»»»»»»»»»»»»»»»»»»»
 
 <template>
-	<header  class="header">
-		<h1 :class="{ 'h1-isDeployed': isDeployed }" class="h1"> 
+	<header class="header">
+		<h1 :class="{ 'h1-isDeployed': isDeployed }" class="h1">
 			<a href="#home" class="a">LBM</a>
 		</h1>
 		<nav :class="{ 'nav-not-deployed': !isDeployed }" class="nav">
 			<ul :class="{ 'nav-not-deployed': !isDeployed }" class="ul">
-				<li class="li" v-for=" page of pages" :key="page.id" >
+				<li class="li" v-for="page of pages" :key="page.id">
 					<a :href="page.id" :title="page.name" class="a">{{ page.name }}</a>
 				</li>
 			</ul>
@@ -70,12 +68,12 @@
 		z-index: 1;
 		position: fixed;
 		background: #18181840;
-		backdrop-filter: blur(.5rem);
+		backdrop-filter: blur(0.5rem);
 		filter: contrast(1.3);
 		@media (prefers-color-scheme: light) {
 			mix-blend-mode: darken;
 		}
-		
+
 		width: 100%;
 		min-height: 4rem;
 		display: flex;
@@ -93,21 +91,22 @@
 			width: fit-content;
 			height: fit-content;
 
-
 			.a {
-				transition: all ease 250ms;
-				font-family: var(--font-family-logo);
 				transition: ease-in-out all 300ms;
-				font-style: oblique;
+				font-family: var(--font-family-logo);
 				font-size: 3rem;
-				text-shadow: 0px 0px 0.2rem var(--color-primary);
+
+				font-style: oblique;
 				color: var(--color-primary);
-				background: none;
+				
+
+			
 			}
 			:hover {
-				filter: brightness(2);
-				background: none;
-				transform: translateY(-3px);
+				text-shadow: 0 0 1rem var(--color-secondary);
+				
+					filter: contrast(1.3);
+				transform: translateY(-1px);
 			}
 		}
 		.nav {
@@ -126,20 +125,30 @@
 					padding: 0.3rem;
 					transition: ease-in-out all 150ms;
 					.a {
-						transition: all ease-in-out 190ms;
 						position: relative;
-						font-family: var(--font-family-secondary);
-						font-size: 1.3rem;
-						font-weight: bold;
-
 						z-index: 1;
 
 						color: var(--color-primary);
-						transform: scale(0.9);
+						font-family: var(--font-family-secondary);
+						font-size: 1.5rem;
+						font-weight: 900;
+						text-shadow: 2rem 0.1rem 2rem var(--color-palette--cuaternary),
+							2rem -2rem 2rem var(--color-palette--tertiary),
+							-2rem -2rem 2rem var(--color-palette--secondary),
+							-2rem 2rem 2rem var(--color-palette--primary);
+
+						filter: drop-shadow();
+						transition: all ease 290ms;
+						transform: scale(1);
 
 						&:hover {
+							text-shadow: -1px -1px 0.1rem var(--color-palette--cuaternary),
+								-1px 1px 0.1rem var(--color-palette--tertiary),
+								1px 1px 0.1rem var(--color-palette--secondary),
+								1px 1px 0.1rem var(--color-palette--primary);
+
 							transform: scale(1.1);
-							text-shadow: 1px 1px 48px var(--color-secondary);
+							filter: saturate(0.7) contrast(1.5);
 						}
 					}
 				}
@@ -155,20 +164,18 @@
 				fill: var(--color-primary);
 			}
 			.h1 {
-				transition: all ease-in-out 400ms;
-				padding-left: 1rem;
+				transition: all ease-in 200ms;
+				padding-left: .5rem;
+				
 				&.h1-isDeployed {
 					position: absolute;
-					opacity: 1;
+				
 
-					z-index: -1;
 
-					.a {
-						text-align: center;
-					}
+
 
 					.a {
-						color: var(--color-secondary);
+						filter: blur(1rem);
 					}
 				}
 			}
