@@ -19,12 +19,12 @@
 	</body>
 	<script>
 		const htmlE = document.getElementsByTagName("html");
-		const delay = 450;
+		const delay = 550;
 		let onQueue = false;
 		let calls = 0;
 
 		const resizeFonts = () => {
-			const newFontSize = Math.trunc(screen.width / 90 + 13).toLocaleString();
+			const newFontSize = Math.trunc(screen.width / 90 + 11).toLocaleString();
 
 			htmlE[0].style.fontSize = newFontSize + "px";
 
