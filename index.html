@@ -19,25 +19,32 @@
 	</body>
 	<script>
 		const htmlE = document.getElementsByTagName("html");
-		const delay = 550;
-		let onQueue = false;
-		let calls = 0;
+		const delay = 1000;
+		let onQueue = false; // is resizing?
+		let timeoutID = false; // finished resizing?
 
+		// change de font size according to the window width
 		const resizeFonts = () => {
 			const newFontSize = Math.trunc(screen.width / 76 + 12).toLocaleString();
-
 			htmlE[0].style.fontSize = newFontSize + "px";
-
-			console.log(htmlE[0].style.fontSize, "calls: ", calls);
 		};
+
 		window.addEventListener("resize", () => {
 			if (!onQueue) {
-				calls += 1;
+				onQueue = true;
 
 				resizeFonts();
 
-				onQueue = true;
+				// stop the last resize while keep firing the event
+				clearTimeout(timeoutID);
 
+				// one more resize to be shure, dont will be stoped
+				// if the event stop
+				timeoutID = setTimeout(() => {
+					resizeFonts();
+				}, 2000);
+
+				// a delay to ortimizing the resizing
 				setTimeout(() => {
 					onQueue = false;
 				}, delay);
