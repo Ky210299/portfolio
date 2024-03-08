@@ -41,7 +41,8 @@
 				{
 					name: "Example Project 2",
 					link: "https://google.com",
-					decription: "Administra y optimiza recursos al diseñar instalaciones electrica de una forma intuitiva",
+					decription:
+						"Administra y optimiza recursos al diseñar instalaciones electrica de una forma intuitiva",
 					img: "../../descarga.jpeg",
 					techs: ["JavaScript", "Python", "DJango", "Pandas", "Numpy"],
 				},
@@ -55,7 +56,8 @@
 				{
 					name: "Example Project 3",
 					link: "https://google.com",
-					decription: "Una CLI para reproducir musica mientras trabajas por consola!",
+					decription:
+						"Una CLI para reproducir musica mientras trabajas por consola!",
 					img: "../../descarga.jpeg",
 					techs: ["Python"],
 				},
@@ -138,14 +140,24 @@
 				width: 100%;
 				display: grid;
 				gap: 1.5rem;
-				grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-				
 				justify-content: center;
 				align-items: flex-start;
+
+				grid-auto-flow: row;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				
 				@media screen and (max-width: 400px) {
 					grid-template-columns: 1fr;
 				}
-				grid-auto-flow: row;
+				@media screen and (max-width: 800px) and (min-width: 400px){
+					grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+				}
+				@media screen and (max-width: 1366px) and (min-width: 800px){
+					grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				}
+				@media screen and (max-width: 2000px) and (min-width: 1367px){
+					grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+				}
 				.article {
 					transition: all ease 0.3s;
 					position: relative;
@@ -153,7 +165,6 @@
 					flex-flow: column nowrap;
 					justify-content: center;
 					align-items: center;
-					min-width: 15rem;
 
 					.picture-container {
 						position: relative;
