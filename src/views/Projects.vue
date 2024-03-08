@@ -32,12 +32,33 @@
 
 			let projects: Ref = ref([
 				{
-					name: "Web Scrapping whit Python",
+					name: "Example Project 1",
 					link: "https://google.com",
-					decription: "Un projecto que recopila datos con Web scrapping",
+					decription: "Recopila datos con Web scrapping",
 					img: "../../descarga.jpeg",
-					techs: ["HTML", "CSS", "JavaScript", "Python", "Pandas"],
-				}
+					techs: ["HTML", "CSS", "JavaScript", "Python", "DJango"],
+				},
+				{
+					name: "Example Project 2",
+					link: "https://google.com",
+					decription: "Administra y optimiza recursos al diseñar instalaciones electrica de una forma intuitiva",
+					img: "../../descarga.jpeg",
+					techs: ["JavaScript", "Python", "DJango", "Pandas", "Numpy"],
+				},
+				{
+					name: "Example Project 3",
+					link: "https://google.com",
+					decription: "Un foro para conseguir compañeros de trabajo ",
+					img: "../../descarga.jpeg",
+					techs: ["HTML", "CSS", "JavaScript"],
+				},
+				{
+					name: "Example Project 3",
+					link: "https://google.com",
+					decription: "Una CLI para reproducir musica mientras trabajas por consola!",
+					img: "../../descarga.jpeg",
+					techs: ["Python"],
+				},
 			]);
 
 			return { projects };
@@ -104,7 +125,6 @@
 			font-size: 3rem;
 			line-height: 100%;
 			border-bottom: 1px solid var(--color-palette--secondary);
-
 			&::first-letter {
 				font-size: 1.5em;
 				color: var(--color-palette--tertiary);
@@ -118,14 +138,10 @@
 				width: 100%;
 				display: grid;
 				gap: 1.5rem;
-				grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
-
-				@media screen and (max-width: 1365px) {
-					grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
-				}
-				@media screen and (max-width: 879px) {
-					grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-				}
+				grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+				
+				justify-content: center;
+				align-items: flex-start;
 				@media screen and (max-width: 400px) {
 					grid-template-columns: 1fr;
 				}
@@ -137,7 +153,7 @@
 					flex-flow: column nowrap;
 					justify-content: center;
 					align-items: center;
-					max-width: 32rem;
+					min-width: 15rem;
 
 					.picture-container {
 						position: relative;
