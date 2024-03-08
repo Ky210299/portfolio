@@ -18,8 +18,7 @@
 					return response.json();
 				})
 				.then((userData) => {
-					imgSrc.value = userData.avatar_url;
-					console.log(imgSrc)
+					imgSrc.value = userData.avatar_url;					
 				})
 				.catch((error) => {
 					console.log("Error ", error);
