@@ -33,7 +33,7 @@
 		.h2 {
 			max-width: 40rem;
 			color: var(--color-primary);
-			font-size: 3rem;
+			font-size: 3rem;	
 			margin-bottom: 2rem;
 			text-align: center;
 			text-wrap: balance;
@@ -41,7 +41,7 @@
 			border-bottom: 2px solid var(--color-palette--secondary);
 			line-height: 100%;
 			&::first-letter {
-				font-size: 4rem;
+				font-size: 1.2em;
 			}
 		}
 
@@ -51,7 +51,7 @@
 			margin-bottom: 3rem;
 			line-height: 100%;
 			&::first-letter {
-				font-size: 3rem;
+				font-size: 1.2em;
 			}
 		}
 	}
@@ -69,11 +69,13 @@
 }
 .about-section {
 	margin: auto;
-	min-height: 95dvh;
+	min-height: 100dvh;
 	padding-top: 6rem;
 	padding-bottom: 4rem;
 	padding-inline: 2rem 2rem;
 }
 .footer {
 	height: 5dvh;
+
+	
 }

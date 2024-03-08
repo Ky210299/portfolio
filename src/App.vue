@@ -6,7 +6,7 @@
 			<Projects />
 		</main>
 		<About />
-		<AppFooter />
+		
 	</div>
 </template>
 
@@ -16,7 +16,7 @@
 	import ProfileContainer from "./components/ProfileContainer.vue";
 	import Projects from "./views/Projects.vue";
 	import About from "./views/About.vue";
-	import AppFooter from "./components/AppFooter.vue";
+
 
 	const position = ref(0);
 	const scrollDown = ref(false);

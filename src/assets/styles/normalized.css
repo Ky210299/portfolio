@@ -191,14 +191,11 @@ html {
 	scrollbar-width: thin;
 	scrollbar-color: var(--color-primary) var(--color-secondary);
 	scroll-snap-type: proximity;
+	font-size: 16px;
 }
 
 body {
 	min-height: 100dvh;
-	font-size: 16px;
-	@media screen and (min-width: 1000px) {
-		font-size: 20px;
-	}
 	color: var(--color-primary);
 	background: linear-gradient(
 		109.6deg,

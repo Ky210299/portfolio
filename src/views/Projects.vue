@@ -35,7 +35,7 @@
 					name: "Web Scrapping whit Python",
 					link: "https://google.com",
 					decription: "Un projecto que recopila datos con Web scrapping",
-					img: "../../public/descarga.jpeg",
+					img: "../../descarga.jpeg",
 					techs: ["HTML", "CSS", "JavaScript", "Python", "Pandas"],
 				}
 			]);

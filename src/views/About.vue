@@ -61,13 +61,14 @@
 		width: 90vw;
 		display: flex;
 		flex-flow: row wrap-reverse;
-		justify-content: space-between;
+		justify-content: space-around;
 		align-items: center;
 		gap: 2rem;
 		.text {
-			flex: 8;
-			max-width: 40rem;
-			min-width: 20rem;
+			
+			flex: 1;
+			max-width: 25rem;
+			min-width: 13rem;
 			.h2 {
 				font-family: var(--font-family-secondary);
 				font-size: 2rem;
@@ -82,7 +83,7 @@
 			}
 			.p {
 				font-style: var(--font-family-primary);
-				font-size: 1.1rem;
+				font-size: 1rem;
 				text-wrap: pretty;
 				padding: 0rem 1rem;
 				margin-bottom: 1rem;
@@ -91,10 +92,9 @@
 		.picture {
 			overflow: hidden;
 			border-radius: 100%;
-			min-width: 10rem;
-			max-width: 20rem;
 			border: 1px solid var(--color-palette--tertiary);
 			.img {
+			max-width: 18rem;
 			object-fit: cover;
 			}
 		}
