@@ -36,9 +36,9 @@
 
 <template>
 	<header class="header">
-		<h1 :class="{ 'h1-isDeployed': isDeployed }" class="h1">
+		<div :class="{ 'logo-isDeployed': isDeployed }" class="logo">
 			<a href="#home" class="a">LBM</a>
-		</h1>
+		</div>
 		<nav :class="{ 'nav-not-deployed': !isDeployed }" class="nav">
 			<ul :class="{ 'nav-not-deployed': !isDeployed }" class="ul">
 				<li class="li" v-for="page of pages" :key="page.id">
@@ -86,7 +86,7 @@
 		.header-menu {
 			display: none;
 		}
-		.h1 {
+		.logo {
 			justify-self: flex-start;
 			width: fit-content;
 			height: fit-content;
@@ -163,11 +163,11 @@
 				display: block;
 				fill: var(--color-primary);
 			}
-			.h1 {
+			.logo {
 				transition: all ease-in 200ms;
 				padding-left: .5rem;
 				
-				&.h1-isDeployed {
+				&.logo-isDeployed {
 					position: absolute;
 				
 
