@@ -15,8 +15,6 @@
 			<a href="https://github.com/ky210299/" title="Github" class="a">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					width="50"
-					height="50"
 					fill="currentColor"
 					class="svg"
 					viewBox="0 0 16 16"
@@ -35,8 +33,6 @@
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					width="50"
-					height="50"
 					fill="currentColor"
 					class="svg"
 					viewBox="0 0 16 16"
@@ -58,11 +54,12 @@
 		flex-flow: row nowrap;
 		justify-content: center;
 		align-items: center;
-		gap: 1rem;
+		gap: 2rem;
 		width: 100%;
 		& .li {
 			& .a {
 				& .svg {
+					width: 5rem;
 					transition: ease-in-out all 150ms;
 				}
 
