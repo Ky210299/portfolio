@@ -1,7 +1,7 @@
 <template>
 	<div ref="test" @scroll="onScroll()" class="scroll">
 		<HeaderContainer :class="{ show: scrollDown }" />
-		<Home />
+		<Home id="home" />
 		<main class="main">
 			<Projects id="projects" />
 		</main>
@@ -13,7 +13,6 @@
 	import { ref } from "vue";
 	import HeaderContainer from "./components/HeaderContainer.vue";
 	import Home from "./views/Home.vue";
-
 	import Projects from "./views/Projects.vue";
 	import About from "./views/About.vue";
 

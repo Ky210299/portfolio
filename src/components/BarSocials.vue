@@ -59,7 +59,7 @@
 		& .li {
 			& .a {
 				& .svg {
-					width: 5rem;
+					width: 3rem;
 					transition: ease-in-out all 150ms;
 				}
 
