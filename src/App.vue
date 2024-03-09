@@ -3,7 +3,7 @@
 		<HeaderContainer :class="{ show: scrollDown }" />
 		<Home />
 		<main class="main">
-			<Projects />
+			<Projects id="projects" />
 		</main>
 		<About />
 	</div>

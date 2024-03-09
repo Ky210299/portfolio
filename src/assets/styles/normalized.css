@@ -2,71 +2,66 @@
 	--color-primary: #b2aceb;
 	--color-secondary: #080072;
 	--color-palette--primary: #00039bfb;
-	--color-palette--secondary: #999e54;
-	--color-palette--tertiary: #ac744f;
-	--color-palette--cuaternary: #8b5899;
+	--color-palette--secondary: #eeff00;
+	--color-palette--tertiary: #ff6600;
+	--color-palette--cuaternary: #c800ff;
 	--font-family-primary: "Neuton", sans-serif;
 	--font-family-secondary: "Genos", sans-serif;
 	--font-family-logo: "MedievalSharp", sans-serif;
 }
 
 .neuton-extralight {
-  font-family: "Neuton", serif;
-  font-weight: 200;
-  font-style: normal;
+	font-family: "Neuton", serif;
+	font-weight: 200;
+	font-style: normal;
 }
 
 .neuton-light {
-  font-family: "Neuton", serif;
-  font-weight: 300;
-  font-style: normal;
+	font-family: "Neuton", serif;
+	font-weight: 300;
+	font-style: normal;
 }
 
 .neuton-regular {
-  font-family: "Neuton", serif;
-  font-weight: 400;
-  font-style: normal;
+	font-family: "Neuton", serif;
+	font-weight: 400;
+	font-style: normal;
 }
 
 .neuton-bold {
-  font-family: "Neuton", serif;
-  font-weight: 700;
-  font-style: normal;
+	font-family: "Neuton", serif;
+	font-weight: 700;
+	font-style: normal;
 }
 
 .neuton-extrabold {
-  font-family: "Neuton", serif;
-  font-weight: 800;
-  font-style: normal;
+	font-family: "Neuton", serif;
+	font-weight: 800;
+	font-style: normal;
 }
 
 .neuton-regular-italic {
-  font-family: "Neuton", serif;
-  font-weight: 400;
-  font-style: italic;
+	font-family: "Neuton", serif;
+	font-weight: 400;
+	font-style: italic;
 }
 
-
-
-
-
-.genos{
-  font-family: "Genos", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+.genos {
+	font-family: "Genos", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
 }
 .medievalsharp-regular {
-  font-family: "MedievalSharp", cursive;
-  font-weight: 400;
-  font-style: normal;
+	font-family: "MedievalSharp", cursive;
+	font-weight: 400;
+	font-style: normal;
 }
-
 
 /*
 family=Cormorant
 family=MedievalSharp
-family=Genos
+famil
 family=Teko
 family=Neuton
 serif para textos de lectura
@@ -207,6 +202,6 @@ body {
 			var(--color-palette--primary) 47.2%,
 			rgb(121, 134, 255) 100%
 		);
-	}	
+	}
 	font-family: var(--font-family-primary);
 }

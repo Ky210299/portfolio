@@ -23,7 +23,7 @@
 	margin: auto;
 	display: flex;
 	flex-flow: column wrap;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
 	min-height: 100dvh;
 	padding: 2rem;

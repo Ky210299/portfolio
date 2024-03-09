@@ -75,7 +75,7 @@
 <template>
 	<div class="project-view">
 		<h2 class="h2">Projects</h2>
-		<section class="projects-section" id="projects">
+		<section class="projects-section">
 			<div class="grid">
 				<article
 					v-for="project of projects"
@@ -115,7 +115,7 @@
 	.project-view {
 		display: flex;
 		flex-flow: column wrap;
-		justify-content: flex-start;
+		justify-content: space-around;
 		align-items: center;
 		width: 100%;
 
