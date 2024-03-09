@@ -64,6 +64,7 @@
 
 <style scoped>
 	.header {
+		overflow-y: hidden;
 		transition: all ease 500ms;
 		z-index: 1;
 		position: fixed;
