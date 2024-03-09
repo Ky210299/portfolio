@@ -25,7 +25,7 @@
 
 		// change de font size according to the window width
 		const resizeFonts = () => {
-			const newFontSize = Math.trunc(screen.width / 76 + 12).toLocaleString();
+			const newFontSize = Math.fround(screen.width / 120 + 13).toLocaleString();
 			htmlE[0].style.fontSize = newFontSize + "px";
 		};
 
@@ -50,5 +50,6 @@
 				}, delay);
 			}
 		});
+		resizeFonts()
 	</script>
 </html>
