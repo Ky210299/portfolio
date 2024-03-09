@@ -16,8 +16,7 @@
 	width: 90vw;
 	display: flex;
 	min-height: 100dvh;
-	padding-top: 7rem;
-	padding-inline: 2rem 2rem;
+	padding: 2rem;
 }
 .main {
 	width: 90vw;
@@ -27,14 +26,12 @@
 	justify-content: center;
 	align-items: center;
 	min-height: 100dvh;
-	padding-inline: 2rem 2rem;
+	padding: 2rem;
 }
 .about-section {
 	margin: auto;
 	min-height: 100dvh;
-	padding-top: 6rem;
-	padding-bottom: 4rem;
-	padding-inline: 2rem 2rem;
+	padding: 2rem;
 }
 .footer {
 	height: 5dvh;
