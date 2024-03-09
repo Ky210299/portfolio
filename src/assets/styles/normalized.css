@@ -1,7 +1,7 @@
 :root {
 	--color-primary: #b2aceb;
-	--color-secondary: #080533;
-	--color-palette--primary: #020475fb;
+	--color-secondary: #080072;
+	--color-palette--primary: #00039bfb;
 	--color-palette--secondary: #999e54;
 	--color-palette--tertiary: #ac744f;
 	--color-palette--cuaternary: #8b5899;
@@ -66,16 +66,12 @@
 /*
 family=Cormorant
 family=MedievalSharp
+family=Genos
 family=Teko
 family=Neuton
 serif para textos de lectura
-
-
- sans serif para titulos y letras grandes
-
-
- manuscritas para el LBM del Logo
-  */
+sans serif para titulos y letras grandes
+*/
 @media (prefers-color-scheme: light) {
 	:root {
 		--color-primary: #201c35;
@@ -200,9 +196,9 @@ body {
 	color: var(--color-primary);
 	background: linear-gradient(
 		109.6deg,
-		rgb(46, 50, 84) 14.2%,
+		rgb(24, 51, 138) 14.2%,
 		var(--color-palette--primary) 40.2%,
-		rgb(16, 16, 76) 90%
+		rgb(13, 47, 125) 90%
 	);
 	@media (prefers-color-scheme: light) {
 		background: linear-gradient(
