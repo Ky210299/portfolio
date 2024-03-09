@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="https://ky210299.github.io/Ky210299/vite-deploy/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&family=MedievalSharp&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Vite + Vue + TS</title>
+		<script type="module" crossorigin src="https://ky210299.github.io/Ky210299/vite-deploy/assets/index-BMnOt88k.js"></script>
+		<link rel="stylesheet" crossorigin href="https://ky210299.github.io/Ky210299/vite-deploy/assets/index-B25hnHAp.css">
+	</head>
+	<body>
+		<div id="app"></div>
+	</body>
+	<script>
+		const htmlE = document.getElementsByTagName("html");
+		const delay = 1000;
+		let onQueue = false; // is resizing?
+		let timeoutID = false; // finished resizing?
+
+		// change de font size according to the window width
+		const resizeFonts = () => {
+			const newFontSize = Math.fround(screen.width / 120 + 13).toLocaleString();
+			htmlE[0].style.fontSize = newFontSize + "px";
+		};
+
+		window.addEventListener("resize", () => {
+			if (!onQueue) {
+				onQueue = true;
+
+				resizeFonts();
+
+				// stop the last resize while keep firing the event
+				clearTimeout(timeoutID);
+
+				// one more resize to be shure, dont will be stoped
+				// if the event stop
+				timeoutID = setTimeout(() => {
+					resizeFonts();
+				}, 2000);
+
+				// a delay to ortimizing the resizing
+				setTimeout(() => {
+					onQueue = false;
+				}, delay);
+			}
+		});
+		resizeFonts()
+	</script>
+</html>

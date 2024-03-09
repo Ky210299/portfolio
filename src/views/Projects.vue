@@ -5,30 +5,30 @@
 	import CardProjectContainer from "../components/CardProjectContainer.vue";
 	export default defineComponent({
 		setup() {
-			type projectImg = string | undefined;
+			// type projectImg = string | undefined;
 
-			interface IProject {
-				name: string;
-				link: string;
-				description: string;
-				techs: Array<string>;
-				img: projectImg;
-			}
+			// interface IProject {
+			// 	name: string;
+			// 	link: string;
+			// 	description: string;
+			// 	techs: Array<string>;
+			// 	img: projectImg;
+			// }
 
-			function Project(
-				this: IProject,
-				name: string,
-				link: string,
-				description: string,
-				img: projectImg = undefined,
-				techs: Array<string>
-			) {
-				(this.name = name),
-					(this.link = link),
-					(this.description = description),
-					(this.img = img),
-					(this.techs = techs);
-			}
+			// function Project(
+			// 	this: IProject,
+			// 	name: string,
+			// 	link: string,
+			// 	description: string,
+			// 	img: projectImg = undefined,
+			// 	techs: Array<string>
+			// ) {
+			// 	(this.name = name),
+			// 		(this.link = link),
+			// 		(this.description = description),
+			// 		(this.img = img),
+			// 		(this.techs = techs);
+			// }
 
 			let projects: Ref = ref([
 				{
