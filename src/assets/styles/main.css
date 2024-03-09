@@ -14,50 +14,12 @@
 
 .profile-section {
 	width: 90vw;
-	margin: auto;
-	min-height: 100dvh;
-	gap: 2rem;
 	display: flex;
-	flex-flow: column nowrap;
-	justify-content: space-between;
-	align-items: center;
+	min-height: 100dvh;
 	padding-top: 7rem;
 	padding-inline: 2rem 2rem;
-	font-family: var(--font-family-secondary);
-	.profile-section-text {
-		display: flex;
-		flex-flow: column wrap;
-		justify-content: center;
-		align-items: center;
-
-		.h2 {
-			max-width: 40rem;
-			color: var(--color-primary);
-			font-size: 3rem;	
-			margin-bottom: 2rem;
-			text-align: center;
-			text-wrap: balance;
-			padding-bottom: 1rem;
-			border-bottom: 2px solid var(--color-palette--secondary);
-			line-height: 100%;
-			&::first-letter {
-				font-size: 1.2em;
-			}
-		}
-
-		.h3 {
-			font-size: 2rem;
-			text-align: center;
-			margin-bottom: 3rem;
-			line-height: 100%;
-			&::first-letter {
-				font-size: 1.2em;
-			}
-		}
-	}
 }
 .main {
-	
 	width: 90vw;
 	margin: auto;
 	display: flex;
@@ -76,6 +38,4 @@
 }
 .footer {
 	height: 5dvh;
-
-	
 }

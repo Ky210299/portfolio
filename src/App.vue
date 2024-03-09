@@ -1,28 +1,27 @@
 <template>
-	<div ref="test" @scroll="onScroll($event)" class="scroll">
+	<div ref="test" @scroll="onScroll()" class="scroll">
 		<HeaderContainer :class="{ show: scrollDown }" />
-		<ProfileContainer />
+		<Home />
 		<main class="main">
 			<Projects />
 		</main>
 		<About />
-		
 	</div>
 </template>
 
 <script lang="ts" setup>
 	import { ref } from "vue";
 	import HeaderContainer from "./components/HeaderContainer.vue";
-	import ProfileContainer from "./components/ProfileContainer.vue";
+	import Home from "./views/Home.vue";
+
 	import Projects from "./views/Projects.vue";
 	import About from "./views/About.vue";
-
 
 	const position = ref(0);
 	const scrollDown = ref(false);
 	const test = ref();
 
-	const onScroll = (event: any) => {
+	const onScroll = () => {
 		const scroll = test.value.scrollTop;
 
 		if (scroll > position.value) {
