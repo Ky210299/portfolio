@@ -77,7 +77,7 @@
 		}
 
 		width: 100%;
-		min-height: 4rem;
+		min-height: 2rem;
 		display: flex;
 		flex-flow: row nowrap;
 		align-items: center;
@@ -92,7 +92,7 @@
 			.a {
 				transition: ease-in-out all 700ms;
 				font-family: var(--font-family-logo);
-				font-size: 3rem;
+				font-size: 2rem;
 
 				font-style: oblique;
 				color: var(--color-primary);
@@ -119,7 +119,7 @@
 					padding: 0.3rem;
 					.a {
 						position: relative;
-						font-size: 1.5rem;
+						font-size: 1rem;
 
 						color: var(--color-primary);
 						font-family: var(--font-family-secondary);
