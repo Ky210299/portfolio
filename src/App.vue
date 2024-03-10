@@ -39,4 +39,7 @@
 	.show {
 		transform: translateY(-100%);
 	}
+	#app{
+		padding-top: 2rem;
+	}
 </style>

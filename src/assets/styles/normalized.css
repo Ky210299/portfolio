@@ -69,8 +69,8 @@ sans serif para titulos y letras grandes
 */
 @media (prefers-color-scheme: light) {
 	:root {
-		--color-primary: #080072;	
-		--color-secondary: #b2aceb;
+		--color-primary: #05013b;	
+		--color-secondary: #9c9ba6;
 		--color-palette--primary: #9baffffb;
 		
 	}
@@ -186,6 +186,7 @@ html {
 
 body {
 	min-height: 100dvh;
+	
 	color: var(--color-primary);
 	background: linear-gradient(
 		109.6deg,

@@ -1,72 +1,95 @@
 <script lang="ts">
 	import { defineComponent, Ref, ref } from "vue";
 	import BarProjectFilter from "../components/BarProjectFilter.vue";
-	import BarIndex from "../components/BarIndex.vue";
+
+
 	import CardProjectContainer from "../components/CardProjectContainer.vue";
 	export default defineComponent({
 		setup() {
-			// type projectImg = string | undefined;
+			type projectImg = string | undefined;
 
-			// interface IProject {
-			// 	name: string;
-			// 	link: string;
-			// 	description: string;
-			// 	techs: Array<string>;
-			// 	img: projectImg;
-			// }
+			interface IProject {
+				name: string;
+				link: string;
+				description: string;
+				techs: Array<ITech>;
+				img: projectImg;
+			}
 
-			// function Project(
-			// 	this: IProject,
-			// 	name: string,
-			// 	link: string,
-			// 	description: string,
-			// 	img: projectImg = undefined,
-			// 	techs: Array<string>
-			// ) {
-			// 	(this.name = name),
-			// 		(this.link = link),
-			// 		(this.description = description),
-			// 		(this.img = img),
-			// 		(this.techs = techs);
-			// }
+			interface ITech {
+				name: string;
+				icon: string;
+			}
+			const techs = {
+				html: {
+					name: "HTML",
+					icon: "./src/components/icons/HtmlIcon.vue",
+				},
+				css: {
+					name: "CSS",
+					icon: "./src/components/icons/CssIcon.vue",
+				},
+				javascript: {
+					name: "JavaScript",
+					icon: "./src/components/icons/JavaScriptIcon.vue",
+				},
+				vue: {
+					name: "Vue.js",
+					icon: "./src/components/icons/VueIcon.vue",
+				},
+				python: {
+					name: "Python",
+					icon: "./src/components/icons/PythonIcon.vue",
+				},
+				django: {
+					name: "DJango",
+					icon: "./src/components/icons/DjangoIcon.vue",
+				},
+			};
 
-			let projects: Ref = ref([
+			let projects: Ref = ref<Array<IProject>>([
 				{
 					name: "Example Project 1",
 					link: "https://google.com",
-					decription: "Recopila datos con Web scrapping",
+					description: "Recopila datos con Web scrapping",
 					img: "../../descarga.jpeg",
-					techs: ["HTML", "CSS", "JavaScript", "Python", "DJango"],
+					techs: [techs.html, techs.css, techs.javascript, techs.python],
 				},
 				{
 					name: "Example Project 2",
 					link: "https://google.com",
-					decription:
+					description:
 						"Administra y optimiza recursos al diseñar instalaciones electrica de una forma intuitiva",
 					img: "../../descarga.jpeg",
-					techs: ["JavaScript", "Python", "DJango", "Pandas", "Numpy"],
+					techs: [
+						techs.python,
+						techs.django,
+						techs.html,
+						techs.css,
+						techs.javascript,
+					],
 				},
 				{
 					name: "Example Project 3",
 					link: "https://google.com",
-					decription: "Un foro para conseguir compañeros de trabajo ",
+					description: "Un foro para conseguir compañeros de trabajo ",
 					img: "../../descarga.jpeg",
-					techs: ["HTML", "CSS", "JavaScript"],
+					techs: [techs.html, techs.css, techs.javascript],
 				},
 				{
 					name: "Example Project 3",
 					link: "https://google.com",
-					decription:
+					description:
 						"Una CLI para reproducir musica mientras trabajas por consola!",
 					img: "../../descarga.jpeg",
-					techs: ["Python"],
+					techs: [techs.python],
 				},
 			]);
 
-			return { projects };
+			return { projects, techs };
 		},
 
-		components: { BarProjectFilter, BarIndex, CardProjectContainer },
+		components: { BarProjectFilter, CardProjectContainer },
 	});
 </script>
 
@@ -90,12 +113,8 @@
 								<h3 class="h3">{{ project.name }}</h3>
 							</a>
 							<ul class="technologies">
-								<li
-									v-for="(tag, index) of project.techs"
-									:key="index"
-									class="tag"
-								>
-									{{ tag }}
+								<li v-for="tech of project.techs" :key="tech.name" class="tag">
+									<svg :href="tech.icon"></svg>
 								</li>
 							</ul>
 						</div>
@@ -125,12 +144,14 @@
 			padding-left: 1rem;
 			margin-bottom: 1rem;
 			font-family: var(--font-family-secondary);
-			font-size: 3rem;
+			color: var();
+			font-size: 2rem;
+			text-transform: uppercase;
 			line-height: 100%;
-			border-bottom: 1px solid var(--color-palette--secondary);
+			border-bottom: 1px solid var(--color-palette--cuaternary);
 			&::first-letter {
-				font-size: 1.5em;
-				color: var(--color-palette--tertiary);
+				font-size: 2em;
+				color: var(--color-palette--cuaternary);
 			}
 		}
 		.projects-section {
@@ -145,20 +166,8 @@
 				align-items: flex-start;
 
 				grid-auto-flow: row;
-				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-				
-				@media screen and (max-width: 400px) {
-					grid-template-columns: 1fr;
-				}
-				@media screen and (max-width: 800px) and (min-width: 400px){
-					grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-				}
-				@media screen and (max-width: 1366px) and (min-width: 800px){
-					grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-				}
-				@media screen and (max-width: 2000px) and (min-width: 1367px){
-					grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
-				}
+				grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+
 				.article {
 					transition: all ease 0.3s;
 					position: relative;
@@ -183,9 +192,7 @@
 							object-fit: contain;
 						}
 						.description {
-							transition: all ease 0.3s;
 							position: absolute;
-							background: transparent;
 							top: 0px;
 							padding: 0.5rem;
 							display: flex;
@@ -195,36 +202,41 @@
 							width: 100%;
 							height: 100%;
 
+							background: transparent;
+							font-size: larger;
+
+							transition: all ease 0.3s;
+
 							.a {
 								.h3 {
 									text-align: center;
 									font-family: var(--font-family-secondary);
 									color: var(--color-primary);
-									font-size: 1.2rem;
-									&::first-letter {
-										font-size: 1.6rem;
-									}
+									font-size: 1.2em;
+									font-weight: 400;
 								}
 							}
 
 							.technologies {
-								transition: all ease-in-out 0.3s;
 								display: flex;
 								flex-flow: row wrap;
 								justify-content: center;
 								align-items: center;
-								gap: 2px 0.3rem;
+								gap: 0.6rem;
+
+								color: var(--color-primary);
+
+								transition: all ease-in-out 0.3s;
 
 								.tag {
-									transition: all ease-in-out 0.3s;
-									font-size: 0.8rem;
+									border: 2px solid var(--color-palette--secondary);
 									text-align: center;
-									background: transparent;
-									color: var(--color-primary);
-									filter: grayscale(0.6) brightness(1) contrast(0.4);
-									box-shadow: inset 0 0 2px var(--color-primary);
-									padding-inline: 0.5rem;
-									border-radius: 1rem;
+									padding: 0.25rem;
+									font-size: 0.8rem;
+									line-height: 100%;
+									border-radius: 0.4rem;
+
+									transition: all ease-in-out 0.3s;
 								}
 							}
 						}
@@ -242,16 +254,15 @@
 						.picture-container {
 							.img {
 								opacity: 0.7;
-								border: 1px solid var(--color-palette--secondary);
+
 								filter: blur(0.2rem);
 							}
 							.description {
 								.tag {
 									filter: contrast(1);
 									&:hover {
-										transform: scale(1.2);
-										filter: grayscale(0) brightness(2);
-										box-shadow: inset 0 0 3px var(--color-primary);
+										transform: scale(1.1);
+										filter: brightness(2);
 									}
 								}
 							}
