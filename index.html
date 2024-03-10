@@ -2,10 +2,17 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="color-scheme" content="dark light" />
+		<meta name="color-scheme" content="dark" />
+		<meta name="scheme" content="dark mode" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="Hi!. I'm Leonardo Bazán Márquez, Fullstack
+					 developer. This is my portfolio!"
+		/>
+
 		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 		<link rel="stylesheet" href="./src/assets/styles/normalized.css" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -18,39 +25,41 @@
 		<div id="app"></div>
 		<script type="module" src="/src/main.ts"></script>
 	</body>
-	<script>
-		const htmlE = document.getElementsByTagName("html");
-		const delay = 1000;
-		let onQueue = false; // is resizing?
-		let timeoutID = false; // finished resizing?
+		<script>
+			const htmlE = document.getElementsByTagName("html");
+			const delay = 1000;
+			let onQueue = false; // is resizing?
+			let timeoutID = false; // finished resizing?
 
-		// change de font size according to the window width
-		const resizeFonts = () => {
-			const newFontSize = Math.fround(screen.width / 120 + 13).toLocaleString();
-			htmlE[0].style.fontSize = newFontSize + "px";
-		};
+			// change de font size according to the window width
+			const resizeFonts = () => {
+				const newFontSize = Math.fround(
+					Math.sqrt(( Math.pow(screen.height, 2) + Math.pow(screen.width, 2))) / 120 + 10
+				).toLocaleString();
+				htmlE[0].style.fontSize = newFontSize + "px";
+			};
 
-		window.addEventListener("resize", () => {
-			if (!onQueue) {
-				onQueue = true;
+			window.addEventListener("resize", () => {
+				if (!onQueue) {
+					onQueue = true;
 
-				resizeFonts();
-
-				// stop the last resize while keep firing the event
-				clearTimeout(timeoutID);
-
-				// one more resize to be shure, dont will be stoped
-				// if the event stop
-				timeoutID = setTimeout(() => {
 					resizeFonts();
-				}, 2000);
 
-				// a delay to ortimizing the resizing
-				setTimeout(() => {
-					onQueue = false;
-				}, delay);
-			}
-		});
-		resizeFonts()
-	</script>
+					// stop the last resize while keep firing the event
+					clearTimeout(timeoutID);
+
+					// one more resize to be shure, dont will be stoped
+					// if the event stop
+					timeoutID = setTimeout(() => {
+						resizeFonts();
+					}, 2000);
+
+					// a delay to ortimizing the resizing
+					setTimeout(() => {
+						onQueue = false;
+					}, delay);
+				}
+			});
+			resizeFonts();
+		</script>
 </html>

@@ -16,6 +16,7 @@
 	width: 90vw;
 	display: flex;
 	min-height: 100dvh;
+	margin: auto;
 	
 }
 .main {

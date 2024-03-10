@@ -21,8 +21,9 @@
 </template>
 <style scoped>
 	.profile-section {
-
-		margin-top: 3rem;
+		margin: auto;
+		min-height: 100dvh;
+		padding-top: 5rem;
 		flex-flow: column nowrap;
 		justify-content: space-around;
 		align-items: center;

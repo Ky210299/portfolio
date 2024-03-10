@@ -87,7 +87,7 @@
 						<img :src="project.img" alt="Imagen" class="img" loading="lazy" />
 						<div class="description">
 							<a href="#" class="a" title="Project Title">
-								<h4 class="h4">{{ project.name }}</h4>
+								<h3 class="h3">{{ project.name }}</h3>
 							</a>
 							<ul class="technologies">
 								<li
@@ -113,6 +113,7 @@
 
 <style scoped>
 	.project-view {
+		margin: auto;
 		display: flex;
 		flex-flow: column wrap;
 		justify-content: space-around;
@@ -195,7 +196,7 @@
 							height: 100%;
 
 							.a {
-								.h4 {
+								.h3 {
 									text-align: center;
 									font-family: var(--font-family-secondary);
 									color: var(--color-primary);
