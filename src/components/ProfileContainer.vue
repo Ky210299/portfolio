@@ -30,6 +30,7 @@
 		padding-bottom: 3rem;
 
 		.profile-section-text {
+			
 			flex: 1;
 			display: flex;
 			flex-flow: column wrap;
@@ -52,6 +53,8 @@
 					content: "{ ";
 					position: absolute;
 					top: -1em;
+					
+
 				}
 				&::after {
 					content: "}";
@@ -60,9 +63,9 @@
 				}
 
 				.profile-hi {
-					padding-left: 1rem;
+					padding-left: 1.4rem;
 					line-height: 100%;
-					font-size: 2em;
+					font-size: 1.7em;
 					font-weight: 300;
 					color: var(--color-palette--tertiary);
 
@@ -83,8 +86,8 @@
 				.profile-iam {
 					line-height: 100%;
 					padding-left: 1rem;
-					font-size: 1.2em;
-					font-weight: 200;
+					font-size: 1.15em;
+					font-weight: 300;
 
 					&::before,
 					&::after {
@@ -102,8 +105,8 @@
 				}
 				.profile-name {
 					line-height: 100%;
-					padding-left: 2rem;
-					font-size: 2em;
+					padding-left: 2.6rem;
+					font-size: 1.3em;
 					line-height: 100%;
 					font-weight: normal;
 
@@ -122,10 +125,12 @@
 					}
 				}
 				.profile-profession {
+
 					line-height: 100%;
-					font-size: 1.7em;
-					padding-left: 3rem;
+					font-size: 1.4em;
+					padding-left: 3.5rem;
 					font-weight: bold;
+					text-wrap: nowrap;
 
 					&::before,
 					&::after {
