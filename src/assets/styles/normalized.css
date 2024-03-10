@@ -58,7 +58,7 @@
 	font-style: normal;
 }
 
-/*
+/*g
 family=Cormorant
 family=MedievalSharp
 famil
@@ -69,12 +69,10 @@ sans serif para titulos y letras grandes
 */
 @media (prefers-color-scheme: light) {
 	:root {
-		--color-primary: #201c35;
-		--color-secondary: #887fff;
-		--color-palette--primary: #b7bcedfb;
-		--color-palette--secondary: #a7b04d;
-		--color-palette--tertiary: #af7450;
-		--color-palette--cuaternary: #341f49;
+		--color-primary: #080072;	
+		--color-secondary: #b2aceb;
+		--color-palette--primary: #cbcbcbfb;
+		
 	}
 }
 
@@ -198,9 +196,9 @@ body {
 	@media (prefers-color-scheme: light) {
 		background: linear-gradient(
 			109.6deg,
-			rgb(138, 142, 255) 11.2%,
+			rgb(155, 148, 148) 11.2%,
 			var(--color-palette--primary) 47.2%,
-			rgb(121, 134, 255) 100%
+			rgb(156, 155, 155) 100%
 		);
 	}
 	font-family: var(--font-family-primary);
