@@ -19,13 +19,7 @@
 			href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&family=MedievalSharp&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap"
 			rel="stylesheet"
 		/>
-		<title>Vite + Vue + TS</title>
-	</head>
-	<body>
-		<div id="app"></div>
-		<script type="module" src="/src/main.ts"></script>
-	</body>
-		<script>
+		<script defer>
 			const htmlE = document.getElementsByTagName("html");
 			const delay = 1000;
 			let onQueue = false; // is resizing?
@@ -35,8 +29,9 @@
 			const resizeFonts = () => {
 				const newFontSize = Math.fround(
 					Math.sqrt(( Math.pow(screen.height, 2) + Math.pow(screen.width, 2))) / 120 + 10
-				).toLocaleString();
+				);
 				htmlE[0].style.fontSize = newFontSize + "px";
+				console.log(newFontSize)
 			};
 
 			window.addEventListener("resize", () => {
@@ -62,4 +57,10 @@
 			});
 			resizeFonts();
 		</script>
+		<title>Vite + Vue + TS</title>
+	</head>
+	<body>
+		<div id="app"></div>
+		<script type="module" src="/src/main.ts"></script>
+	</body>
 </html>

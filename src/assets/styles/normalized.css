@@ -2,9 +2,9 @@
 	--color-primary: #b2aceb;
 	--color-secondary: #080072;
 	--color-palette--primary: #00039bfb;
-	--color-palette--secondary: #eeff00;
+	--color-palette--secondary: #999e58;
 	--color-palette--tertiary: #ff6600;
-	--color-palette--cuaternary: #c800ff;
+	--color-palette--cuaternary: rgb(140, 81, 196);
 	--font-family-primary: "Neuton", sans-serif;
 	--font-family-secondary: "Genos", sans-serif;
 	--font-family-logo: "MedievalSharp", sans-serif;
@@ -71,7 +71,7 @@ sans serif para titulos y letras grandes
 	:root {
 		--color-primary: #080072;	
 		--color-secondary: #b2aceb;
-		--color-palette--primary: #cbcbcbfb;
+		--color-palette--primary: #9baffffb;
 		
 	}
 }
@@ -196,9 +196,9 @@ body {
 	@media (prefers-color-scheme: light) {
 		background: linear-gradient(
 			109.6deg,
-			rgb(155, 148, 148) 11.2%,
+			rgb(165, 207, 255) 11.2%,
 			var(--color-palette--primary) 47.2%,
-			rgb(156, 155, 155) 100%
+			rgb(158, 219, 255) 100%
 		);
 	}
 	font-family: var(--font-family-primary);

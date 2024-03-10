@@ -78,6 +78,7 @@
 
 		width: 100%;
 		min-height: 2rem;
+		max-height: 3rem;
 		display: flex;
 		flex-flow: row nowrap;
 		align-items: center;
@@ -119,18 +120,18 @@
 					padding: 0.3rem;
 					.a {
 						position: relative;
-						font-size: 1rem;
+						font-size: 1.2rem;
 
 						color: var(--color-primary);
 						font-family: var(--font-family-secondary);
 
-						font-weight: 900;
-						text-shadow: .5rem .5rem 3rem var(--color-palette--cuaternary),
-							.5rem -.5rem 3rem var(--color-palette--tertiary),
-							-.5rem -.5rem 3rem var(--color-palette--secondary),
-							-.5rem .5rem 3rem var(--color-palette--primary);
+						font-weight: 500;
+						text-shadow: .5rem .5rem 1rem transparent,
+							.5rem -.5rem 1rem transparent,
+							-.5rem -.5rem 1rem transparent,
+							-.5rem .5rem 1rem transparent;
 
-						filter: saturate(.3);
+						
 						transition: all ease 290ms;
 						transform: scale(1);
 
@@ -141,7 +142,7 @@
 								1px 1px 0.1rem var(--color-palette--primary);
 
 							transform: scale(1.1);
-							filter: saturate(0.7) contrast(1);
+							filter: brightness(1.2) saturate(.5);
 						}
 					}
 				}
@@ -202,6 +203,7 @@
 
 							&:hover {
 								text-shadow: none;
+								
 							}
 						}
 					}

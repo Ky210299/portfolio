@@ -21,18 +21,16 @@
 </template>
 <style scoped>
 	.profile-section {
-		margin: auto;
-		min-height: 100dvh;
-		padding-top: 5rem;
 		flex-flow: column nowrap;
 		justify-content: space-around;
 		align-items: center;
-		padding: 2rem;
 		text-align: start;
 		text-wrap: balance;
 		color: var(--color-primary);
+		padding-bottom: 3rem;
 
 		.profile-section-text {
+			flex: 1;
 			display: flex;
 			flex-flow: column wrap;
 			justify-content: space-around;
@@ -146,5 +144,6 @@
 				}
 			}
 		}
+		
 	}
 </style>
