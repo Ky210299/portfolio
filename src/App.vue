@@ -2,8 +2,8 @@
 	<div ref="test" @scroll="onScroll()" class="scroll">
 		<HeaderContainer :class="{ show: scrollDown }" />
 		<Home id="home" />
-		<main class="main">
-			<Projects id="projects" />
+		<main class="main" id="projects">
+			<Projects  />
 		</main>
 		<About />
 	</div>
