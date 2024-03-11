@@ -340,13 +340,13 @@ export default defineComponent({
 								height: 1.1rem;
 								
 								transition: all ease-in-out 0.2s;
-								filter: blur(1px) saturate(.4);
+								filter: saturate(.4);
 
 								&:hover{
 									
 									
 									transform: scale(1.1);
-									filter: blur(0) saturate(1);
+									filter: saturate(1);
 								}
 							}
 						}
