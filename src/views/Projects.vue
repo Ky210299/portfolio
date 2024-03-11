@@ -188,11 +188,11 @@ export default defineComponent({
 								<h3 class="h3">{{ project.name }}</h3>
 							</a>
 
-							<ul class="technologies">
+							<ul class="technologies" >
 								<li v-for="tech of project.techs"
 									:key="tech.name" class="tag">
 									<img :src="`${tech.src}${tech.fileName}.svg`"
-										 :title="tech.name" ></img>
+										alt="tech.name" :title="tech.name" ></img>
 								</li>
 							</ul>
 

@@ -59,13 +59,12 @@
 		width: 90vw;
 		display: flex;
 		flex-flow: row wrap-reverse;
-		justify-content: space-around;
+		justify-content: space-between;
 		align-items: center;
-		gap: 2rem;
 		.text {
 			flex: 1;
-			max-width: 25rem;
-			min-width: 13rem;
+			max-width: 22rem;
+			
 			.h2 {
 				font-family: var(--font-family-secondary);
 				font-size: 2rem;
@@ -74,7 +73,7 @@
 				border-bottom: 1px solid var(--color-palette--secondary);
 				padding-left: 1rem;
 				&::first-letter {
-					font-size: 3rem;
+					font-size: 2em;
 					color: var(--color-palette--tertiary);
 				}
 			}
@@ -82,16 +81,19 @@
 				font-style: var(--font-family-primary);
 				font-size: 1rem;
 				text-wrap: pretty;
-				padding: 0rem 1rem;
-				margin-bottom: 1rem;
+				line-height: 100%;
+				margin-bottom: .5rem;
+				
 			}
 		}
 		.picture {
 			overflow: hidden;
 			border-radius: 100%;
-			border: 1px solid var(--color-palette--tertiary);
+			box-shadow: 0 0 1rem black, 0 0 .5rem var(--color-palette--cuaternary);
+			max-width: 15rem;
+			margin: auto;
+			
 			.img {
-				max-width: 18rem;
 				object-fit: cover;
 			}
 		}
