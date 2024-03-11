@@ -1,96 +1,169 @@
 <script lang="ts">
-	import { defineComponent, Ref, ref } from "vue";
-	import BarProjectFilter from "../components/BarProjectFilter.vue";
+import { defineComponent, Ref, ref } from "vue";
+import BarProjectFilter from "../components/BarProjectFilter.vue";
+import CardProjectContainer from "../components/CardProjectContainer.vue";
+export default defineComponent({
+	setup() {
+		type ProjectImg = string | undefined;
+		type Link = string | undefined;
 
 
-	import CardProjectContainer from "../components/CardProjectContainer.vue";
-	export default defineComponent({
-		setup() {
-			type projectImg = string | undefined;
+		interface IProject {
+			name: string;
+			links: IProjectLinks;
+			description: string;
+			techs: Array<ITech>;
+			img: ProjectImg;
+		}
 
-			interface IProject {
-				name: string;
-				link: string;
-				description: string;
-				techs: Array<ITech>;
-				img: projectImg;
-			}
+		interface ILink {
 
-			interface ITech {
-				name: string;
-				icon: string;
-			}
-			const techs = {
-				html: {
-					name: "HTML",
-					icon: "./src/components/icons/HtmlIcon.vue",
-				},
-				css: {
-					name: "CSS",
-					icon: "./src/components/icons/CssIcon.vue",
-				},
-				javascript: {
-					name: "JavaScript",
-					icon: "./src/components/icons/JavaScriptIcon.vue",
-				},
-				vue: {
-					name: "Vue.js",
-					icon: "./src/components/icons/VueIcon.vue",
-				},
-				python: {
-					name: "Python",
-					icon: "./src/components/icons/PythonIcon.vue",
-				},
-				django: {
-					name: "DJango",
-					icon: "./src/components/icons/DjangoIcon.vue",
-				},
-			};
+			name: string,
+			linkDescription: string,
+			link: Link,
+		}
 
-			let projects: Ref = ref<Array<IProject>>([
-				{
-					name: "Example Project 1",
-					link: "https://google.com",
-					description: "Recopila datos con Web scrapping",
-					img: "../../descarga.jpeg",
-					techs: [techs.html, techs.css, techs.javascript, techs.python],
-				},
-				{
-					name: "Example Project 2",
-					link: "https://google.com",
-					description:
-						"Administra y optimiza recursos al diseñar instalaciones electrica de una forma intuitiva",
-					img: "../../descarga.jpeg",
-					techs: [
-						techs.python,
-						techs.django,
-						techs.html,
-						techs.css,
-						techs.javascript,
-					],
-				},
-				{
-					name: "Example Project 3",
-					link: "https://google.com",
-					description: "Un foro para conseguir compañeros de trabajo ",
-					img: "../../descarga.jpeg",
-					techs: [techs.html, techs.css, techs.javascript],
-				},
-				{
-					name: "Example Project 3",
-					link: "https://google.com",
-					description:
-						"Una CLI para reproducir musica mientras trabajas por consola!",
-					img: "../../descarga.jpeg",
-					techs: [techs.python],
-				},
-			]);
+		interface IProjectLinks {
+			deployedLink: ILink
+			githubLink: ILink
+		}
 
-			return { projects, techs };
-		},
+		interface ITech {
+			name: string;
+			fileName: string;
+			src: string;
+		}
+		const techs = {
+			html: {
+				name: "HTML",
+				fileName: "HtmlIcon",
+				src: "./src/components/icons/",
+			},
+			css: {
+				name: "CSS",
+				fileName: "CssIcon",
+				src: "./src/components/icons/",
+			},
+			javascript: {
+				name: "JavaScript",
+				fileName: "javascriptIcon",
+				src: "./src/components/icons/",
+			},
+			vue: {
+				name: "Vue.js",
+				fileName: "VueIcon",
+				src: "./src/components/icons/",
+			},
+			python: {
+				name: "Python",
+				fileName: "PythonIcon",
+				src: "./src/components/icons/",
+			},
+			django: {
+				name: "DJango",
+				fileName: "DjangoIcon",
+				src: "./src/components/icons/",
+			},
+		};
 
-		components: { BarProjectFilter, CardProjectContainer },
-	});
+		let projects: Ref = ref<Array<IProject>>([
+			{
+				name: "Example Project 1",
+				links: {
+
+					deployedLink: {
+						name: "deployedLink",
+						linkDescription: "See the site",
+						link: undefined,
+
+					}, githubLink: {
+						name: "githubLink",
+						linkDescription: "See the source code",
+						link: "https://github.com/ky210299/portfolio",
+					}
+				},
+				description: "Recopila datos con Web scrapping",
+				img: "../../descarga.jpeg",
+				techs: [techs.html, techs.css, techs.javascript, techs.python],
+			},
+			{
+				name: "Example Project 2",
+				links: {
+
+					deployedLink: {
+						name: "deployedLink",
+						linkDescription: "See the site",
+						link: "https://google.com"
+
+					}, githubLink: {
+						name: "githubLink",
+						linkDescription: "See the source code",
+						link: undefined
+					}
+				},
+				description:
+					"Administra y optimiza recursos al diseñar instalaciones electrica de una forma intuitiva y rapida",
+				img: "../../descarga.jpeg",
+				techs: [
+					techs.python,
+					techs.django,
+					techs.html,
+					techs.css,
+					techs.javascript,
+				],
+			},
+			{
+				name: "Example Project 3",
+				links: {
+
+					deployedLink: {
+						name: "deployedLink",
+						linkDescription: "See the site",
+						link: "https://google.com",
+					},
+
+					githubLink: {
+						name: "githubLink",
+						linkDescription: "See the source code",
+						link: "https://github.com/ky210299/portfolio",
+					}
+				},
+				description: "Un foro para conseguir compañeros de trabajo ",
+				img: "../../descarga.jpeg",
+				techs: [techs.html, techs.css, techs.javascript],
+			},
+
+			{
+				name: "Example Project 3",
+				links: {
+
+					deployedLink: {
+						name: "deployedLink",
+						linkDescription: "See the site",
+						link: undefined
+
+					}, githubLink: {
+						name: "githubLink",
+						linkDescription: "See the source code",
+						link: "https://github.com/ky210299/portfolio"
+					}
+				},
+				description:
+					"Una CLI para reproducir musica por consola mientras trabajas !",
+				img: "../../descarga.jpeg",
+				techs: [techs.python],
+			},
+		]);
+
+		return { projects };
+	},
+
+	components: {
+		BarProjectFilter,
+		CardProjectContainer,
+
+	},
+});
 </script>
 
 ««««««««««««««««««««--Template--»»»»»»»»»»»»»»»»»»»»»
@@ -100,28 +173,48 @@
 		<h2 class="h2">Projects</h2>
 		<section class="projects-section">
 			<div class="grid">
-				<article
-					v-for="project of projects"
-					:key="project['name']"
-					@click=""
-					class="article"
-				>
+				<article v-for="project of projects" :key="project['name']"
+					@click="" class="article">
+
 					<div class="picture-container">
-						<img :src="project.img" alt="Imagen" class="img" loading="lazy" />
-						<div class="description">
-							<a href="#" class="a" title="Project Title">
+
+						<img :src="project.img" alt="Imagen" class="img"
+							loading="lazy" />
+
+						<div class="project-info">
+
+							<a href="#" class="a" title="Project Title" _bl>
 								<h3 class="h3">{{ project.name }}</h3>
 							</a>
+
 							<ul class="technologies">
-								<li v-for="tech of project.techs" :key="tech.name" class="tag">
-									<svg :href="tech.icon"></svg>
+								<li v-for="tech of project.techs"
+									:key="tech.name" class="tag">
+									<img :src="`${tech.src}${tech.fileName}.svg`"
+										:alt="tech.name" :title="tech.name" ></img>
 								</li>
 							</ul>
+
+							<p class="project-description">
+								{{ project.description }}
+							</p>
+
 						</div>
 					</div>
-					<p class="project-description">
-						{{ project.decription }}
-					</p>
+
+					<ul class="project-links">
+
+						<li v-for=" link in project.links" :key="link.name"
+							class="project-links-item">
+
+							<a class="project-links-item-text" v-show="link.link != undefined" :href="link">
+
+								{{ link.linkDescription }}
+
+							</a>
+						</li>
+					</ul>
+
 				</article>
 			</div>
 		</section>
@@ -131,149 +224,208 @@
 ««««««««««««««««««««--Style--»»»»»»»»»»»»»»»»»»»»»
 
 <style scoped>
-	.project-view {
-		margin: auto;
-		display: flex;
-		flex-flow: column wrap;
-		justify-content: space-around;
-		align-items: center;
+.project-view {
+	margin: auto;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+
+	.h2 {
 		width: 100%;
+		padding-left: 1rem;
+		margin-bottom: 1rem;
+		font-family: var(--font-family-secondary);
+		color: var();
+		font-size: 2rem;
+		text-transform: uppercase;
+		line-height: 100%;
+		border-bottom: 1px solid var(--color-palette--cuaternary);
 
-		.h2 {
-			width: 100%;
-			padding-left: 1rem;
-			margin-bottom: 1rem;
-			font-family: var(--font-family-secondary);
-			color: var();
-			font-size: 2rem;
-			text-transform: uppercase;
-			line-height: 100%;
-			border-bottom: 1px solid var(--color-palette--cuaternary);
-			&::first-letter {
-				font-size: 2em;
-				color: var(--color-palette--cuaternary);
-			}
+		&::first-letter {
+			font-size: 2em;
+			color: var(--color-palette--cuaternary);
 		}
-		.projects-section {
+	}
+
+	.projects-section {
+		width: 100%;
+		display: flex;
+		align-items: center;
+
+		.grid {
 			width: 100%;
-			display: flex;
-			align-items: center;
-			.grid {
-				width: 100%;
-				display: grid;
-				gap: 1.5rem;
+			display: grid;
+			gap: 1.5rem;
+			justify-content: center;
+			align-items: flex-start;
+
+			grid-auto-flow: row;
+			grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+
+			.article {
+				position: relative;
+				display: flex;
+				flex-flow: column nowrap;
 				justify-content: center;
-				align-items: flex-start;
+				align-items: center;
+				margin-bottom: 2rem;
 
-				grid-auto-flow: row;
-				grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+				.picture-container {
 
-				.article {
-					transition: all ease 0.3s;
 					position: relative;
+				
 					display: flex;
-					flex-flow: column nowrap;
 					justify-content: center;
 					align-items: center;
+					width: 100%;
+				
 
-					.picture-container {
-						position: relative;
+					transition: all ease 0.3s;
+
+					.img {
+						z-index: -1;
+						transition: all ease 0.5s;
+						background: none;
+						border-radius: 1rem;
+						object-fit: contain;
+					}
+
+					.project-info {
+						filter: contrast(2);
+						position: absolute;
+						top: 0px;
+						padding: 0.5rem;
 						display: flex;
-						justify-content: center;
+						flex-flow: column wrap;
+						justify-content: space-between;
 						align-items: center;
 						width: 100%;
 						height: 100%;
+						background: transparent;
+						font-size: larger;
 
-						.img {
-							transition: all ease 0.5s;
-							background: none;
-							border-radius: 1rem;
+						transition: all ease 0.3s;
 
-							object-fit: contain;
-						}
-						.description {
-							position: absolute;
-							top: 0px;
-							padding: 0.5rem;
-							display: flex;
-							flex-direction: column;
-							justify-content: space-between;
-							align-items: center;
-							width: 100%;
-							height: 100%;
-
-							background: transparent;
-							font-size: larger;
-
-							transition: all ease 0.3s;
-
-							.a {
-								.h3 {
-									text-align: center;
-									font-family: var(--font-family-secondary);
-									color: var(--color-primary);
-									font-size: 1.2em;
-									font-weight: 400;
-								}
-							}
-
-							.technologies {
-								display: flex;
-								flex-flow: row wrap;
-								justify-content: center;
-								align-items: center;
-								gap: 0.6rem;
-
+						.a {
+							.h3 {
+								text-align: center;
+								font-family: var(--font-family-secondary);
 								color: var(--color-primary);
+								font-size: 1.2em;
+								font-weight: 400;
+							}
+						}
 
-								transition: all ease-in-out 0.3s;
+						.technologies {
+							display: flex;
+							flex-flow: row wrap;
+							justify-content: center;
+							align-items: center;
+							gap: 0.6rem;
 
-								.tag {
-									border: 2px solid var(--color-palette--secondary);
-									text-align: center;
-									padding: 0.25rem;
-									font-size: 0.8rem;
-									line-height: 100%;
-									border-radius: 0.4rem;
+							z-index: -1;
+							color: var(--color-primary);
 
-									transition: all ease-in-out 0.3s;
+							
+							
+
+							.tag {
+								
+								width: 1.1rem;
+								height: 1.1rem;
+								
+								transition: all ease-in-out 0.2s;
+								filter: blur(1px) saturate(.4);
+
+								&:hover{
+									
+									
+									transform: scale(1.1);
+									filter: blur(0) saturate(1);
 								}
 							}
 						}
+
+						.project-description {
+							position: absolute;
+							font-size: .7em;
+							top: 3rem;
+							width: 100%;
+							padding-inline: 2rem;
+
+							text-wrap: pretty;
+
+							transition: all ease-in-out 0.3s;
+							opacity: 0;
+							transform: translateY(4rem);
+
+						}
 					}
-					.project-description {
-						position: absolute;
-						padding: 1rem;
-						transition: all ease-in-out 0.3s;
-						opacity: 0;
-						transform: translateY(2rem);
-					}
+
 					&:hover {
 						transform: scale(1.05);
 						cursor: pointer;
-						.picture-container {
-							.img {
-								opacity: 0.7;
 
-								filter: blur(0.2rem);
-							}
-							.description {
-								.tag {
-									filter: contrast(1);
-									&:hover {
-										transform: scale(1.1);
-										filter: brightness(2);
-									}
-								}
-							}
-						}
+
 						.project-description {
 							opacity: 1;
 							transform: translateY(0);
+							filter: contrast(2);
+						}
+
+					}
+
+					&:hover {
+
+						.img {
+							opacity: 0.8;
+
+							filter: blur(0.3rem);
 						}
 					}
 				}
+
+
+				.project-links {
+
+					display: flex;
+					flex-flow: row nowrap;
+					justify-content: center;
+					align-items: center;
+					gap: 1rem;
+					position: absolute;
+					bottom: -1.4rem;
+					width: 100%;
+					
+					
+					.project-links-item {
+						
+						&:hover {
+
+							
+							transform: scale(1.1);
+							filter: brightness(1.2);
+							
+						}
+					    
+						.project-links-item-text{
+							text-align: center;
+							margin-top: -.25rem;
+							
+						}
+					
+						border-radius: .1rem;
+						transition: all ease 200ms;
+
+
+					}
+				}
+
 			}
 		}
 	}
+}
+
 </style>

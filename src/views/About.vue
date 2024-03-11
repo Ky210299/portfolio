@@ -18,7 +18,7 @@
 					return response.json();
 				})
 				.then((userData) => {
-					imgSrc.value = userData.avatar_url;					
+					imgSrc.value = userData.avatar_url;
 				})
 				.catch((error) => {
 					console.log("Error ", error);
@@ -35,8 +35,7 @@
 		<div class="text">
 			<h2 class="h2">About me</h2>
 			<p class="p">
-				Front-end and data science developer with an electrical engineering
-				background.
+				Full stack web developer with an electrical engineering background.
 			</p>
 			<p class="p">
 				I love setting myself new challenges that solve problems or optimize
@@ -64,7 +63,6 @@
 		align-items: center;
 		gap: 2rem;
 		.text {
-			
 			flex: 1;
 			max-width: 25rem;
 			min-width: 13rem;
@@ -93,8 +91,8 @@
 			border-radius: 100%;
 			border: 1px solid var(--color-palette--tertiary);
 			.img {
-			max-width: 18rem;
-			object-fit: cover;
+				max-width: 18rem;
+				object-fit: cover;
 			}
 		}
 	}
