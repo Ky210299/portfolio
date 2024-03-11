@@ -7,6 +7,7 @@ export default defineComponent({
 		type ProjectImg = string | undefined;
 		type Link = string | undefined;
 
+		const svgSrc = "./"
 
 		interface IProject {
 			name: string;
@@ -37,32 +38,32 @@ export default defineComponent({
 			html: {
 				name: "HTML",
 				fileName: "HtmlIcon",
-				src: "./src/components/icons/",
+				src: svgSrc,
 			},
 			css: {
 				name: "CSS",
 				fileName: "CssIcon",
-				src: "./src/components/icons/",
+				src: svgSrc,
 			},
 			javascript: {
 				name: "JavaScript",
 				fileName: "javascriptIcon",
-				src: "./src/components/icons/",
+				src: svgSrc,
 			},
 			vue: {
 				name: "Vue.js",
 				fileName: "VueIcon",
-				src: "./src/components/icons/",
+				src: svgSrc,
 			},
 			python: {
 				name: "Python",
 				fileName: "PythonIcon",
-				src: "./src/components/icons/",
+				src: svgSrc,
 			},
 			django: {
 				name: "DJango",
 				fileName: "DjangoIcon",
-				src: "./src/components/icons/",
+				src: svgSrc,
 			},
 		};
 
@@ -191,7 +192,7 @@ export default defineComponent({
 								<li v-for="tech of project.techs"
 									:key="tech.name" class="tag">
 									<img :src="`${tech.src}${tech.fileName}.svg`"
-										:alt="tech.name" :title="tech.name" ></img>
+										 :title="tech.name" ></img>
 								</li>
 							</ul>
 
