@@ -61,6 +61,7 @@
 				& .svg {
 					width: 3rem;
 					transition: ease-in-out all 150ms;
+					color: var(--color-primary);
 				}
 
 				& .svg:hover {

@@ -132,7 +132,7 @@
 							-.5rem .5rem 1rem transparent;
 
 						
-						transition: all ease 340ms;
+						transition: all ease 300ms;
 						transform: scale(1);
 
 						&:hover {
@@ -141,8 +141,8 @@
 								1px 1px 0.1rem var(--color-palette--secondary),
 								1px 1px 0.1rem var(--color-palette--primary);
 
-							transform: scale(1.1);
-							filter: brightness(1.2) saturate(.5);
+							transform: scale(1.05);
+							filter: brightness(1.4) saturate(.2);
 						}
 					}
 				}

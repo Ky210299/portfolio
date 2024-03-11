@@ -69,14 +69,15 @@ sans serif para titulos y letras grandes
 */
 @media (prefers-color-scheme: light) {
 	:root {
-		--color-primary: #05013b;	
-		--color-secondary: #9c9ba6;
-		--color-palette--primary: #9baffffb;
+		--color-primary: #0a081f;	
+		--color-secondary: #ffffff;
+		--color-palette--primary: #fffffffb;
 		
 	}
 }
 
 *,
+:any-link,
 *::before,
 *::after {
 	margin: 0;
@@ -84,6 +85,7 @@ sans serif para titulos y letras grandes
 	border: 0;
 	box-sizing: border-box;
 	vertical-align: baseline;
+	text-decoration: none;
 }
 h1,
 h2,
@@ -113,6 +115,8 @@ p a {
 li {
 	list-style-type: none;
 }
+
+
 
 a:-webkit-any-link,
 h1,
@@ -197,9 +201,9 @@ body {
 	@media (prefers-color-scheme: light) {
 		background: linear-gradient(
 			109.6deg,
-			rgb(165, 207, 255) 11.2%,
+			rgb(239, 239, 239) 11.2%,
 			var(--color-palette--primary) 47.2%,
-			rgb(158, 219, 255) 100%
+			rgb(245, 245, 245) 100%
 		);
 	}
 	font-family: var(--font-family-primary);

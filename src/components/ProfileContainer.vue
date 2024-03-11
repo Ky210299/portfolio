@@ -36,7 +36,8 @@
 			flex-flow: column wrap;
 			justify-content: space-around;
 			align-items: center;
-			padding-block: 5rem;
+			margin-bottom: 4rem;
+			padding-top: 7rem;
 			.h1 {
 				flex: 1;
 				font-size: 1rem;
@@ -65,7 +66,7 @@
 				}
 
 				.profile-hi {
-					padding-left: 1.4rem;
+					padding-left: 1rem;
 					line-height: 100%;
 					font-size: 1.7em;
 					font-weight: 300;
@@ -107,7 +108,7 @@
 				}
 				.profile-name {
 					line-height: 100%;
-					padding-left: 2.6rem;
+					padding-left: 1.3rem;
 					font-size: 1.3em;
 					line-height: 2em;
 					font-weight: normal;
@@ -129,11 +130,11 @@
 				.profile-profession {
 
 					line-height: 100%;
-					font-size: 1.4em;
-					padding-left: 3.5rem;
+					font-size: 1.3em;
+					padding-left: 1.6rem;
 					font-weight: bold;
-					text-wrap: nowrap;
-
+					
+					
 					&::before,
 					&::after {
 						font-size: 1em;

@@ -179,20 +179,21 @@ export default defineComponent({
 
 					<div class="picture-container">
 
-						<img :src="project.img" alt="Imagen" class="img"
+						<img :src="project.img" alt="Project imagen" class="img"
 							loading="lazy" />
 
 						<div class="project-info">
 
 							<a href="#" class="a" title="Project Title" _bl>
-								<h3 class="h3">{{ project.name }}</h3>
+								<h1 class="h1">{{ project.name }}</h1>
 							</a>
 
-							<ul class="technologies" >
+							<ul class="technologies">
 								<li v-for="tech of project.techs"
 									:key="tech.name" class="tag">
 									<img :src="`${tech.src}${tech.fileName}.svg`"
-										alt="tech.name" :title="tech.name" ></img>
+										alt="tech.name"
+										:title="tech.name"></img>
 								</li>
 							</ul>
 
@@ -208,7 +209,8 @@ export default defineComponent({
 						<li v-for=" link in project.links" :key="link.name"
 							class="project-links-item">
 
-							<a class="project-links-item-text" v-if="link.link != undefined" :href="link">
+							<a class="project-links-item-text"
+								v-if="link.link != undefined" :href="link">
 
 								{{ link.linkDescription }}
 
@@ -226,6 +228,7 @@ export default defineComponent({
 
 <style scoped>
 .project-view {
+
 	margin: auto;
 	display: flex;
 	flex-flow: column wrap;
@@ -272,31 +275,27 @@ export default defineComponent({
 				justify-content: center;
 				align-items: center;
 				margin-bottom: 2rem;
-				
-				
 
 				.picture-container {
 
 					position: relative;
-				
+
 					display: flex;
 					justify-content: center;
 					align-items: center;
 					width: 100%;
-				
 
 					transition: all ease 0.3s;
 
 					.img {
-						z-index: -1;
+
 						transition: all ease 0.5s;
-						background: none;
+
 						border-radius: 1rem;
 						object-fit: contain;
 					}
 
 					.project-info {
-						filter: contrast(2);
 						position: absolute;
 						top: 0px;
 						padding: 0.5rem;
@@ -306,18 +305,38 @@ export default defineComponent({
 						align-items: center;
 						width: 100%;
 						height: 100%;
-						background: transparent;
+
 						font-size: larger;
 
 						transition: all ease 0.3s;
 
 						.a {
-							.h3 {
+
+							position: relative;
+
+							&::before {
+								content: '';
+								position: absolute;
+								left: -1rem;
+								right: -1rem;
+								height: 100%;
+
+								border-radius: .5rem;
+								background-color: var(--color-secondary);
+
+								opacity: .6;
+								box-shadow: inset 0 0 2rem var(--color-secondary);
+								transition: all ease-out .2s;
+								filter: blur(2rem) contrast(10);
+							}
+
+							.h1 {
 								text-align: center;
 								font-family: var(--font-family-secondary);
 								color: var(--color-primary);
 								font-size: 1.2em;
-								font-weight: 400;
+								font-weight: 500;
+								filter: opacity(1) contrast(1.6);
 							}
 						}
 
@@ -328,23 +347,18 @@ export default defineComponent({
 							align-items: center;
 							gap: 0.6rem;
 
-							z-index: -1;
 							color: var(--color-primary);
 
-							
-							
-
 							.tag {
-								
+
 								width: 1.1rem;
 								height: 1.1rem;
-								
+
 								transition: all ease-in-out 0.2s;
 								filter: saturate(.4);
 
-								&:hover{
-									
-									
+								&:hover {
+
 									transform: scale(1.1);
 									filter: saturate(1);
 								}
@@ -353,7 +367,7 @@ export default defineComponent({
 
 						.project-description {
 							position: absolute;
-							font-size: .7em;
+							font-size: 1rem;
 							top: 3rem;
 							width: 100%;
 							padding-inline: 2rem;
@@ -363,7 +377,6 @@ export default defineComponent({
 							transition: all ease-in-out 0.3s;
 							opacity: 0;
 							transform: translateY(4rem);
-
 						}
 					}
 
@@ -371,68 +384,68 @@ export default defineComponent({
 						transform: scale(1.05);
 						cursor: pointer;
 
-
 						.project-description {
 							opacity: 1;
 							transform: translateY(0);
-							filter: contrast(2);
-						}
+							filter: contrast(1.5);
 
+						}
 					}
 
 					&:hover {
 
+						.project-info {
+							.a {
+								&::before {
+
+									filter: blur(1rem) contrast(0);
+								}
+							}
+						}
+
 						.img {
-							opacity: 0.8;
+							opacity: 0.5;
 
 							filter: blur(0.3rem);
 						}
 					}
 				}
 
-
 				.project-links {
 
+					color: var(--color-primary);
 					display: flex;
 					flex-flow: row nowrap;
 					padding-inline: 2rem;
-					justify-content: space-between;
+					justify-content: center;
 					align-items: center;
 					gap: 1rem;
 					position: absolute;
 					bottom: -1.5rem;
 					width: 100%;
-					
-					
+
 					.project-links-item {
-						overflow-x: visible;
-						flex: 1;
-					
+
+						text-align: center;
+						width: 50%;
+
 						&:hover {
 
-							
 							transform: scale(1.05);
 							filter: brightness(1.2);
-							
+
 						}
-					    
-						.project-links-item-text{
-							text-align: center;
+
+						.project-links-item-text {
+							width: 7rem;
 							text-wrap: nowrap;
-							
-							
+							color: var(--color-primary);
+
 						}
-					
-						border-radius: .1rem;
-						transition: all ease 200ms;
-
-
 					}
 				}
-
 			}
 		}
 	}
 }
-
 </style>
