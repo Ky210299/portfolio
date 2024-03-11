@@ -132,7 +132,7 @@
 							-.5rem .5rem 1rem transparent;
 
 						
-						transition: all ease 290ms;
+						transition: all ease 340ms;
 						transform: scale(1);
 
 						&:hover {

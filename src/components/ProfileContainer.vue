@@ -22,24 +22,26 @@
 <style scoped>
 	.profile-section {
 		flex-flow: column nowrap;
-		justify-content: space-around;
+		justify-content: space-evenly;
 		align-items: center;
 		text-align: start;
 		text-wrap: balance;
 		color: var(--color-primary);
-		padding-bottom: 3rem;
+		
 
 		.profile-section-text {
 			
-			flex: 1;
+		
 			display: flex;
 			flex-flow: column wrap;
 			justify-content: space-around;
 			align-items: center;
+			padding-block: 5rem;
 			.h1 {
+				flex: 1;
 				font-size: 1rem;
 				
-				line-height: 100%;
+				line-height: 1em;
 				position: relative;
 
 				&::before,
@@ -107,7 +109,7 @@
 					line-height: 100%;
 					padding-left: 2.6rem;
 					font-size: 1.3em;
-					line-height: 100%;
+					line-height: 2em;
 					font-weight: normal;
 
 					&::before,

@@ -207,7 +207,7 @@ export default defineComponent({
 						<li v-for=" link in project.links" :key="link.name"
 							class="project-links-item">
 
-							<a class="project-links-item-text" v-show="link.link != undefined" :href="link">
+							<a class="project-links-item-text" v-if="link.link != undefined" :href="link">
 
 								{{ link.linkDescription }}
 
@@ -235,7 +235,7 @@ export default defineComponent({
 	.h2 {
 		width: 100%;
 		padding-left: 1rem;
-		margin-bottom: 1rem;
+		margin-bottom: 2rem;
 		font-family: var(--font-family-secondary);
 		color: var();
 		font-size: 2rem;
@@ -262,7 +262,7 @@ export default defineComponent({
 			align-items: flex-start;
 
 			grid-auto-flow: row;
-			grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+			grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
 
 			.article {
 				position: relative;
@@ -271,6 +271,8 @@ export default defineComponent({
 				justify-content: center;
 				align-items: center;
 				margin-bottom: 2rem;
+				
+				
 
 				.picture-container {
 
@@ -392,27 +394,31 @@ export default defineComponent({
 
 					display: flex;
 					flex-flow: row nowrap;
-					justify-content: center;
+					padding-inline: 2rem;
+					justify-content: space-between;
 					align-items: center;
 					gap: 1rem;
 					position: absolute;
-					bottom: -1.4rem;
+					bottom: -1.5rem;
 					width: 100%;
 					
 					
 					.project-links-item {
-						
+						overflow-x: visible;
+						flex: 1;
+					
 						&:hover {
 
 							
-							transform: scale(1.1);
+							transform: scale(1.05);
 							filter: brightness(1.2);
 							
 						}
 					    
 						.project-links-item-text{
 							text-align: center;
-							margin-top: -.25rem;
+							text-wrap: nowrap;
+							
 							
 						}
 					
