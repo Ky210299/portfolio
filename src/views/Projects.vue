@@ -275,7 +275,8 @@ export default defineComponent({
 				justify-content: center;
 				align-items: center;
 				margin-bottom: 2rem;
-
+				width: 100%;
+				height: 100%;
 				.picture-container {
 
 					position: relative;
@@ -284,6 +285,7 @@ export default defineComponent({
 					justify-content: center;
 					align-items: center;
 					width: 100%;
+					height: 100%;
 
 					transition: all ease 0.3s;
 
@@ -291,7 +293,9 @@ export default defineComponent({
 
 						transition: all ease 0.5s;
 						border-radius: 1rem;
-						object-fit: contain;
+						object-fit: cover;
+						height: 100%;
+						width: 100%;
 					}
 
 					.project-info {
