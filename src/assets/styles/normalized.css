@@ -191,13 +191,14 @@ html {
 body {
 	min-height: 100dvh;
 	
+	font-family: var(--font-family-primary);
 	color: var(--color-primary);
 	background: linear-gradient(
 		130.6deg,
 		rgb(0, 52, 58) 20%,
 		var(--color-palette--primary) 80%,
 		rgb(0, 25, 65) 99%
-	);
+		);
 	@media (prefers-color-scheme: light) {
 		background: linear-gradient(
 			109.6deg,
@@ -206,5 +207,4 @@ body {
 			rgb(177, 194, 214) 100%
 			);
 	}
-	font-family: var(--font-family-primary);
 }

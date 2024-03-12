@@ -1,6 +1,5 @@
 <script lang="ts">
 import { defineComponent, Ref, ref } from "vue";
-import BarProjectFilter from "../components/BarProjectFilter.vue";
 import CardProjectContainer from "../components/CardProjectContainer.vue";
 export default defineComponent({
 	setup() {
@@ -160,9 +159,7 @@ export default defineComponent({
 	},
 
 	components: {
-		BarProjectFilter,
 		CardProjectContainer,
-
 	},
 });
 </script>
@@ -429,8 +426,9 @@ export default defineComponent({
 
 						}
 						&.disabled {
-								filter: contrast(.2);
-
+								opacity: .2;
+								filter: contrast(1);
+								pointer-events: none;
 								&:hover{
 									transform: none 
 								}

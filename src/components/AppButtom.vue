@@ -1,12 +1,14 @@
 <script lang="ts">
-	import { defineComponent } from "vue";
-	export default defineComponent({});
+import { defineComponent } from "vue";
+export default defineComponent({});
 </script>
 
 ««««««««««««««««««««--Template--»»»»»»»»»»»»»»»»»»»»»
 
 <template>
-	<button class="button">test button</button>
+	<button class="button">
+		<slot></slot>
+	</button>
 </template>
 
 ««««««««««««««««««««--Style--»»»»»»»»»»»»»»»»»»»»»
