@@ -12,7 +12,7 @@
 				<span class="profile-iam">I'm</span>
 				<br />
 				<p class="profile-name">Leonardo Bazán Márquez</p>
-				<strong class="profile-profession"> FullStack Web Developer </strong
+				<strong class="profile-profession"> Frontend Web Developer </strong
 				><br />
 			</h1>
 		</div>

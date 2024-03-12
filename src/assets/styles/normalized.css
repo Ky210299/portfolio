@@ -1,7 +1,7 @@
 :root {
-	--color-primary: #b2aceb;
-	--color-secondary: #080072;
-	--color-palette--primary: #00039bfb;
+	--color-primary: #c5c4d6;
+	--color-secondary: #07032c;
+	--color-palette--primary: #000135fb;
 	--color-palette--secondary: #999e58;
 	--color-palette--tertiary: #ff6600;
 	--color-palette--cuaternary: rgb(140, 81, 196);
@@ -194,9 +194,9 @@ body {
 	color: var(--color-primary);
 	background: linear-gradient(
 		109.6deg,
-		rgb(24, 51, 138) 14.2%,
+		rgb(0, 17, 28) 14.2%,
 		var(--color-palette--primary) 40.2%,
-		rgb(13, 47, 125) 90%
+		rgb(0, 21, 33) 90%
 	);
 	@media (prefers-color-scheme: light) {
 		background: linear-gradient(

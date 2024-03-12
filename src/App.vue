@@ -5,6 +5,7 @@
 		<main class="main" id="projects">
 			<Projects  />
 		</main>
+		<Contact/>
 		<About />
 	</div>
 </template>
@@ -14,6 +15,7 @@
 	import HeaderContainer from "./components/HeaderContainer.vue";
 	import Home from "./views/Home.vue";
 	import Projects from "./views/Projects.vue";
+	import Contact from "./views/Contact.vue";
 	import About from "./views/About.vue";
 
 	const position = ref(0);

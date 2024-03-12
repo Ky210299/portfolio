@@ -35,7 +35,7 @@ export default defineComponent({
 		<div class="text">
 			<h2 class="h2">About me</h2>
 			<p class="p">
-				Full stack web developer with an electrical engineering
+				Frontend web developer with an electrical engineering
 				background.
 			</p>
 			<p class="p">

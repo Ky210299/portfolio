@@ -56,9 +56,9 @@
 			@click="isDeployed = !isDeployed"
 			id="nav-menu"
 			class="header-menu"
-		/>
-	</header>
-</template>
+			/>
+		</header>
+	</template>
 
 ««««««««««««««««««««--Style--»»»»»»»»»»»»»»»»»»»»»
 
@@ -69,13 +69,12 @@
 		transition: all ease 500ms;
 		z-index: 1;
 		position: fixed;
-		background: #18181840;
-		backdrop-filter: blur(0.5rem);
-		filter: contrast(1.3);
-		@media (prefers-color-scheme: light) {
-			mix-blend-mode: darken;
-		}
-
+		background: transparent;
+		backdrop-filter: blur(10px);
+		 
+		
+		
+		
 		width: 100%;
 		min-height: 2rem;
 		max-height: 3rem;
@@ -89,25 +88,21 @@
 		.logo {
 			justify-self: flex-start;
 			width: 0%;
+			z-index: -12;
 
 			.a {
-				transition: ease-in-out all 700ms;
+				transition: ease-in-out all 200ms;
 				font-family: var(--font-family-logo);
 				font-size: 2rem;
-
 				font-style: oblique;
 				color: var(--color-primary);
 			}
-			:hover {
-				text-shadow: 0 0 1rem var(--color-secondary);
-				filter: contrast(1.3);
-				transform: translateY(-1px);
-			}
+			
 		}
 		.nav {
 			justify-self: flex-end;
-
 			transition: ease-in all 200ms;
+			background: transparent;
 			.ul {
 				display: flex;
 				flex-flow: row wrap;
@@ -126,23 +121,23 @@
 						font-family: var(--font-family-secondary);
 
 						font-weight: 500;
-						text-shadow: .5rem .5rem 1rem transparent,
-							.5rem -.5rem 1rem transparent,
-							-.5rem -.5rem 1rem transparent,
-							-.5rem .5rem 1rem transparent;
+						text-shadow: .5rem .5rem 0rem transparent,
+							.5rem -.5rem 0rem transparent,
+							-.5rem -.5rem 0rem transparent,
+							-.5rem .5rem 0rem transparent;
 
 						
 						transition: all ease 300ms;
 						transform: scale(1);
 
 						&:hover {
-							text-shadow: -1px -1px 0.1rem var(--color-palette--cuaternary),
-								-1px 1px 0.1rem var(--color-palette--tertiary),
-								1px 1px 0.1rem var(--color-palette--secondary),
-								1px 1px 0.1rem var(--color-palette--primary);
+							text-shadow: -1px -1px 0.2rem var(--color-palette--cuaternary),
+								-1px 1px 0.2rem var(--color-palette--tertiary),
+								1px -1px 0.2rem var(--color-palette--secondary),
+								1px 1px 0.2rem var(--color-palette--primary);
 
 							transform: scale(1.05);
-							filter: brightness(1.4) saturate(.2);
+							filter: brightness(1.1) saturate(.2);
 						}
 					}
 				}

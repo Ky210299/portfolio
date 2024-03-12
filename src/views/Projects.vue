@@ -151,7 +151,7 @@ export default defineComponent({
 				},
 				description:
 					"Una CLI para reproducir musica por consola mientras trabajas !",
-				img: "../../descarga.jpeg",
+				img: "/Sin título.jpg",
 				techs: [techs.python],
 			},
 		]);
@@ -290,7 +290,6 @@ export default defineComponent({
 					.img {
 
 						transition: all ease 0.5s;
-
 						border-radius: 1rem;
 						object-fit: contain;
 					}
@@ -305,38 +304,28 @@ export default defineComponent({
 						align-items: center;
 						width: 100%;
 						height: 100%;
-
+						background: transparent;
 						font-size: larger;
-
+						
 						transition: all ease 0.3s;
 
 						.a {
-
-							position: relative;
-
-							&::before {
-								content: '';
-								position: absolute;
-								left: -1rem;
-								right: -1rem;
-								height: 100%;
-
-								border-radius: .5rem;
-								background-color: var(--color-secondary);
-
-								opacity: .6;
-								box-shadow: inset 0 0 2rem var(--color-secondary);
-								transition: all ease-out .2s;
-								filter: blur(2rem) contrast(10);
-							}
-
+						
+							background-color: transparent;
+							backdrop-filter: blur(10px);
+							border-radius: .5rem;
+							padding-inline: 1rem;
+							padding-block: .1rem;
+							box-shadow: 0 0 2rem rgba(237, 237, 237, 0.1), inset 0 0 3rem rgba(0, 0, 0, 0.3), inset 0 0 4rem rgba(0, 0, 0, 0.6);
+							filter: contrast(.7);
 							.h1 {
 								text-align: center;
 								font-family: var(--font-family-secondary);
-								color: var(--color-primary);
-								font-size: 1.2em;
+								color: rgb(234, 234, 234);
+								font-size: 1em;
 								font-weight: 500;
-								filter: opacity(1) contrast(1.6);
+								
+								
 							}
 						}
 
@@ -345,9 +334,16 @@ export default defineComponent({
 							flex-flow: row wrap;
 							justify-content: center;
 							align-items: center;
+							padding-inline: 1rem;
+							padding-block: .3rem;
 							gap: 0.6rem;
 
+							background: transparent;
 							color: var(--color-primary);
+							border-radius: .5rem;
+						
+							backdrop-filter: blur(6px);
+							
 
 							.tag {
 
@@ -395,6 +391,8 @@ export default defineComponent({
 					&:hover {
 
 						.project-info {
+
+						
 							.a {
 								&::before {
 
@@ -428,6 +426,7 @@ export default defineComponent({
 
 						text-align: center;
 						width: 50%;
+						transition: all ease .3s;
 
 						&:hover {
 
