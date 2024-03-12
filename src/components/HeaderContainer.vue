@@ -120,24 +120,15 @@ export default defineComponent({
 					font-family: var(--font-family-secondary);
 
 					font-weight: 500;
-					text-shadow: .5rem .5rem 1rem transparent,
-						.5rem -.5rem 1rem transparent,
-						-.5rem -.5rem 1rem transparent,
-						-.5rem .5rem 1rem transparent;
+					
 
 
 					transition: all ease 300ms;
 					transform: scale(1);
 
 					&:hover {
-						text-shadow: 0 0 0 var(--color-primary),
-							0 0 0 var(--color-primary),
-							0 0 0 var(--color-primary),
-							0 0 0 var(--color-primary);
-
-
-						transform: scale(1.05);
-						filter: brightness(1.1) saturate(.2);
+					
+						transform: scale(1.05);						
 					}
 				}
 			}
