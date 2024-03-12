@@ -71,7 +71,7 @@ sans serif para titulos y letras grandes
 	:root {
 		--color-primary: #0a081f;	
 		--color-secondary: #ffffff;
-		--color-palette--primary: #fffffffb;
+		--color-palette--primary: #dfdfdffb;
 		
 	}
 }
@@ -201,10 +201,10 @@ body {
 	@media (prefers-color-scheme: light) {
 		background: linear-gradient(
 			109.6deg,
-			rgb(239, 239, 239) 11.2%,
+			rgb(255, 255, 255) 11.2%,
 			var(--color-palette--primary) 47.2%,
-			rgb(245, 245, 245) 100%
-		);
+			rgb(255, 255, 255) 100%
+			);
 	}
 	font-family: var(--font-family-primary);
 }

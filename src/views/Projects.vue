@@ -261,7 +261,8 @@ export default defineComponent({
 		.grid {
 			width: 100%;
 			display: grid;
-			gap: 3rem;
+			gap: 2rem;
+
 			justify-content: center;
 			align-items: flex-start;
 
@@ -269,19 +270,18 @@ export default defineComponent({
 			grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
 
 			.article {
-				position: relative;
 				display: flex;
 				flex-flow: column nowrap;
 				justify-content: center;
 				align-items: center;
-				margin-bottom: 2rem;
 				width: 100%;
 				height: 100%;
+				position: relative;
 
 				.picture-container {
 
 					position: relative;
-
+					margin-bottom: .7rem;
 					display: flex;
 					justify-content: center;
 					align-items: center;
@@ -293,7 +293,7 @@ export default defineComponent({
 					.img {
 
 						transition: all ease 0.5s;
-						border-radius: 1rem;
+						border-radius: .5rem;
 						object-fit: cover;
 						height: 100%;
 						width: 100%;
@@ -311,11 +311,11 @@ export default defineComponent({
 						height: 100%;
 						background: transparent;
 						font-size: larger;
-						
+
 						transition: all ease 0.3s;
 
 						.a {
-						
+
 							background-color: transparent;
 							backdrop-filter: blur(10px);
 							border-radius: .5rem;
@@ -323,14 +323,15 @@ export default defineComponent({
 							padding-block: .1rem;
 							box-shadow: 0 0 2rem rgba(237, 237, 237, 0.1), inset 0 0 3rem rgba(0, 0, 0, 0.3), inset 0 0 4rem rgba(0, 0, 0, 0.6);
 							filter: contrast(.7);
+
 							.h1 {
 								text-align: center;
 								font-family: var(--font-family-secondary);
 								color: rgb(234, 234, 234);
 								font-size: 1em;
 								font-weight: 500;
-								
-								
+
+
 							}
 						}
 
@@ -346,9 +347,9 @@ export default defineComponent({
 							background: transparent;
 							color: var(--color-primary);
 							border-radius: .5rem;
-						
-							backdrop-filter: blur(6px);
-							
+
+							backdrop-filter: blur(10px);
+
 
 							.tag {
 
@@ -386,6 +387,7 @@ export default defineComponent({
 						cursor: pointer;
 
 						.project-description {
+
 							opacity: 1;
 							transform: translateY(0);
 							filter: contrast(1.5);
@@ -397,7 +399,7 @@ export default defineComponent({
 
 						.project-info {
 
-						
+
 							.a {
 								&::before {
 
@@ -409,31 +411,25 @@ export default defineComponent({
 						.img {
 							opacity: 0.5;
 
-							filter: blur(0.3rem);
+							filter: blur(5px);
 						}
 					}
 				}
 
 				.project-links {
 
-					color: var(--color-primary);
 					display: flex;
 					flex-flow: row nowrap;
-					padding-inline: 2rem;
-					justify-content: center;
-					align-items: center;
-					gap: 1rem;
-					position: absolute;
-					bottom: -1.5rem;
-				
+					justify-content: space-around;
+					align-items: center;	
 					width: 100%;
-					
 
 					.project-links-item {
 
 						text-align: center;
-						width: 50%;
 						transition: all ease .3s;
+
+
 
 						&:hover {
 
@@ -443,9 +439,13 @@ export default defineComponent({
 						}
 
 						.project-links-item-text {
-							width: 7rem;
+
 							text-wrap: nowrap;
-							color: var(--color-primary);
+							border-radius: .5rem;
+							padding-inline: 1rem;
+							padding-block: .2rem;
+							color: var(--color-secondary);
+							background-color: var(--color-primary);
 
 						}
 					}

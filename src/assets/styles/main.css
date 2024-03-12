@@ -15,7 +15,7 @@
 .profile-section {
 	width: 90vw;
 	display: flex;
-	min-height: 100svh;
+	min-height: 100dvh;
 	margin: auto;
 
 	
@@ -36,6 +36,10 @@
 	margin: auto;
 	min-height: 100dvh;
 	padding: 2rem;
+}
+.contact-section{
+	width: 90vw;
+	height: 100dvh;
 }
 .footer {
 	height: 5dvh;
