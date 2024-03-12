@@ -207,13 +207,12 @@ export default defineComponent({
 					<ul class="project-links">
 
 						<li v-for=" link in project.links" :key="link.name"
-							class="project-links-item">
+							class="project-links-item"
+							:class="{ 'disabled': link.link == undefined }">
 
-							<a class="project-links-item-text"
-								v-if="link.link != undefined" :href="link">
+							<a class="project-links-item-text" :href="link">
 
 								{{ link.linkDescription }}
-
 							</a>
 						</li>
 					</ul>
@@ -291,11 +290,11 @@ export default defineComponent({
 					transition: all ease 0.3s;
 
 					.img {
-						
+
 						transition: all ease 0.5s;
 						border-radius: .5rem;
 						object-fit: fill;
-						aspect-ratio: 3	/2;
+						aspect-ratio: 3 /2;
 					}
 
 					.project-info {
@@ -410,15 +409,15 @@ export default defineComponent({
 					gap: 5%;
 					width: 100%;
 					
-						
+
 					.project-links-item {
-						justify-self: center;
+						justify-self: flex-start;
 						text-align: center;
 						transition: all ease .3s;
-				
+
 
 						.project-links-item-text {
-							
+
 							text-wrap: nowrap;
 							border-radius: .5rem;
 							padding-inline: .5rem;
@@ -427,19 +426,28 @@ export default defineComponent({
 							background-color: var(--color-palette--primary);
 							filter: contrast(.5) saturate(1);
 							width: max-content;
+
 						}
+						&.disabled {
+								filter: contrast(.2);
+
+								&:hover{
+									transform: none 
+								}
+								
+							}
 
 						&:hover {
 
-							transform: scale(1.05);
-							filter: contrast(2) ;
-
+							transform: scale(1.05) ;
+							
 						}
-
+						
 					}
 				}
 			}
 		}
 	}
 }
+
 </style>
