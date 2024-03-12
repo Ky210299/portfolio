@@ -74,12 +74,12 @@ export default defineComponent({
 			font-size: 2rem;
 			font-weight: bold;
 			margin-bottom: 1rem;
-			border-bottom: 1px solid var(--color-palette--secondary);
+			border-bottom: 1px solid var(--color-palette--cuaternary);
 			padding-left: 1rem;
 
 			&::first-letter {
 				font-size: 2em;
-				color: var(--color-palette--tertiary);
+				color: var(--color-palette--cuaternary);
 			}
 		}
 

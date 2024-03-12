@@ -316,18 +316,17 @@ export default defineComponent({
 
 						.a {
 
-							background-color: transparent;
-							backdrop-filter: blur(10px);
+							background-color: var(--color-secondary);
+							opacity: .75;
 							border-radius: .5rem;
 							padding-inline: 1rem;
 							padding-block: .1rem;
-							box-shadow: 0 0 2rem rgba(237, 237, 237, 0.1), inset 0 0 3rem rgba(0, 0, 0, 0.3), inset 0 0 4rem rgba(0, 0, 0, 0.6);
-							filter: contrast(.7);
+							filter: contrast(.55);
 
 							.h1 {
 								text-align: center;
 								font-family: var(--font-family-secondary);
-								color: rgb(234, 234, 234);
+								color: var(--color-primary);
 								font-size: 1em;
 								font-weight: 500;
 
@@ -397,20 +396,8 @@ export default defineComponent({
 
 					&:hover {
 
-						.project-info {
-
-
-							.a {
-								&::before {
-
-									filter: blur(1rem) contrast(0);
-								}
-							}
-						}
-
 						.img {
 							opacity: 0.5;
-
 							filter: blur(5px);
 						}
 					}
@@ -418,36 +405,38 @@ export default defineComponent({
 
 				.project-links {
 
-					display: flex;
-					flex-flow: row nowrap;
-					justify-content: space-around;
-					align-items: center;	
+					display: grid;
+					grid-template-columns: 45% 45%;
+					grid-auto-flow: column;
+					gap: 5%;
 					width: 100%;
-
+					
+						
 					.project-links-item {
-
+						justify-self: center;
 						text-align: center;
 						transition: all ease .3s;
+				
 
-
+						.project-links-item-text {
+							
+							text-wrap: nowrap;
+							border-radius: .5rem;
+							padding-inline: .5rem;
+							padding-block: .5rem;
+							color: var(--color-primary);
+							background-color: var(--color-palette--primary);
+							filter: contrast(.5) saturate(1);
+							width: max-content;
+						}
 
 						&:hover {
 
 							transform: scale(1.05);
-							filter: brightness(1.2);
+							filter: contrast(2) ;
 
 						}
 
-						.project-links-item-text {
-
-							text-wrap: nowrap;
-							border-radius: .5rem;
-							padding-inline: 1rem;
-							padding-block: .2rem;
-							color: var(--color-secondary);
-							background-color: var(--color-primary);
-
-						}
 					}
 				}
 			}
