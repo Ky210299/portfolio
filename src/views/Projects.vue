@@ -261,7 +261,7 @@ export default defineComponent({
 		.grid {
 			width: 100%;
 			display: grid;
-			gap: 1.5rem;
+			gap: 3rem;
 			justify-content: center;
 			align-items: flex-start;
 
@@ -277,6 +277,7 @@ export default defineComponent({
 				margin-bottom: 2rem;
 				width: 100%;
 				height: 100%;
+
 				.picture-container {
 
 					position: relative;
@@ -424,7 +425,9 @@ export default defineComponent({
 					gap: 1rem;
 					position: absolute;
 					bottom: -1.5rem;
+				
 					width: 100%;
+					
 
 					.project-links-item {
 
