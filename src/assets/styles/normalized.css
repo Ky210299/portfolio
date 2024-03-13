@@ -1,7 +1,7 @@
 :root {
 	--color-primary: #c5c4d6;
 	--color-secondary: #07032c;
-	--color-palette--primary: #000135fb;
+	--color-palette--primary: #002657fb;
 	--color-palette--secondary: #999e58;
 	--color-palette--tertiary: #ff6600;
 	--color-palette--cuaternary: rgb(140, 81, 196);
@@ -67,14 +67,6 @@ family=Neuton
 serif para textos de lectura
 sans serif para titulos y letras grandes
 */
-@media (prefers-color-scheme: light) {
-	:root {
-		--color-primary: #0f0a43;	
-		--color-secondary: #ffffff;
-		--color-palette--primary: #b2c7dcfb;
-		
-	}
-}
 
 *,
 :any-link,
@@ -196,15 +188,7 @@ body {
 	background: linear-gradient(
 		130.6deg,
 		rgb(0, 52, 58) 20%,
-		var(--color-palette--primary) 80%,
-		rgb(0, 25, 65) 99%
+		var(--color-palette--primary) 50%,
+		rgb(0, 51, 65) 70%
 		);
-	@media (prefers-color-scheme: light) {
-		background: linear-gradient(
-			109.6deg,
-			rgb(218, 218, 218) 5%,
-			var(--color-palette--primary) 90.2%,
-			rgb(177, 194, 214) 100%
-			);
-	}
 }
