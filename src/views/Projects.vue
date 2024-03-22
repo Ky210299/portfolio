@@ -154,7 +154,6 @@ export default defineComponent({
 				techs: [techs.python],
 			},
 		]);
-
 		return { projects };
 	},
 
@@ -171,13 +170,11 @@ export default defineComponent({
 		<h2 class="h2">Projects</h2>
 		<section class="projects-section">
 			<div class="grid">
-				<article v-for="project of projects" :key="project['name']"
-					@click="" class="article">
+				<article v-for="project of projects" :key="project['name']" @click="" class="article">
 
 					<div class="picture-container">
 
-						<img :src="project.img" alt="Project imagen" class="img"
-							loading="lazy" />
+						<img :src="project.img" alt="Project imagen" class="img" loading="lazy" />
 
 						<div class="project-info">
 
@@ -186,11 +183,8 @@ export default defineComponent({
 							</a>
 
 							<ul class="technologies">
-								<li v-for="tech of project.techs"
-									:key="tech.name" class="tag">
-									<img :src="`${tech.src}${tech.fileName}.svg`"
-										alt="tech.name"
-										:title="tech.name"></img>
+								<li v-for="tech of project.techs" :key="tech.name" class="tag">
+									<img :src="`${tech.src}${tech.fileName}.svg`" alt="tech.name" :title="tech.name"></img>
 								</li>
 							</ul>
 
@@ -203,8 +197,7 @@ export default defineComponent({
 
 					<ul class="project-links">
 
-						<li v-for=" link in project.links" :key="link.name"
-							class="project-links-item"
+						<li v-for=" link in project.links" :key="link.name" class="project-links-item"
 							:class="{ 'disabled': link.link == undefined }">
 
 							<a class="project-links-item-text" :href="link">
@@ -405,7 +398,7 @@ export default defineComponent({
 					grid-auto-flow: column;
 					gap: 5%;
 					width: 100%;
-					
+
 
 					.project-links-item {
 						justify-self: flex-start;
@@ -425,27 +418,28 @@ export default defineComponent({
 							width: max-content;
 
 						}
+
 						&.disabled {
-								opacity: .2;
-								filter: contrast(1);
-								pointer-events: none;
-								&:hover{
-									transform: none 
-								}
-								
+							opacity: .2;
+							filter: contrast(1);
+							pointer-events: none;
+
+							&:hover {
+								transform: none
 							}
+
+						}
 
 						&:hover {
 
-							transform: scale(1.05) ;
-							
+							transform: scale(1.05);
+
 						}
-						
+
 					}
 				}
 			}
 		}
 	}
 }
-
 </style>
