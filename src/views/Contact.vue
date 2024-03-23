@@ -11,13 +11,16 @@ export default defineComponent({
 <template>
 
     <form class="Contact" id="contactForm" action="" autocomplete="on" method="post">
-        <label class="label" for="formName">What's your name?</label>
-        <input class="input" type="text" id="formName">
-        <label class="label" for="formEmail">What's your email?</label>
-        <input class="input" type="email" id="formEmail">
-        <label class="label" for="formMessage"></label>
-        <textarea class="input" form="contactForm" id="formMessage" autocomplete="on" cols="30" rows="10"
-            maxlength="2000" required placeholder="Text your message here. Thanks for contact me!"></textarea>
+        <div class="name-container">
+            <label class="label" for="formName">What's your name?</label>
+            <input class="input" type="text" placeholder="Text your name here" id="formName">
+        </div>
+        <div class="email-container">
+            <label class="label" for="formEmail">What's your email?</label>
+            <input class="input" type="email" placeholder="Text your email here" id="formEmail">
+        </div>
+        <textarea class="input" form="contactForm" id="formMessage" autocomplete="on" maxlength="2000" required
+            placeholder="Text your message here. Thanks for contact me!"></textarea>
         <div class="submit-container">
             <button class="submit" type="submit">Submit</button>
             <output class="output" form="contactForm" for="formName formEmail formMessage">your message was
@@ -29,37 +32,62 @@ export default defineComponent({
 ««««««««««««««««««««--Style--»»»»»»»»»»»»»»»»»»»»»
 
 <style scoped>
-* {
-    outline: 1px solid white;
-}
-
-
 .Contact {
     width: 90vw;
     margin: auto;
+    flex: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 10rem 1fr;
+    grid-template-rows: repeat(3, 5rem);
+    gap: 2rem;
 
 
-    & .label {
-        border: 2px solid white;
+    & .label {}
+
+    & .input {
+        border: 1px solid var(--color-primary);
+        padding: .3rem;
+    }
+
+
+    .name-container {
+        grid-row: 1/2;
+        grid-column: 1/2;
+        margin: 1rem;
+    }
+
+    .email-container {
+        grid-row: 2/3;
+        grid-column: 1/2;
+        margin: 1rem;
+    }
+
+
+    #formMessage {
+        grid-row: 1/3;
+        grid-column: 2/3;
+        height: 100%;
+        margin: 2rem;
+        padding: .5rem;
+
     }
 
     & .submit-container {
-
         width: 100%;
         height: 6rem;
-
+        margin: 1rem;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-flow: column nowrap;
+        grid-row: 3/4;
+        grid-column: 1/3;
 
         & .submit {
             padding: 1rem;
             margin-bottom: 1rem;
-            border: 2px solid var(--color-palette--secondary);
+
+            border: 1px solid var(--color-palette--tertiary);
             background: var(--color-palette--primary);
             border-radius: .5rem;
             transition: all ease-in-out .2s;
@@ -73,27 +101,6 @@ export default defineComponent({
             /* visibility: hidden; */
             padding-inline: 1rem;
         }
-    }
-
-    .formName {
-        grid-row: 1;
-        grid-column: 1;
-    }
-
-    .formEmail {
-        grid-row: 2;
-        grid-column: 1;
-    }
-
-    .submit-container {
-        grid-row: 3;
-        grid-column: 1;
-    }
-
-    .formMessage {
-        grid-row: 1/3;
-        grid-column: 2;
-
     }
 }
 </style>
