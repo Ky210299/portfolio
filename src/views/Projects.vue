@@ -422,7 +422,7 @@ export default defineComponent({
 
 						&.disabled {
 							opacity: .2;
-							filter: contrast(1);
+							filter: grayscale(1);
 							pointer-events: none;
 
 							&:hover {
