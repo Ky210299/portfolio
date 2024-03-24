@@ -118,8 +118,9 @@ export default defineComponent({
     transition: all ease-in-out .2s;
 
     & .submit {
-        padding: 1rem;
         margin-bottom: 1rem;
+        padding: 1rem;
+        font-family: var(--font-family-secondary);
         border: 1px solid var(--color-palette--tertiary);
         background: var(--color-palette--primary);
         border-radius: .5rem;

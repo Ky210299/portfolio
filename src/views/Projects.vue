@@ -78,7 +78,7 @@ export default defineComponent({
 
 					}, githubLink: {
 						name: "githubLink",
-						linkDescription: "See the source code",
+						linkDescription: "Source Code",
 						link: "https://github.com/ky210299/portfolio",
 					}
 				},
@@ -97,7 +97,7 @@ export default defineComponent({
 
 					}, githubLink: {
 						name: "githubLink",
-						linkDescription: "See the source code",
+						linkDescription: "Source Code",
 						link: undefined
 					}
 				},
@@ -124,7 +124,7 @@ export default defineComponent({
 
 					githubLink: {
 						name: "githubLink",
-						linkDescription: "See the source code",
+						linkDescription: "Source Code",
 						link: "https://github.com/ky210299/portfolio",
 					}
 				},
@@ -144,7 +144,7 @@ export default defineComponent({
 
 					}, githubLink: {
 						name: "githubLink",
-						linkDescription: "See the source code",
+						linkDescription: "Source Code",
 						link: "https://github.com/ky210299/portfolio"
 					}
 				},
@@ -393,29 +393,30 @@ export default defineComponent({
 
 				.project-links {
 
-					display: grid;
-					grid-template-columns: 45% 45%;
-					grid-auto-flow: column;
-					gap: 5%;
+					display: flex;
+					flex-wrap: nowrap;
+					justify-content: space-around;
+					align-items: center;
 					width: 100%;
-
+					transition: all ease-in-out .2s;
 
 					.project-links-item {
-						justify-self: flex-start;
-						text-align: center;
-						transition: all ease .3s;
-
+						transition: inherit;
 
 						.project-links-item-text {
 
-							text-wrap: nowrap;
+							font-family: var(--font-family-secondary);
+							padding: .5rem;
+							border: 1px solid var(--color-palette--tertiary);
+							background: var(--color-palette--primary);
 							border-radius: .5rem;
-							padding-inline: .5rem;
-							padding-block: .5rem;
-							color: var(--color-primary);
-							background-color: var(--color-palette--primary);
-							filter: contrast(.5) saturate(1);
-							width: max-content;
+							transition: inherit;
+							color: var(--color-palette--secondary);
+
+							&:hover {
+								transform: scale(1.05);
+								filter: brightness(1.1);
+							}
 
 						}
 
