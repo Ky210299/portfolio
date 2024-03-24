@@ -70,7 +70,7 @@ import About from "./views/About.vue";
 	min-height: 100dvh;
 	margin: auto;
 	padding-inline: 2rem;
-	padding-top: 2rem;
+	padding-top: 4rem;
 
 }
 
