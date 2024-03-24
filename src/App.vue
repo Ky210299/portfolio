@@ -67,9 +67,10 @@ import About from "./views/About.vue";
 
 #contact {
 	width: 90vw;
-	height: 100dvh;
+	min-height: 100dvh;
 	margin: auto;
 	padding-inline: 2rem;
+	padding-top: 2rem;
 
 }
 
