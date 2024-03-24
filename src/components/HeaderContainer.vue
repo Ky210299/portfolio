@@ -20,6 +20,11 @@ export default defineComponent({
 				name: "Projects",
 				id: "#projects",
 			},
+
+			{
+				name: "Contact",
+				id: "#contact",
+			},
 			{
 				name: "About",
 				id: "#about",
@@ -47,10 +52,8 @@ export default defineComponent({
 				</li>
 			</ul>
 		</nav>
-		<IconArrowBarRigth v-show="isDeployed" @click="isDeployed = !isDeployed"
-			class="header-menu" />
-		<IconArrowBarLeft v-show="!isDeployed" @click="isDeployed = !isDeployed"
-			id="nav-menu" class="header-menu" />
+		<IconArrowBarRigth v-show="isDeployed" @click="isDeployed = !isDeployed" class="header-menu" />
+		<IconArrowBarLeft v-show="!isDeployed" @click="isDeployed = !isDeployed" id="nav-menu" class="header-menu" />
 	</header>
 </template>
 
@@ -120,15 +123,15 @@ export default defineComponent({
 					font-family: var(--font-family-secondary);
 
 					font-weight: 500;
-					
+
 
 
 					transition: all ease 300ms;
 					transform: scale(1);
 
 					&:hover {
-					
-						transform: scale(1.05);						
+
+						transform: scale(1.05);
 					}
 				}
 			}

@@ -5,7 +5,7 @@
 		<main class="main" id="projects">
 			<Projects />
 		</main>
-		<Contact class="contact-section" />
+		<Contact class="contact-section" id="contact" />
 		<About />
 	</div>
 </template>
@@ -67,7 +67,7 @@ import About from "./views/About.vue";
 
 .contact-section {
 	width: 90vw;
-	min-height: 100dvh;
+	height: 100dvh;
 	margin: auto;
 	display: flex;
 	justify-content: space-around;
