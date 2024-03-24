@@ -5,7 +5,7 @@
 		<main class="main" id="projects">
 			<Projects />
 		</main>
-		<Contact class="contact-section" id="contact" />
+		<Contact id="contact" />
 		<About />
 	</div>
 </template>
@@ -65,16 +65,11 @@ import About from "./views/About.vue";
 	padding: 2rem;
 }
 
-.contact-section {
+#contact {
 	width: 90vw;
 	height: 100dvh;
 	margin: auto;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	flex-flow: column nowrap;
 	padding-inline: 2rem;
-	padding-block: 4rem;
 
 }
 
