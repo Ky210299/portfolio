@@ -3,12 +3,13 @@ import { defineComponent, reactive, ref } from "vue";
 export default defineComponent({
 
     setup() {
+        let isValid = ref(false)
         let output = ref("")
         const form = reactive({
             name: {
                 value: "",
                 re: /^(\w{2,36}(\s\w{2,36}){0,4})?$/,
-                error: "The name field it's not valid, Please try again. Just alphanumeric characters.",
+                error: "The name field it's not valid. Only alphanumeric characters are accepted",
             },
             email: {
                 value: "",
@@ -18,12 +19,12 @@ export default defineComponent({
             subject: {
                 value: "",
                 re: /^([\w\s¡!¿?,.:;'"]{2,200})?$/,
-                error: "The subject is not valid. Please try again. Must contain 200 characters max",
+                error: "The subject is not valid. Two characters minimum",
             },
             message: {
                 value: "",
                 re: /^([\w\s¡!¿?,.:;'"]{2,2000})?$/,
-                error: "The message is not valid. Please try again.",
+                error: "The message is not valid.",
             },
         })
         const validateField = (input: string, re: RegExp) => {
@@ -31,8 +32,13 @@ export default defineComponent({
             return (match !== null) ? match[0] : null
         }
 
+        const sendForm = () => {
+            if (isValid.value) {
+                output.value = `The form has been sended`
+            }
+        }
         const validateForm = () => {
-            let isValid = false
+            isValid.value = false
             let count = 0
 
             output.value = ""
@@ -49,7 +55,7 @@ export default defineComponent({
 
                     } else {
                         count++
-                        isValid = count === 4 // if the four fields are valid, then is valid the form
+                        isValid.value = count === 4 // if the four fields are valid, then is valid the form
                     }
 
                 } else {
@@ -59,11 +65,12 @@ export default defineComponent({
                 }
 
             }
-            return isValid
+            return sendForm()
         }
 
-        return { form, validateForm, output }
+        return { form, validateForm, output, isValid, }
     }
+
 
 })
 </script>
@@ -87,7 +94,8 @@ export default defineComponent({
             placeholder="Text your message here. Thanks for contact me!"></textarea>
         <div class="submit-container">
             <button class="submit" id="submit" @click.prevent="validateForm" type="submit" name="submit">Submit</button>
-            <output class="output" v-html="output" form="contactForm"></output>
+            <output class="output" :class="{ 'form--valid': isValid, 'form--not-valid': !isValid }" v-html="output"
+                form="contactForm"></output>
         </div>
     </form>
 
@@ -215,5 +223,13 @@ export default defineComponent({
             margin: 0;
         }
     }
+}
+
+.form--valid {
+    color: green;
+}
+
+.form--not-valid {
+    color: red;
 }
 </style>
