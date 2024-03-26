@@ -1,18 +1,71 @@
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, reactive, ref } from "vue";
 export default defineComponent({
+
     setup() {
-        let inputName = ref("")
-        let inputEmail = ref("")
-        let inputMessage = ref("")
-        let subject = ref("")
         let output = ref("")
+        const form = reactive({
+            name: {
+                value: "",
+                re: /^(\w{2,36}(\s\w{2,36}){0,4})?$/,
+                error: "The name field it's not valid, Please try again. Just alphanumeric characters.",
+            },
+            email: {
+                value: "",
+                re: /^(\w+@\w+\.\w{2,10})?$/,
+                error: "The email address is not valid. Please try again.",
+            },
+            subject: {
+                value: "",
+                re: /^([\w\s¡!¿?,.:;'"]{2,200})?$/,
+                error: "The subject is not valid. Please try again. Must contain 200 characters max",
+            },
+            message: {
+                value: "",
+                re: /^([\w\s¡!¿?,.:;'"]{2,2000})?$/,
+                error: "The message is not valid. Please try again.",
+            },
+        })
+        const validateField = (input: string, re: RegExp) => {
+            const match = input.trim().match(re)
+            return (match !== null) ? match[0] : null
+        }
+
+        const validateForm = () => {
+            let isValid = false
+            let count = 0
+
+            output.value = ""
+
+            for (const field in form) {
 
 
+                const match = validateField(form[field].value, form[field].re)
 
-        return { inputName, inputEmail, inputMessage, subject, output }
+                if (match !== null) {
+
+                    if (!match[0]) {
+                        output.value += `The ${field} field is empty. <br>`
+
+                    } else {
+                        count++
+                        isValid = count === 4 // if the four fields are valid, then is valid the form
+                    }
+
+                } else {
+
+                    output.value += `${form[field].error} <br>`
+                    form[field].value = ""
+                }
+
+            }
+            return isValid
+        }
+
+        return { form, validateForm, output }
     }
-});
+
+})
 </script>
 
 ««««««««««««««««««««--Template--»»»»»»»»»»»»»»»»»»»»»
@@ -22,19 +75,19 @@ export default defineComponent({
         <header class="header">
             <h2>Message me to work together!</h2>
         </header>
-        <label class="label name" for="name">What's your name?<input class="input" v-model="inputName" name="name"
-                type="text" min="2" max="10" placeholder="Text your name here"></label>
+        <label class="label name" for="name">What's your name?<input class="input" v-model="form.name.value" name="name"
+                type="text" placeholder="Text your name here"></label>
 
-        <label class="label email" for="email">What's your email?<input class="input" v-model="inputEmail" name="email"
-                type="email" placeholder="Text your email here" id="formEmail"></label>
+        <label class="label email" for="email">What's your email?<input class="input" name="email"
+                v-model="form.email.value" type="email" placeholder="Text your email here" id="formEmail"></label>
 
 
-        <input type="text" class="subject input" placeholder="What it's about" v-model="subject">
-        <textarea class="input textarea" v-model="inputMessage" name="message" form="contactForm" autocomplete="on"
-            maxlength="2000" placeholder="Text your message here. Thanks for contact me!"></textarea>
+        <input type="text" class="subject input" v-model="form.subject.value" placeholder="What it's about">
+        <textarea class="input textarea" v-model="form.message.value" name="message" form="contactForm"
+            placeholder="Text your message here. Thanks for contact me!"></textarea>
         <div class="submit-container">
-            <button class="submit" name="submit" type="submit">Submit</button>
-            <output class="output" form="contactForm" for="name email message">{{ output }}</output>
+            <button class="submit" id="submit" @click.prevent="validateForm" type="submit" name="submit">Submit</button>
+            <output class="output" v-html="output" form="contactForm"></output>
         </div>
     </form>
 
