@@ -93,7 +93,7 @@ export default defineComponent({
         <textarea class="input textarea" v-model="form.message.value" name="message" form="contactForm"
             placeholder="Text your message here. Thanks for contact me!"></textarea>
         <div class="submit-container">
-            <button class="submit" id="submit" @click.prevent="validateForm" type="submit" name="submit">Submit</button>
+            <button class="submit" id="submit" @click.prevent="validateForm" type="button" name="submit">Submit</button>
             <output class="output" :class="{ 'form--valid': isValid, 'form--not-valid': !isValid }" v-html="output"
                 form="contactForm"></output>
         </div>
