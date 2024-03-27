@@ -63,6 +63,7 @@ import About from "./views/About.vue";
 	margin: auto;
 	min-height: 100dvh;
 	padding: 2rem;
+	margin-top: 10rem;
 }
 
 #contact {

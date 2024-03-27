@@ -5,7 +5,12 @@ export default defineComponent({
     setup() {
         let isValid = ref(false)
         let output = ref("")
-        const form = reactive({
+        interface IFormInput {
+            value: string,
+            re: RegExp,
+            error: string,
+        }
+        const form: Record<string, IFormInput> = reactive({
             name: {
                 value: "",
                 re: /^(\w{2,36}(\s\w{2,36}){0,4})?$/,
@@ -44,9 +49,9 @@ export default defineComponent({
             output.value = ""
 
             for (const field in form) {
+                const input = form[field]
 
-
-                const match = validateField(form[field].value, form[field].re)
+                const match = validateField(input.value, input.re)
 
                 if (match !== null) {
 
@@ -60,8 +65,8 @@ export default defineComponent({
 
                 } else {
 
-                    output.value += `${form[field].error} <br>`
-                    form[field].value = ""
+                    output.value += `${input.error} <br>`
+                    input.value = ""
                 }
 
             }
