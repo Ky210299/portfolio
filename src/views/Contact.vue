@@ -5,9 +5,19 @@ export default defineComponent({
     setup() {
         let isValid = ref(false)
         let output = ref("")
+<<<<<<< HEAD
         const form = [
             ref({
                 field: "name",
+=======
+        interface IFormInput {
+            value: string,
+            re: RegExp,
+            error: string,
+        }
+        const form: Record<string, IFormInput> = reactive({
+            name: {
+>>>>>>> feature
                 value: "",
                 re: /^(\w{2,36}(\s\w{2,36}){0,4})?$/,
                 error: "The name field it's not valid. Must contain more than two alphanumeric characters",
@@ -47,12 +57,20 @@ export default defineComponent({
 
             output.value = ""
 
+<<<<<<< HEAD
 
             for (const field of form) {
                 const f = field.value
                 const match = validateField(f.value, f.re)
 
                 console.log(form, field)
+=======
+            for (const field in form) {
+                const input = form[field]
+
+                const match = validateField(input.value, input.re)
+
+>>>>>>> feature
                 if (match !== null) {
 
                     if (!match[0]) {
@@ -65,8 +83,13 @@ export default defineComponent({
 
                 } else {
 
+<<<<<<< HEAD
                     output.value += `${f.error} <br>`
                     f.value = ""
+=======
+                    output.value += `${input.error} <br>`
+                    input.value = ""
+>>>>>>> feature
                 }
 
             }
