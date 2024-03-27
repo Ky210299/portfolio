@@ -1,32 +1,36 @@
 <script lang="ts">
-import { defineComponent, reactive, ref } from "vue";
+import { defineComponent, ref } from 'vue'
 export default defineComponent({
 
     setup() {
         let isValid = ref(false)
         let output = ref("")
-        const form = reactive({
-            name: {
+        const form = [
+            ref({
+                field: "name",
                 value: "",
                 re: /^(\w{2,36}(\s\w{2,36}){0,4})?$/,
-                error: "The name field it's not valid. Only alphanumeric characters are accepted",
-            },
-            email: {
+                error: "The name field it's not valid. Must contain more than two alphanumeric characters",
+            }),
+            ref({
+                field: "email",
                 value: "",
                 re: /^(\w+@\w+\.\w{2,10})?$/,
                 error: "The email address is not valid. Please try again.",
-            },
-            subject: {
+            }),
+            ref({
+                field: "subject",
                 value: "",
                 re: /^([\w\s¡!¿?,.:;'"]{2,200})?$/,
                 error: "The subject is not valid. Two characters minimum",
-            },
-            message: {
+            }),
+            ref({
+                field: "message",
                 value: "",
                 re: /^([\w\s¡!¿?,.:;'"]{2,2000})?$/,
-                error: "The message is not valid.",
-            },
-        })
+                error: "The message is not valid. Two characters minimun",
+            }),
+        ]
         const validateField = (input: string, re: RegExp) => {
             const match = input.trim().match(re)
             return (match !== null) ? match[0] : null
@@ -43,15 +47,16 @@ export default defineComponent({
 
             output.value = ""
 
-            for (const field in form) {
 
+            for (const field of form) {
+                const f = field.value
+                const match = validateField(f.value, f.re)
 
-                const match = validateField(form[field].value, form[field].re)
-
+                console.log(form, field)
                 if (match !== null) {
 
                     if (!match[0]) {
-                        output.value += `The ${field} field is empty. <br>`
+                        output.value += `The ${f.field} field is empty. <br>`
 
                     } else {
                         count++
@@ -60,8 +65,8 @@ export default defineComponent({
 
                 } else {
 
-                    output.value += `${form[field].error} <br>`
-                    form[field].value = ""
+                    output.value += `${f.error} <br>`
+                    f.value = ""
                 }
 
             }
@@ -82,15 +87,15 @@ export default defineComponent({
         <header class="header">
             <h2>Message me to work together!</h2>
         </header>
-        <label class="label name" for="name">What's your name?<input class="input" v-model="form.name.value" name="name"
-                type="text" placeholder="Text your name here"></label>
+        <label class="label name" for="name">What's your name?<input class="input" v-model="form[0].value.value"
+                name="name" type="text" placeholder="Text your name here"></label>
 
         <label class="label email" for="email">What's your email?<input class="input" name="email"
-                v-model="form.email.value" type="email" placeholder="Text your email here" id="formEmail"></label>
+                v-model="form[1].value.value" type="email" placeholder="Text your email here" id="formEmail"></label>
 
 
-        <input type="text" class="subject input" v-model="form.subject.value" placeholder="What it's about">
-        <textarea class="input textarea" v-model="form.message.value" name="message" form="contactForm"
+        <input type="text" class="subject input" v-model="form[2].value.value" placeholder="What it's about">
+        <textarea class="input textarea" v-model="form[3].value.value" name="message" form="contactForm"
             placeholder="Text your message here. Thanks for contact me!"></textarea>
         <div class="submit-container">
             <button class="submit" id="submit" @click.prevent="validateForm" type="button" name="submit">Submit</button>
@@ -118,7 +123,7 @@ export default defineComponent({
 .Contact {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(6, 3rem);
+    grid-template-rows: repeat(5, 3rem);
     padding-top: 4rem;
     gap: 1rem;
     border-radius: 1rem;
@@ -177,6 +182,7 @@ export default defineComponent({
     grid-row: -2/-1;
     grid-column: 1/3;
     transition: all ease-in-out .2s;
+    height: 10rem;
 
     & .submit {
         margin-bottom: 1rem;
@@ -187,6 +193,7 @@ export default defineComponent({
         border-radius: .5rem;
         transition: inherit;
         color: var(--color-palette--secondary);
+        text-wrap: pretty;
 
         &:hover {
             transform: scale(1.05);
